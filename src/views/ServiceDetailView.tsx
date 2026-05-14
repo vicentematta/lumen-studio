@@ -60,7 +60,7 @@ export function ServiceDetailView({ service, prev, next }: Props) {
               variants={blurIn}
               initial="hidden"
               animate="show"
-              className="mt-6 max-w-4xl font-display text-4xl leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl"
+              className="mt-6 max-w-4xl font-body font-normal uppercase text-white text-h1 md:text-display-md !tracking-[0.05em]"
             >
               {service.name}
             </motion.h1>
@@ -286,7 +286,7 @@ function ServiceNavCard({ service, direction }: NavCardProps) {
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">
               {isNext ? 'Siguiente' : 'Anterior'}
             </p>
-            <p className="mt-2 font-display text-h2 italic leading-tight text-white">
+            <p className="mt-2 font-body text-h4 font-normal uppercase !tracking-[0.05em] text-white">
               {service.name}
             </p>
           </div>

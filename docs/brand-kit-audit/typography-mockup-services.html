@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<title>Riverhaus · Service Typography Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:#000;color:#faf7f2;
+    font-family:'Instrument Sans',system-ui,sans-serif;
+    padding:48px 0;
+    -webkit-font-smoothing:antialiased;
+  }
+  .container{max-width:1320px;margin:0 auto;padding:0 24px}
+  .doc-h1{font-family:'Instrument Serif',serif;font-size:48px;line-height:1.05;letter-spacing:-0.02em;margin-bottom:8px}
+  .doc-intro{font-size:17px;line-height:1.65;color:rgba(250,247,242,0.65);max-width:640px;margin-bottom:64px}
+
+  /* Section header */
+  .option-block{margin-bottom:80px;padding-top:48px;border-top:1px solid rgba(255,255,255,0.1)}
+  .option-label{
+    font-size:11px;letter-spacing:0.15em;text-transform:uppercase;
+    color:#5BA3B8;margin-bottom:12px;font-weight:500;
+  }
+  .option-name{font-family:'Instrument Serif',serif;font-size:36px;letter-spacing:-0.02em;line-height:1.1;margin-bottom:8px}
+  .option-spec{font-size:13px;letter-spacing:0.05em;color:rgba(250,247,242,0.5);margin-bottom:28px;font-family:ui-monospace,monospace}
+
+  /* Cards row */
+  .row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{
+    background:rgba(255,255,255,0.03);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;overflow:hidden;
+  }
+  .card .img{
+    aspect-ratio:16/10;
+    background:
+      radial-gradient(ellipse at top, rgba(91,163,184,0.3) 0%, transparent 60%),
+      linear-gradient(180deg, #14110D 0%, #0a0807 100%);
+    position:relative;
+  }
+  .card.b .img{
+    background:
+      radial-gradient(ellipse at center, rgba(122,155,110,0.25) 0%, transparent 60%),
+      linear-gradient(180deg, #1a1815 0%, #0a0807 100%);
+  }
+  .card.c .img{
+    background:
+      radial-gradient(ellipse at bottom, rgba(212,146,106,0.25) 0%, transparent 65%),
+      linear-gradient(180deg, #14110D 0%, #0a0807 100%);
+  }
+  .card .body{padding:28px 32px 32px}
+
+  /* COMMON eyebrow */
+  .eyebrow{
+    font-family:'Instrument Sans',sans-serif;
+    font-size:13px;line-height:1;letter-spacing:0.08em;text-transform:uppercase;
+    color:rgba(250,247,242,0.4);margin-bottom:20px;
+  }
+  .short{
+    font-family:'Instrument Sans',sans-serif;
+    font-size:17px;line-height:1.65;color:rgba(250,247,242,0.65);
+    margin-top:16px;
+  }
+
+  /* ──────── OPTION A · UPPER Sans 500, tight, grande ──────── */
+  .ta-A{
+    font-family:'Instrument Sans',sans-serif;
+    font-weight:500;
+    font-size:36px;line-height:1.05;letter-spacing:-0.02em;
+    text-transform:uppercase;color:#faf7f2;
+  }
+
+  /* ──────── OPTION B · UPPER Sans 400, abierto, mediano ──────── */
+  .ta-B{
+    font-family:'Instrument Sans',sans-serif;
+    font-weight:400;
+    font-size:22px;line-height:1.2;letter-spacing:0.05em;
+    text-transform:uppercase;color:#faf7f2;
+  }
+
+  /* ──────── OPTION C · Numerito Serif italic + UPPER label ──────── */
+  .ta-C-wrap{margin-top:-8px}
+  .ta-C-num{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-size:64px;line-height:1;letter-spacing:-0.02em;
+    color:rgba(91,163,184,0.85);margin-bottom:12px;display:block;
+  }
+  .ta-C-label{
+    font-family:'Instrument Sans',sans-serif;
+    font-weight:500;
+    font-size:20px;line-height:1.15;letter-spacing:0.04em;
+    text-transform:uppercase;color:#faf7f2;
+  }
+
+  /* ──────── MIX · UPPER Sans 500 medium + número monospace ──────── */
+  .ta-MIX-num{
+    display:inline-block;
+    font-family:ui-monospace,'SF Mono',monospace;
+    font-size:11px;letter-spacing:0.15em;color:rgba(91,163,184,0.85);
+    padding:4px 10px;border:1px solid rgba(91,163,184,0.3);border-radius:999px;
+    margin-bottom:18px;
+  }
+  .ta-MIX-name{
+    font-family:'Instrument Sans',sans-serif;
+    font-weight:500;
+    font-size:30px;line-height:1.1;letter-spacing:-0.01em;
+    text-transform:uppercase;color:#faf7f2;
+  }
+
+  /* Reference (current state) */
+  .ta-REF{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-size:36px;line-height:1.1;letter-spacing:-0.02em;
+    color:#faf7f2;
+  }
+
+  /* Hide eyebrow in C and MIX because they have their own number treatment */
+  .card.c .eyebrow{display:none}
+  .card.mix .eyebrow{display:none}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1 class="doc-h1">Riverhaus · Service titles · comparativo tipográfico</h1>
+  <p class="doc-intro">Cuatro tratamientos visuales para los 3 servicios núcleo (Estrategia Comercial · Identidad Digital · Negocio + Diseño). Mismo contenedor, misma imagen, misma estructura · solo cambia el titular.</p>
+
+  <!-- REFERENCE: current state -->
+  <div class="option-block" style="border-top:none;padding-top:0">
+    <div class="option-label">REFERENCIA · estado actual</div>
+    <h2 class="option-name">Instrument Serif italic · 36px</h2>
+    <div class="option-spec">font-display, italic, text-h2 (36px, ls -2%), case-as-typed</div>
+
+    <div class="row">
+      <div class="card"><div class="img"></div><div class="body">
+        <div class="eyebrow">01 · Comunicación estratégica</div>
+        <h3 class="ta-REF">Estrategia Comercial</h3>
+        <p class="short">Claridad sobre tu diferenciador competitivo.</p>
+      </div></div>
+      <div class="card"><div class="img"></div><div class="body">
+        <div class="eyebrow">02 · Marca, web y contenido</div>
+        <h3 class="ta-REF">Identidad Digital</h3>
+        <p class="short">Tu portada competitiva en digital.</p>
+      </div></div>
+      <div class="card"><div class="img"></div><div class="body">
+        <div class="eyebrow">03 · Producción continua</div>
+        <h3 class="ta-REF">Negocio + Diseño</h3>
+        <p class="short">Producción que refuerza tu posición.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- OPTION A -->
+  <div class="option-block">
+    <div class="option-label">OPCIÓN A · "Etiqueta de producto"</div>
+    <h2 class="option-name">UPPER Sans 500 · tight · 36px</h2>
+    <div class="option-spec">font-body, weight 500, size 36px, uppercase, ls -2%, color Cal Viva 100%</div>
+
+    <div class="row">
+      <div class="card"><div class="img"></div><div class="body">
+        <div class="eyebrow">01 · Comunicación estratégica</div>
+        <h3 class="ta-A">Estrategia Comercial</h3>
+        <p class="short">Claridad sobre tu diferenciador competitivo.</p>
+      </div></div>
+      <div class="card"><div class="img"></div><div class="body">
+        <div class="eyebrow">02 · Marca, web y contenido</div>
+        <h3 class="ta-A">Identidad Digital</h3>
+        <p class="short">Tu portada competitiva en digital.</p>
+      </div></div>
+      <div class="card"><div class="img"></div><div class="body">
+        <div class="eyebrow">03 · Producción continua</div>
+        <h3 class="ta-A">Negocio + Diseño</h3>
+        <p class="short">Producción que refuerza tu posición.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- OPTION B -->
+  <div class="option-block">
+    <div class="option-label">OPCIÓN B · "Tag editorial luxe"</div>
+    <h2 class="option-name">UPPER Sans 400 · abierto · 22px</h2>
+    <div class="option-spec">font-body, weight 400, size 22px, uppercase, ls +5%, color Cal Viva 100%</div>
+
+    <div class="row">
+      <div class="card"><div class="img"></div><div class="body">
+        <div class="eyebrow">01 · Comunicación estratégica</div>
+        <h3 class="ta-B">Estrategia Comercial</h3>
+        <p class="short">Claridad sobre tu diferenciador competitivo.</p>
+      </div></div>
+      <div class="card"><div class="img"></div><div class="body">
+        <div class="eyebrow">02 · Marca, web y contenido</div>
+        <h3 class="ta-B">Identidad Digital</h3>
+        <p class="short">Tu portada competitiva en digital.</p>
+      </div></div>
+      <div class="card"><div class="img"></div><div class="body">
+        <div class="eyebrow">03 · Producción continua</div>
+        <h3 class="ta-B">Negocio + Diseño</h3>
+        <p class="short">Producción que refuerza tu posición.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- OPTION C -->
+  <div class="option-block">
+    <div class="option-label">OPCIÓN C · "Producto codificado"</div>
+    <h2 class="option-name">Número Serif italic + UPPER label Sans 500</h2>
+    <div class="option-spec">número 64px Serif italic color Río · label 20px Sans 500 UPPER ls +4%</div>
+
+    <div class="row">
+      <div class="card c"><div class="img"></div><div class="body">
+        <div class="ta-C-wrap">
+          <span class="ta-C-num">01</span>
+          <h3 class="ta-C-label">Estrategia Comercial</h3>
+        </div>
+        <p class="short">Claridad sobre tu diferenciador competitivo.</p>
+      </div></div>
+      <div class="card c"><div class="img"></div><div class="body">
+        <div class="ta-C-wrap">
+          <span class="ta-C-num">02</span>
+          <h3 class="ta-C-label">Identidad Digital</h3>
+        </div>
+        <p class="short">Tu portada competitiva en digital.</p>
+      </div></div>
+      <div class="card c"><div class="img"></div><div class="body">
+        <div class="ta-C-wrap">
+          <span class="ta-C-num">03</span>
+          <h3 class="ta-C-label">Negocio + Diseño</h3>
+        </div>
+        <p class="short">Producción que refuerza tu posición.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- MIX -->
+  <div class="option-block">
+    <div class="option-label">MIX · "Pill mono + UPPER product"</div>
+    <h2 class="option-name">Mono pill número + UPPER Sans 500 medium</h2>
+    <div class="option-spec">pill 11px mono UPPER Río borde · título 30px Sans 500 UPPER ls -1%</div>
+
+    <div class="row">
+      <div class="card mix"><div class="img"></div><div class="body">
+        <span class="ta-MIX-num">SVC · 01</span>
+        <h3 class="ta-MIX-name">Estrategia Comercial</h3>
+        <p class="short">Claridad sobre tu diferenciador competitivo.</p>
+      </div></div>
+      <div class="card mix"><div class="img"></div><div class="body">
+        <span class="ta-MIX-num">SVC · 02</span>
+        <h3 class="ta-MIX-name">Identidad Digital</h3>
+        <p class="short">Tu portada competitiva en digital.</p>
+      </div></div>
+      <div class="card mix"><div class="img"></div><div class="body">
+        <span class="ta-MIX-num">SVC · 03</span>
+        <h3 class="ta-MIX-name">Negocio + Diseño</h3>
+        <p class="short">Producción que refuerza tu posición.</p>
+      </div></div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

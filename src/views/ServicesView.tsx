@@ -79,7 +79,7 @@ export function ServicesView({ services }: Props) {
                           </span>
                         </div>
                         {s.name ? (
-                          <h3 className="mb-4 font-display text-h2 italic text-white">
+                          <h3 className="mb-4 font-body text-h4 font-normal uppercase !tracking-[0.05em] text-white">
                             {s.name}
                           </h3>
                         ) : null}

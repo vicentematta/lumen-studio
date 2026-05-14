@@ -418,7 +418,7 @@ function Services({ content }: { content: HomeContent }) {
                       <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </div>
-                  <h3 className="mb-4 font-display text-h2 italic text-white">
+                  <h3 className="mb-4 font-body text-h4 font-normal uppercase !tracking-[0.05em] text-white">
                     {card.title}
                   </h3>
                   {card.description ? (
