@@ -12,7 +12,9 @@ import { getHomePage } from '@/lib/queries/homePage'
 import { HomeView } from '@/views/HomeView'
 
 export const metadata: Metadata = {
-  title: 'Riverhaus · Negocio + Diseño',
+  // `absolute` evita que el template '%s · Riverhaus' del root layout
+  // duplique el nombre en la home
+  title: { absolute: 'Riverhaus · Negocio + Diseño' },
   description:
     'Consultora bilingüe de negocio y diseño basada en Valdivia, Chile. Estrategia comercial + identidad digital para consolidar tu autoridad en tu categoría.',
 }
