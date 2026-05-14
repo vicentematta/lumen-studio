@@ -137,7 +137,7 @@ export default function Auth({ mode }: Props) {
     <>
       <Seo
         title={isSignup ? 'Create account' : 'Sign in'}
-        description={isSignup ? 'Create your Liquid Glass Studio account.' : 'Sign in to your Liquid Glass Studio account.'}
+        description={isSignup ? 'Crea tu cuenta Riverhaus.' : 'Ingresa a tu cuenta Riverhaus.'}
         url={isSignup ? '/signup' : '/login'}
         noindex
       />

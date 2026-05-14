@@ -1,10 +1,10 @@
 import { Helmet } from 'react-helmet-async'
 
-export const SITE_URL = 'https://liquidglass.studio'
-const SITE_NAME = 'Liquid Glass Studio'
+export const SITE_URL = 'https://riverhaus.xyz'
+const SITE_NAME = 'Riverhaus'
 const DEFAULT_DESCRIPTION =
-  'Brand, identity, and digital craft for the discerning few. A studio for companies that compete on taste.'
-const DEFAULT_IMAGE = `${SITE_URL}/og-default.jpg`
+  'Consultora bilingüe de negocio y diseño basada en Valdivia, Chile. Estrategia comercial + identidad digital para consolidar tu autoridad en tu categoría.'
+const DEFAULT_IMAGE = `${SITE_URL}/og-fallback.png`
 
 export interface SeoProps {
   title?: string

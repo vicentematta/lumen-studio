@@ -292,7 +292,7 @@ export default function WorkDetail() {
     url: `${SITE_URL}/work/${project.slug}`,
     creator: {
       '@type': 'Organization',
-      name: 'Liquid Glass Studio',
+      name: 'Riverhaus',
       url: SITE_URL,
     },
   }

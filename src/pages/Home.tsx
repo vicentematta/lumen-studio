@@ -14,15 +14,16 @@ import { fadeRise, blurIn, stagger, inViewProps, slideFromLeft, slideFromRight }
 import { useHomePage, type HomeContent } from '@/hooks/useHomePage'
 import { stegaClean } from '@sanity/client/stega'
 
-const SITE_URL = 'https://liquidglass.studio'
+const SITE_URL = 'https://riverhaus.xyz'
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Liquid Glass Studio',
+  name: 'Riverhaus',
   url: SITE_URL,
-  description: 'Brand, identity, and digital craft for the discerning few.',
-  logo: { '@type': 'ImageObject', url: `${SITE_URL}/favicon.svg` },
+  description:
+    'Consultora bilingüe de negocio y diseño basada en Valdivia, Chile.',
+  logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo-riverhaus-light.svg` },
 }
 
 export default function Home() {

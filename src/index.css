@@ -2,10 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ════════════════════════════════════════════════════════════
+   Riverhaus brand kit v1.5 · Dark theme (primario) por defecto
+   Light theme se activa con [data-theme="light"] en un ancestor.
+   ════════════════════════════════════════════════════════════ */
 :root {
   color-scheme: dark;
+
+  /* Legacy · preservados para backwards-compat de componentes existentes */
   --bg: #000000;
-  --fg: #ffffff;
+  --fg: #faf7f2; /* Cal Viva en lugar de white puro */
+
+  /* Brand kit · DARK (primario) */
+  --paper: #000000;
+  --paper-warm: #0a0807;
+  --paper-deep: #14110d;
+  --line: rgba(255, 255, 255, 0.1);
+  --ink: #faf7f2;
+  --ink-soft: rgba(250, 247, 242, 0.85);
+  --ink-mute: rgba(250, 247, 242, 0.55);
+  --ink-faint: rgba(250, 247, 242, 0.4);
+
+  --rio: #5ba3b8;
+  --bosque: #7a9b6e;
+  --tierra: #d4926a;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #faf7f2;
+  --fg: #0a0907;
+
+  --paper: #faf7f2;
+  --paper-warm: #f2ede3;
+  --paper-deep: #e8e1d2;
+  --line: #d9d2c2;
+  --ink: #0a0907;
+  --ink-soft: #36312a;
+  --ink-mute: #7a746a;
+  --ink-faint: #aca59b;
+
+  --rio: #1f4d5c;
+  --bosque: #2d3b2a;
+  --tierra: #a8633a;
 }
 
 html,
@@ -17,7 +57,7 @@ body,
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: 'Barlow', system-ui, sans-serif;
+  font-family: 'Instrument Sans', system-ui, sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,7 +65,7 @@ body {
 
 ::selection {
   background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+  color: var(--ink);
 }
 
 @layer components {
