@@ -14,7 +14,7 @@ import {
   type Block,
   type Project,
 } from '@/data/projects'
-import NotFound from '@/pages/NotFound'
+import NotFound from '@/legacy-pages/NotFound'
 import { Seo, SITE_URL } from '@/components/Seo'
 import { useProject, useProjects } from '@/hooks/useProjects'
 import { stegaClean } from '@sanity/client/stega'
