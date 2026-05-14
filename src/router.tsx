@@ -8,7 +8,6 @@ import Work from '@/legacy-pages/Work'
 import WorkDetail from '@/legacy-pages/WorkDetail'
 import Pricing from '@/legacy-pages/Pricing'
 import Contact from '@/legacy-pages/Contact'
-import Auth from '@/legacy-pages/Auth'
 import NotFound from '@/legacy-pages/NotFound'
 
 export const router = createBrowserRouter([
@@ -24,8 +23,6 @@ export const router = createBrowserRouter([
       { path: 'work/:slug', element: <WorkDetail /> },
       { path: 'pricing', element: <Pricing /> },
       { path: 'contact', element: <Contact /> },
-      { path: 'login', element: <Auth mode="login" /> },
-      { path: 'signup', element: <Auth mode="signup" /> },
       { path: '*', element: <NotFound /> },
     ],
   },
