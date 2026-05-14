@@ -123,6 +123,46 @@ Continúa el patrón actual de `:5180`: **headings H1, H2, H3 en Instrument Seri
 
 **Letter-spacing inverso:** negativo en grandes (–2%), positivo en chicos (+8%). Iguala color tipográfico.
 
+### 3.X Tokens especiales · Product Names (decisión 2026-05-14)
+
+**Excepción documentada** al "single weight 400 + Serif-dominant" para nombres de servicios/productos vendibles. Se diferencian del "discurso" (filosofía, copy) usando un tratamiento de **etiqueta editorial luxe**.
+
+| Token | Familia | Weight | Transform | LS | Size cards | Size hero |
+|---|---|---|---|---|---|---|
+| `product` | Instrument Sans | 400 | UPPERCASE | **+0.05em** | 22px | — |
+| `product-display` | Instrument Sans | 400 | UPPERCASE | **+0.05em** | — | 56px |
+
+**Aplica EXCLUSIVAMENTE a:**
+- Nombres de servicios en cards (Home Services section, /services index, ServiceNavCard prev/next)
+- Hero `<h1>` de `/services/[slug]` (página detalle)
+
+**NO aplica a:**
+- Títulos de sección (siguen Serif italic large)
+- Headings de filosofía/about (Serif italic)
+- Body copy / lead paragraphs (Sans regular)
+- Eyebrows / labels (Sans uppercase con tracking +8%)
+- Project/case study titles (esos usan Serif italic regular · son "discurso editorial")
+
+**Razón conceptual:**
+El wordmark RIVERHAUS es **uppercase outlined custom**. Los nombres de productos heredan ese ADN uppercase, por eso se sienten "marca-Riverhaus" más que "texto-Riverhaus". Lectura instantánea a distancia: "esto se vende". Diferencia clara con el "discurso" (Serif italic = reflexión · UPPER Sans = inventory de productos).
+
+**Implementación Tailwind:**
+```tsx
+{/* Card */}
+<h3 className="font-body text-h4 font-normal uppercase !tracking-[0.05em] text-white">
+  {service.name}
+</h3>
+
+{/* Hero detail */}
+<h1 className="font-body font-normal uppercase text-white text-h1 md:text-display-md !tracking-[0.05em]">
+  {service.name}
+</h1>
+```
+
+El `!tracking-[0.05em]` (con `!` important) es necesario porque los tokens `text-h4`/`text-h1`/`text-display-md` del brand kit canónico tienen letter-spacing built-in negativo (−2%, −0.5%). Sin el `!`, el token gana.
+
+**Próximo paso (M2f o M6):** añadir tokens propios `text-product` y `text-product-display` al `tailwind.config.js` para evitar el `!important` y dejar el código más limpio.
+
 ---
 
 ## 4. Color · Sistema dual
