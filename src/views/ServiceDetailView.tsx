@@ -172,48 +172,60 @@ export function ServiceDetailView({ service, prev, next }: Props) {
       ) : null}
 
       {/* Deliverables */}
-      {service.deliverables?.length ? (
-        <section className="px-6 pb-24 md:pb-32">
-          <Container width="lg">
-            <motion.div
-              variants={stagger}
-              {...inViewProps}
-              className="mb-12"
-            >
-              <motion.p
-                variants={fadeRiseSmall}
-                className="text-xs uppercase tracking-[0.2em] text-white/40"
+      {service.deliverables?.length ? (() => {
+        // Columnas dinámicas según cantidad — evita celdas grises vacías
+        // cuando los items no llenan la grilla.
+        // 4 items → 2×2 · 5 items → 1×5 en desktop · resto → 3 cols default
+        const N = service.deliverables.length
+        const colsClass =
+          N === 4
+            ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'
+            : N === 5
+              ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-5'
+              : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3'
+        return (
+          <section className="px-6 pb-24 md:pb-32">
+            <Container width="lg">
+              <motion.div
+                variants={stagger}
+                {...inViewProps}
+                className="mb-12"
               >
-                Entregables
-              </motion.p>
-              <motion.h2
-                variants={fadeRise}
-                className="mt-4 font-display text-3xl leading-tight tracking-tight text-white md:text-5xl"
-              >
-                Qué obtienes.
-              </motion.h2>
-            </motion.div>
-            <motion.div
-              variants={stagger}
-              {...inViewProps}
-              className="grid grid-cols-1 gap-px overflow-hidden rounded-3xl bg-white/5 sm:grid-cols-2 md:grid-cols-3"
-            >
-              {service.deliverables.map((d, i) => (
-                <motion.div
-                  key={d}
+                <motion.p
                   variants={fadeRiseSmall}
-                  className="bg-black/40 p-7"
+                  className="text-xs uppercase tracking-[0.2em] text-white/40"
                 >
-                  <p className="mb-3 text-xs uppercase tracking-[0.2em] text-white/40">
-                    0{i + 1}
-                  </p>
-                  <p className="text-base leading-relaxed text-white">{d}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </Container>
-        </section>
-      ) : null}
+                  Entregables
+                </motion.p>
+                <motion.h2
+                  variants={fadeRise}
+                  className="mt-4 font-display text-3xl leading-tight tracking-tight text-white md:text-5xl"
+                >
+                  Qué obtienes.
+                </motion.h2>
+              </motion.div>
+              <motion.div
+                variants={stagger}
+                {...inViewProps}
+                className={`grid ${colsClass} gap-px overflow-hidden rounded-3xl bg-white/5`}
+              >
+                {service.deliverables.map((d, i) => (
+                  <motion.div
+                    key={d}
+                    variants={fadeRiseSmall}
+                    className="bg-black/40 p-7"
+                  >
+                    <p className="mb-3 text-xs uppercase tracking-[0.2em] text-white/40">
+                      0{i + 1}
+                    </p>
+                    <p className="text-base leading-relaxed text-white">{d}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </Container>
+          </section>
+        )
+      })() : null}
 
       {/* Prev / Next nav */}
       <section className="px-6 pb-24 md:pb-32">
