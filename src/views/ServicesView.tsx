@@ -65,26 +65,26 @@ export function ServicesView({ services }: Props) {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       </div>
-                      <div className="p-6 md:p-8">
-                        <div className="mb-5 flex items-start justify-between">
+                      <div className="p-7 md:p-9">
+                        <div className="mb-6 flex items-start justify-between gap-4">
                           {s.eyebrow ? (
-                            <span className="text-xs uppercase tracking-[0.2em] text-white/40">
+                            <span className="text-eyebrow uppercase text-white/40">
                               {s.eyebrow}
                             </span>
                           ) : (
                             <span />
                           )}
-                          <span className="liquid-glass flex h-8 w-8 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45">
+                          <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45">
                             <ArrowUpRight className="h-4 w-4" />
                           </span>
                         </div>
                         {s.name ? (
-                          <h3 className="mb-3 font-display text-2xl tracking-tight text-white md:text-3xl">
+                          <h3 className="mb-4 font-display text-h2 italic text-white">
                             {s.name}
                           </h3>
                         ) : null}
                         {s.short ? (
-                          <p className="text-sm leading-relaxed text-white/55">
+                          <p className="text-body text-white/65">
                             {s.short}
                           </p>
                         ) : null}

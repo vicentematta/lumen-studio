@@ -54,33 +54,33 @@ export function PricingView({ content }: Props) {
                     )}
                   >
                     {tier.name ? (
-                      <p className="text-xs uppercase tracking-[0.2em] text-white/40">
+                      <p className="text-eyebrow uppercase text-white/40">
                         {tier.name}
                       </p>
                     ) : null}
                     {tier.price ? (
-                      <p className="mt-4 font-display text-4xl text-white md:text-5xl">
+                      <p className="mt-5 font-display text-display-md text-white">
                         {tier.price}
                       </p>
                     ) : null}
                     {tier.cadence ? (
-                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/40">
+                      <p className="mt-2 text-eyebrow uppercase text-white/40">
                         {tier.cadence}
                       </p>
                     ) : null}
                     {tier.tagline ? (
-                      <p className="mt-5 text-sm leading-relaxed text-white/70">
+                      <p className="mt-6 text-body text-white/75">
                         {tier.tagline}
                       </p>
                     ) : null}
                     {tier.features?.length ? (
-                      <ul className="mt-7 flex-1 space-y-3">
+                      <ul className="mt-8 flex-1 space-y-4">
                         {tier.features.map((f) => (
                           <li
                             key={f}
-                            className="flex items-start gap-3 text-sm text-white/80"
+                            className="flex items-start gap-3 text-body-sm text-white/85"
                           >
-                            <Check className="mt-[3px] h-4 w-4 shrink-0 text-white/50" />
+                            <Check className="mt-[5px] h-4 w-4 shrink-0 text-white/50" />
                             <span>{f}</span>
                           </li>
                         ))}

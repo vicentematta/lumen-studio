@@ -109,7 +109,7 @@ export function ServiceDetailView({ service, prev, next }: Props) {
                 </p>
               </motion.div>
               <motion.div variants={fadeRise} className="md:col-span-8">
-                <p className="text-lg leading-relaxed text-white/80 md:text-xl">
+                <p className="text-lead text-white/80 md:text-h4">
                   {service.summary}
                 </p>
               </motion.div>
@@ -147,19 +147,19 @@ export function ServiceDetailView({ service, prev, next }: Props) {
             >
               {service.process.map((p) => (
                 <motion.div key={p.step ?? p.title} variants={fadeRise}>
-                  <GlassCard rounded="2xl" className="h-full p-8">
+                  <GlassCard rounded="2xl" className="h-full p-8 md:p-10">
                     {p.step !== null ? (
-                      <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
+                      <p className="mb-5 text-eyebrow uppercase text-white/40">
                         0{p.step}
                       </p>
                     ) : null}
                     {p.title ? (
-                      <h3 className="font-display text-xl tracking-tight text-white">
+                      <h3 className="font-display text-h2 italic text-white">
                         {p.title}
                       </h3>
                     ) : null}
                     {p.body ? (
-                      <p className="mt-3 text-sm leading-relaxed text-white/60">
+                      <p className="mt-4 text-body text-white/70">
                         {p.body}
                       </p>
                     ) : null}
@@ -213,12 +213,12 @@ export function ServiceDetailView({ service, prev, next }: Props) {
                   <motion.div
                     key={d}
                     variants={fadeRiseSmall}
-                    className="bg-black/40 p-7"
+                    className="bg-black/40 p-8 md:p-9"
                   >
-                    <p className="mb-3 text-xs uppercase tracking-[0.2em] text-white/40">
+                    <p className="mb-4 text-eyebrow uppercase text-white/40">
                       0{i + 1}
                     </p>
-                    <p className="text-base leading-relaxed text-white">{d}</p>
+                    <p className="text-body text-white">{d}</p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -286,7 +286,7 @@ function ServiceNavCard({ service, direction }: NavCardProps) {
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">
               {isNext ? 'Siguiente' : 'Anterior'}
             </p>
-            <p className="mt-2 font-display text-2xl leading-tight tracking-tight text-white md:text-3xl">
+            <p className="mt-2 font-display text-h2 italic leading-tight text-white">
               {service.name}
             </p>
           </div>

@@ -94,14 +94,14 @@ export function AboutView({ content }: Props) {
                   animate="show"
                   transition={{ delay: 0.05 + idx * 0.12, duration: 0.8 }}
                 >
-                  <GlassCard rounded="2xl" className="h-full p-7">
+                  <GlassCard rounded="2xl" className="h-full p-8 md:p-10">
                     {v.label ? (
-                      <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
+                      <p className="mb-5 text-eyebrow uppercase text-white/40">
                         {v.label}
                       </p>
                     ) : null}
                     {v.body ? (
-                      <p className="text-base leading-relaxed text-white/75">
+                      <p className="text-body text-white/80">
                         {v.body}
                       </p>
                     ) : null}

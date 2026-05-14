@@ -213,14 +213,14 @@ function Featured({ content }: { content: HomeContent }) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
           <div className="absolute inset-x-0 bottom-0 flex flex-col gap-6 p-6 md:flex-row md:items-end md:justify-between md:p-10">
             {content.featuredMethodLabel || content.featuredMethodBody ? (
-              <GlassCard className="max-w-md p-6 md:p-8">
+              <GlassCard className="max-w-md p-7 md:p-9">
                 {content.featuredMethodLabel ? (
-                  <p className="mb-3 text-xs uppercase tracking-[0.2em] text-white/50">
+                  <p className="mb-4 text-eyebrow uppercase text-white/50">
                     {content.featuredMethodLabel}
                   </p>
                 ) : null}
                 {content.featuredMethodBody ? (
-                  <p className="text-sm leading-relaxed text-white md:text-base">
+                  <p className="text-body text-white">
                     {content.featuredMethodBody}
                   </p>
                 ) : null}
@@ -283,12 +283,12 @@ function Philosophy({ content }: { content: HomeContent }) {
               content.philosophyDisciplineBody) && (
               <div>
                 {content.philosophyDisciplineLabel ? (
-                  <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
+                  <p className="mb-5 text-eyebrow uppercase text-white/40">
                     {content.philosophyDisciplineLabel}
                   </p>
                 ) : null}
                 {content.philosophyDisciplineBody ? (
-                  <p className="text-base leading-relaxed text-white/70 md:text-lg">
+                  <p className="text-lead text-white/75">
                     {content.philosophyDisciplineBody}
                   </p>
                 ) : null}
@@ -299,12 +299,12 @@ function Philosophy({ content }: { content: HomeContent }) {
               content.philosophyStandardBody) && (
               <div>
                 {content.philosophyStandardLabel ? (
-                  <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
+                  <p className="mb-5 text-eyebrow uppercase text-white/40">
                     {content.philosophyStandardLabel}
                   </p>
                 ) : null}
                 {content.philosophyStandardBody ? (
-                  <p className="text-base leading-relaxed text-white/70 md:text-lg">
+                  <p className="text-lead text-white/75">
                     {content.philosophyStandardBody}
                   </p>
                 ) : null}
@@ -409,20 +409,20 @@ function Services({ content }: { content: HomeContent }) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
-                <div className="p-6 md:p-8">
-                  <div className="mb-5 flex items-start justify-between">
-                    <span className="text-xs uppercase tracking-[0.2em] text-white/40">
+                <div className="p-7 md:p-9">
+                  <div className="mb-6 flex items-start justify-between gap-4">
+                    <span className="text-eyebrow uppercase text-white/40">
                       {card.tag}
                     </span>
-                    <span className="liquid-glass flex h-8 w-8 items-center justify-center rounded-full text-white">
+                    <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white">
                       <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </div>
-                  <h3 className="mb-3 font-display text-2xl tracking-tight text-white md:text-3xl">
+                  <h3 className="mb-4 font-display text-h2 italic text-white">
                     {card.title}
                   </h3>
                   {card.description ? (
-                    <p className="text-sm leading-relaxed text-white/55">
+                    <p className="text-body text-white/65">
                       {card.description}
                     </p>
                   ) : null}
