@@ -73,8 +73,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html
       lang="es-CL"
       className={`${instrumentSerif.variable} ${instrumentSans.variable}`}
+      suppressHydrationWarning
     >
-      <body className="bg-paper text-ink">{children}</body>
+      {/* suppressHydrationWarning ignora atributos inyectados por extensiones
+          de Chrome (ColorZilla, Grammarly, etc.) que añaden al <body> antes
+          de que React hidrate. Sin esto, React tira un warning permanente. */}
+      <body className="bg-paper text-ink" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   )
 }
