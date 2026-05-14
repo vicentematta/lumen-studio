@@ -1,35 +1,34 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { Instagram, Twitter, Globe } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { GlassButton } from '@/components/ui/GlassButton'
-import { useSiteSettings } from '@/hooks/useSiteSettings'
+import type { SiteSettings } from '@/lib/queries/siteSettings'
 
-export function Footer() {
-  const { settings } = useSiteSettings()
+interface Props {
+  settings: SiteSettings | null
+}
 
+export function Footer({ settings }: Props) {
   const COLUMNS = [
     {
-      heading: settings.navCol1Heading,
+      heading: settings?.navCol1Heading ?? '',
       links: [
-        { label: settings.navLinkAbout, to: '/about' },
-        { label: settings.navLinkWork, to: '/work' },
-        { label: settings.navLinkPricing, to: '/pricing' },
+        { label: settings?.navLinkAbout, href: '/about' },
+        { label: settings?.navLinkWork, href: '/work' },
+        { label: settings?.navLinkPricing, href: '/pricing' },
       ],
     },
     {
-      heading: settings.navCol2Heading,
+      heading: settings?.navCol2Heading ?? '',
       links: [
-        { label: settings.navLinkStrategy, to: '/services/strategy' },
-        { label: settings.navLinkDesign, to: '/services/design' },
-        { label: settings.navLinkEngineering, to: '/services/engineering' },
+        { label: settings?.navLinkStrategy, href: '/services/estrategia-comercial' },
+        { label: settings?.navLinkDesign, href: '/services/identidad-digital' },
+        { label: settings?.navLinkEngineering, href: '/services/negocio-diseno' },
       ],
     },
     {
-      heading: settings.navCol3Heading,
-      links: [
-        { label: settings.navLinkContact, to: '/contact' },
-        { label: settings.navLinkSignup, to: '/signup' },
-      ],
+      heading: settings?.navCol3Heading ?? '',
+      links: [{ label: settings?.navLinkContact, href: '/contact' }],
     },
   ]
 
@@ -39,41 +38,59 @@ export function Footer() {
       <Container width="lg">
         <div className="flex flex-col items-start justify-between gap-12 md:flex-row md:items-end">
           <div className="max-w-md">
-            <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
-              {settings.footerEyebrow}
-            </p>
-            <h3 className="font-display text-4xl leading-[1.05] tracking-tight text-white md:text-6xl">
-              {settings.footerHeading}{' '}
-              <em className="italic text-white/60">{settings.footerHeadingItalic}</em>.
-            </h3>
-            <p className="mt-5 text-sm leading-relaxed text-white/60">{settings.footerSubtitle}</p>
+            {settings?.footerEyebrow ? (
+              <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
+                {settings.footerEyebrow}
+              </p>
+            ) : null}
+            {settings?.footerHeading ? (
+              <h3 className="font-display text-4xl leading-[1.05] tracking-tight text-white md:text-6xl">
+                {settings.footerHeading}
+                {settings.footerHeadingItalic ? (
+                  <>
+                    {' '}
+                    <em className="italic text-white/60">{settings.footerHeadingItalic}</em>
+                  </>
+                ) : null}
+                .
+              </h3>
+            ) : null}
+            {settings?.footerSubtitle ? (
+              <p className="mt-5 text-sm leading-relaxed text-white/60">
+                {settings.footerSubtitle}
+              </p>
+            ) : null}
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <GlassButton to="/contact" variant="solid" size="lg">
-                {settings.footerCtaBook}
+                {settings?.footerCtaBook ?? 'Agenda diagnóstico'}
               </GlassButton>
               <GlassButton to="/work" variant="glass" size="lg">
-                {settings.footerCtaWork}
+                {settings?.footerCtaWork ?? 'Ver trabajos'}
               </GlassButton>
             </div>
           </div>
 
           <div className="grid w-full grid-cols-3 gap-8 md:w-auto md:gap-14">
-            {COLUMNS.map((col) => (
-              <div key={col.heading}>
-                <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
-                  {col.heading}
-                </p>
+            {COLUMNS.map((col, i) => (
+              <div key={`${col.heading}-${i}`}>
+                {col.heading ? (
+                  <p className="mb-4 text-xs uppercase tracking-[0.2em] text-white/40">
+                    {col.heading}
+                  </p>
+                ) : null}
                 <ul className="space-y-3">
-                  {col.links.map((l) => (
-                    <li key={l.to}>
-                      <Link
-                        to={l.to}
-                        className="text-sm text-white/70 transition-colors hover:text-white"
-                      >
-                        {l.label}
-                      </Link>
-                    </li>
-                  ))}
+                  {col.links
+                    .filter((l) => l.label)
+                    .map((l) => (
+                      <li key={l.href}>
+                        <Link
+                          href={l.href}
+                          className="text-sm text-white/70 transition-colors hover:text-white"
+                        >
+                          {l.label}
+                        </Link>
+                      </li>
+                    ))}
                 </ul>
               </div>
             ))}
@@ -82,21 +99,42 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
           <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} {settings.footerCopyright}
+            © {new Date().getFullYear()} {settings?.footerCopyright ?? 'Riverhaus'}
           </p>
           <div className="flex items-center gap-3">
-            <a href={settings.socialInstagram} aria-label="Instagram"
-              className="liquid-glass flex h-10 w-10 items-center justify-center rounded-full text-white/70 transition-colors hover:text-white">
-              <Instagram className="h-4 w-4" />
-            </a>
-            <a href={settings.socialTwitter} aria-label="Twitter"
-              className="liquid-glass flex h-10 w-10 items-center justify-center rounded-full text-white/70 transition-colors hover:text-white">
-              <Twitter className="h-4 w-4" />
-            </a>
-            <a href={settings.socialWebsite} aria-label="Website"
-              className="liquid-glass flex h-10 w-10 items-center justify-center rounded-full text-white/70 transition-colors hover:text-white">
-              <Globe className="h-4 w-4" />
-            </a>
+            {settings?.socialInstagram ? (
+              <a
+                href={settings.socialInstagram}
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="liquid-glass flex h-10 w-10 items-center justify-center rounded-full text-white/70 transition-colors hover:text-white"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+            ) : null}
+            {settings?.socialTwitter ? (
+              <a
+                href={settings.socialTwitter}
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="liquid-glass flex h-10 w-10 items-center justify-center rounded-full text-white/70 transition-colors hover:text-white"
+              >
+                <Twitter className="h-4 w-4" />
+              </a>
+            ) : null}
+            {settings?.socialWebsite ? (
+              <a
+                href={settings.socialWebsite}
+                aria-label="Website"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="liquid-glass flex h-10 w-10 items-center justify-center rounded-full text-white/70 transition-colors hover:text-white"
+              >
+                <Globe className="h-4 w-4" />
+              </a>
+            ) : null}
           </div>
         </div>
       </Container>

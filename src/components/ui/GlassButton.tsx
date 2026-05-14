@@ -1,6 +1,8 @@
+'use client'
+
 import { forwardRef } from 'react'
 import type { ReactNode, MouseEventHandler } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/cn'
 
@@ -89,7 +91,7 @@ export const GlassButton = forwardRef<HTMLElement, Props>(function GlassButton(p
       >
         <Link
           ref={ref as React.Ref<HTMLAnchorElement>}
-          to={props.to}
+          href={props.to}
           className={classes}
           onClick={onClick as MouseEventHandler<HTMLAnchorElement> | undefined}
           aria-label={ariaLabel}

@@ -44,6 +44,20 @@
     "e2e",
     "tests",
     "dist",
-    "docs"
+    "docs",
+    "src/legacy-pages/**",
+    "src/components/RootLayout.tsx",
+    "src/components/CookieBanner.tsx",
+    "src/components/EditOverlay.tsx",
+    "src/components/LanguageSwitcher.tsx",
+    "src/components/Seo.tsx",
+    "src/components/PageHero.tsx",
+    "src/router.tsx",
+    "src/main.tsx",
+    "src/hooks/**",
+    "src/lib/sanity.ts",
+    "src/lib/analytics.ts",
+    "src/lib/i18n.ts",
+    "src/locales/**"
   ]
 }
