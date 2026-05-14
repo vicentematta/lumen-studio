@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "work": "Proyectos",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "login": "Ingresar",
+    "signup": "Registrarse"
+  },
+  "footer": {
+    "eyebrow": "Comenzar",
+    "heading_plain": "Construye algo",
+    "heading_italic": "inolvidable",
+    "subtitle": "Agenda una llamada de estrategia gratuita. Sin compromisos, sin discursos — solo claridad sobre lo que es posible.",
+    "cta_book": "Agendar llamada",
+    "cta_work": "Ver proyectos",
+    "copyright": "Lumen Studio. Todos los derechos reservados.",
+    "col_studio": "Estudio",
+    "col_services": "Servicios",
+    "col_reach": "Contacto",
+    "link_about": "Nosotros",
+    "link_work": "Proyectos",
+    "link_pricing": "Precios",
+    "link_strategy": "Estrategia",
+    "link_design": "Diseño",
+    "link_engineering": "Ingeniería",
+    "link_contact": "Contacto",
+    "link_login": "Ingresar",
+    "link_signup": "Registrarse"
+  },
+  "auth": {
+    "login_title_plain": "Ingresa a",
+    "login_title_italic": "Lumen",
+    "signup_title_plain": "Crea tu",
+    "signup_title_italic": "cuenta",
+    "field_name": "Nombre",
+    "field_email": "Correo",
+    "field_password": "Contraseña",
+    "btn_login": "Ingresar",
+    "btn_signup": "Crear cuenta",
+    "already_account": "¿Ya tienes cuenta?",
+    "link_login": "Ingresar",
+    "new_here": "¿Nuevo aquí?",
+    "link_signup": "Regístrate"
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title_plain": "Cuéntanos qué estás",
+    "title_italic": "construyendo",
+    "subtitle": "Un fundador responderá en 24 horas hábiles. Sin embudos de ventas, sin SDR, sin secuencias de seguimiento.",
+    "field_name": "Nombre",
+    "field_email": "Correo",
+    "field_company": "Empresa",
+    "field_budget": "Presupuesto",
+    "field_message": "¿Qué estás construyendo?",
+    "respond_note": "Respondemos en 24 horas, solo días hábiles.",
+    "send_btn": "Enviar",
+    "success_title": "Mensaje recibido.",
+    "success_body": "Recibimos tu mensaje. Un fundador se pondrá en contacto en 24 horas a"
+  },
+  "pricing": {
+    "eyebrow": "Precios",
+    "title_plain": "Tres formas de",
+    "title_italic": "trabajar con nosotros",
+    "subtitle": "Formas transparentes, sin niveles ocultos. Cada proyecto es liderado por un equipo senior — sin delegaciones junior.",
+    "tiers": {
+      "spark": {
+        "tagline": "Un compromiso corto para validar el próximo paso.",
+        "cadence": "alcance fijo · 2 semanas",
+        "features": [
+          "Descubrimiento y auditoría",
+          "Recomendación estratégica",
+          "Una dirección creativa"
+        ],
+        "cta": "Empezar con Spark"
+      },
+      "studio": {
+        "tagline": "Alianza de servicio completo para un lanzamiento.",
+        "cadence": "mensual · mínimo 3 meses",
+        "features": [
+          "Estrategia + diseño + desarrollo",
+          "Sesiones semanales de trabajo",
+          "Lanzamiento de marca o producto",
+          "Equipo solo senior"
+        ],
+        "cta": "Agendar llamada Studio"
+      },
+      "atelier": {
+        "tagline": "Una alianza a largo plazo, integrada.",
+        "cadence": "retainer trimestral",
+        "features": [
+          "Equipo integrado",
+          "Asesoría permanente",
+          "Lead dedicado",
+          "NDA disponible"
+        ],
+        "cta": "Hablar con los fundadores"
+      }
+    }
+  },
+  "notfound": {
+    "eyebrow": "404",
+    "title_plain": "Perdido en la",
+    "title_italic": "oscuridad",
+    "subtitle": "La página que buscabas se ha movido, o nunca existió.",
+    "go_home": "Ir al inicio",
+    "contact_us": "Contáctanos"
+  },
+  "work": {
+    "eyebrow": "Proyectos seleccionados",
+    "title_plain": "Cosas que hicimos",
+    "title_italic": "para durar",
+    "subtitle": "Una pequeña muestra del archivo del estudio. Cada proyecto es una alianza — a veces de una temporada, a veces de años.",
+    "keep_reading": "Seguir leyendo",
+    "more_archive": "Más del archivo.",
+    "all_work": "Todos los proyectos",
+    "overview_label": "Descripción",
+    "outcomes_label": "Resultados",
+    "what_moved": "Lo que transformó.",
+    "gallery_label": "Galería"
+  }
+}

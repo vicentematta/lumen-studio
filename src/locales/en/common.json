@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "about": "About",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Log in",
+    "signup": "Sign Up"
+  },
+  "footer": {
+    "eyebrow": "Begin",
+    "heading_plain": "Build something",
+    "heading_italic": "unforgettable",
+    "subtitle": "Book a free strategy call. No commitment, no pitch — just clarity on what's possible.",
+    "cta_book": "Book a Call",
+    "cta_work": "See our work",
+    "copyright": "Lumen Studio. All rights reserved.",
+    "col_studio": "Studio",
+    "col_services": "Services",
+    "col_reach": "Reach",
+    "link_about": "About",
+    "link_work": "Work",
+    "link_pricing": "Pricing",
+    "link_strategy": "Strategy",
+    "link_design": "Design",
+    "link_engineering": "Engineering",
+    "link_contact": "Contact",
+    "link_login": "Login",
+    "link_signup": "Sign Up"
+  },
+  "auth": {
+    "login_title_plain": "Log in to",
+    "login_title_italic": "Lumen",
+    "signup_title_plain": "Create your",
+    "signup_title_italic": "account",
+    "field_name": "Name",
+    "field_email": "Email",
+    "field_password": "Password",
+    "btn_login": "Log in",
+    "btn_signup": "Create account",
+    "already_account": "Already have an account?",
+    "link_login": "Log in",
+    "new_here": "New here?",
+    "link_signup": "Sign up"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title_plain": "Tell us what you're",
+    "title_italic": "building",
+    "subtitle": "A founder will reply within 24 hours, on weekdays. No sales funnel, no SDR, no follow-up sequences.",
+    "field_name": "Name",
+    "field_email": "Email",
+    "field_company": "Company",
+    "field_budget": "Budget",
+    "field_message": "What are you building?",
+    "respond_note": "We respond within 24 hours, weekdays only.",
+    "send_btn": "Send",
+    "success_title": "Message received.",
+    "success_body": "We've received your note. A founder will be in touch within 24 hours at"
+  },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title_plain": "Three ways to",
+    "title_italic": "work with us",
+    "subtitle": "Transparent shapes, no hidden tiers. Every engagement is led by a senior team — there are no junior handoffs.",
+    "tiers": {
+      "spark": {
+        "tagline": "A short engagement to validate the next move.",
+        "cadence": "fixed scope · 2 weeks",
+        "features": [
+          "Discovery & audit",
+          "Strategic recommendation",
+          "One creative direction"
+        ],
+        "cta": "Start with Spark"
+      },
+      "studio": {
+        "tagline": "Full-service partnership for a launch.",
+        "cadence": "monthly · 3 month minimum",
+        "features": [
+          "Strategy + design + build",
+          "Weekly working sessions",
+          "Brand or product launch",
+          "Senior-only team"
+        ],
+        "cta": "Book a Studio call"
+      },
+      "atelier": {
+        "tagline": "A long-term, embedded partnership.",
+        "cadence": "quarterly retainer",
+        "features": [
+          "Embedded team",
+          "Always-on advisory",
+          "Dedicated lead",
+          "NDA on request"
+        ],
+        "cta": "Talk to founders"
+      }
+    }
+  },
+  "notfound": {
+    "eyebrow": "404",
+    "title_plain": "Lost in the",
+    "title_italic": "dark",
+    "subtitle": "The page you were looking for has moved, or never existed.",
+    "go_home": "Go home",
+    "contact_us": "Contact us"
+  },
+  "work": {
+    "eyebrow": "Selected work",
+    "title_plain": "Things we made",
+    "title_italic": "to last",
+    "subtitle": "A small slice of the studio's archive. Each project is a partnership — sometimes a season long, sometimes years.",
+    "keep_reading": "Keep reading",
+    "more_archive": "More from the archive.",
+    "all_work": "All work",
+    "overview_label": "Overview",
+    "outcomes_label": "Outcomes",
+    "what_moved": "What it moved.",
+    "gallery_label": "Gallery"
+  }
+}

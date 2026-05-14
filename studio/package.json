@@ -1,0 +1,19 @@
+{
+  "name": "liquid-glass-studio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy"
+  },
+  "dependencies": {
+    "@sanity/vision": "^3.80.0",
+    "sanity": "^3.80.0",
+    "styled-components": "^6.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

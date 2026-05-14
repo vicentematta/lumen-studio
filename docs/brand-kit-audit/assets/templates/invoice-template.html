@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<title>Invoice · {{NUMERO}} · {{CLIENTE}} · Riverhaus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════════════════════════════
+   RIVERHAUS · INVOICE TEMPLATE · branded v1.0
+   Para cobro POST-entrega · diferente de la Cotización (pre-trabajo)
+   Variables: {{NUMERO}} {{COTIZACION_REF}} {{FECHA}} {{VENCIMIENTO}}
+              {{CLIENTE}} {{RAZON_SOCIAL}} {{DIRECCION}} {{RUT_CLIENTE}}
+              {{ITEMS}} {{SUBTOTAL}} {{IVA}} {{TOTAL}}
+   ════════════════════════════════════════════════════════════════ */
+:root {
+  --paper: #FAF7F2;
+  --paper-warm: #F2EDE3;
+  --paper-deep: #E8E1D2;
+  --line: #D9D2C2;
+  --ink: #0A0907;
+  --ink-soft: #36312A;
+  --mute: #7A746A;
+  --rio: #1F4D5C;
+  --f-display: 'Instrument Serif', Georgia, serif;
+  --f-body: 'Instrument Sans', system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+@page { size: A4 portrait; margin: 0; }
+html { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 11pt; line-height: 1.6; }
+body { background: var(--paper); }
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 22mm 22mm 30mm;
+  background: var(--paper);
+  page-break-after: always;
+  position: relative;
+}
+.page:last-child { page-break-after: auto; }
+
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--line);
+}
+.issuer .wordmark img {
+  width: 110px;
+  height: auto;
+  display: block;
+  margin-bottom: 18px;
+}
+.issuer .info {
+  font-size: 9pt;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.issuer .info strong {
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.invoice-meta {
+  text-align: right;
+}
+.invoice-meta .label {
+  font-family: var(--f-display);
+  font-size: 38pt;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.invoice-meta .number {
+  font-size: 9pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 18px;
+}
+.invoice-meta .number strong {
+  font-family: ui-monospace, "SF Mono", monospace;
+  font-weight: 400;
+  color: var(--ink);
+  font-size: 11pt;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.invoice-meta .dates {
+  font-size: 10pt;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.invoice-meta .dates .label-inline {
+  font-size: 8pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mute);
+  display: inline-block;
+  width: 100px;
+  text-align: left;
+}
+.invoice-meta .dates .due {
+  margin-top: 4px;
+  font-style: italic;
+  font-family: var(--f-display);
+  color: var(--rio);
+  font-size: 11pt;
+}
+
+/* Bill-to row */
+.bill-to-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+.bill-to-row .col .label {
+  font-size: 8pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 6px;
+}
+.bill-to-row .col .body {
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.bill-to-row .col .body strong {
+  font-weight: 500;
+  font-size: 11pt;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Items table */
+.items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+.items th {
+  font-weight: 400;
+  font-size: 8pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mute);
+  border-bottom: 1px solid var(--ink);
+  padding: 10px 12px;
+  text-align: left;
+}
+.items th.num,
+.items th.qty,
+.items th.unit,
+.items th.amount { text-align: right; }
+.items th.num { width: 40px; text-align: center; }
+.items th.qty { width: 70px; }
+.items th.unit { width: 130px; }
+.items th.amount { width: 140px; }
+
+.items td {
+  padding: 14px 12px;
+  font-size: 10pt;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.items td.num { text-align: center; color: var(--mute); font-family: var(--f-display); font-style: italic; }
+.items td.qty,
+.items td.unit,
+.items td.amount { text-align: right; font-variant-numeric: tabular-nums; }
+.items td .desc-sub {
+  font-size: 9pt;
+  color: var(--mute);
+  margin-top: 4px;
+}
+
+/* Totals */
+.totals-block {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 32px;
+}
+.totals {
+  min-width: 280px;
+  font-size: 10pt;
+}
+.totals .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-variant-numeric: tabular-nums;
+}
+.totals .row .label {
+  color: var(--mute);
+  letter-spacing: 0.04em;
+}
+.totals .row.subtotal { border-bottom: 1px solid var(--line); }
+.totals .row.total {
+  border-top: 1px solid var(--ink);
+  margin-top: 6px;
+  padding: 12px 0 4px;
+  font-family: var(--f-display);
+  font-size: 16pt;
+  letter-spacing: -0.01em;
+}
+.totals .row.total .label {
+  color: var(--ink);
+  font-style: italic;
+}
+.totals .currency {
+  font-size: 9pt;
+  color: var(--mute);
+  margin-left: 6px;
+  font-family: var(--f-body);
+  font-style: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Payment + bank section */
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.payment-card {
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 20px;
+}
+.payment-card h3 {
+  font-family: var(--f-body);
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rio);
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.payment-card .row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+  padding: 3px 0;
+  font-size: 9.5pt;
+  line-height: 1.5;
+}
+.payment-card .row .label {
+  font-size: 8pt;
+  color: var(--mute);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-top: 3px;
+}
+.payment-card .row .value {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Notes */
+.notes {
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  border-left: 2px solid var(--rio);
+  background: var(--paper-warm);
+}
+.notes h3 {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 12pt;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.notes p {
+  font-size: 9.5pt;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* Page footer */
+.page-footer {
+  position: absolute;
+  bottom: 16mm;
+  left: 22mm;
+  right: 22mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.page-footer .geo::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--rio);
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: 1px;
+}
+
+@media screen {
+  body { background: #ddd5c5; padding: 24px 0; }
+  .page { box-shadow: 0 10px 50px rgba(0,0,0,0.18); margin: 20px auto; }
+}
+</style>
+</head>
+<body>
+
+<section class="page">
+  <div class="doc-header">
+    <div class="issuer">
+      <div class="wordmark"><img src="../logo-riverhaus-dark.svg" alt="RIVERHAUS"></div>
+      <div class="info">
+        <strong>Matías Cruzat · Riverhaus</strong>
+        RUT 15.097.893-9<br>
+        Quitacalzón, Valdivia<br>
+        Los Ríos, Chile<br>
+        riverhaus.xyz@gmail.com
+      </div>
+    </div>
+    <div class="invoice-meta">
+      <div class="label">Invoice</div>
+      <div class="number">N° <strong>{{NUMERO}}</strong></div>
+      <div class="dates">
+        <div><span class="label-inline">Emisión</span>{{FECHA}}</div>
+        <div><span class="label-inline">Vencimiento</span>{{VENCIMIENTO}}</div>
+        <div class="due">Pagadero en 14 días</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bill-to-row">
+    <div class="col">
+      <div class="label">Facturar a</div>
+      <div class="body">
+        <strong>{{RAZON_SOCIAL}}</strong>
+        {{CLIENTE}}<br>
+        {{DIRECCION}}<br>
+        RUT {{RUT_CLIENTE}}<br>
+        {{EMAIL_CLIENTE}}
+      </div>
+    </div>
+    <div class="col">
+      <div class="label">Referencia</div>
+      <div class="body">
+        Cotización <strong>#{{COTIZACION_REF}}</strong>
+        Servicios entregados según cronograma acordado.
+        <span style="color:var(--mute); font-size:9pt;">Aprobación cotizante: {{FECHA_APROBACION}}</span>
+      </div>
+    </div>
+  </div>
+
+  <table class="items">
+    <thead>
+      <tr>
+        <th class="num">#</th>
+        <th>Descripción</th>
+        <th class="qty">Cant.</th>
+        <th class="unit">Precio unit.</th>
+        <th class="amount">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- ── REEMPLAZAR según servicios entregados ── -->
+      <tr>
+        <td class="num">1</td>
+        <td>
+          Diseño Web
+          <div class="desc-sub">Layout estructura página web (12 págs) · integración imágenes + textos · navegación · sitemap</div>
+        </td>
+        <td class="qty">1</td>
+        <td class="unit">1.000.000</td>
+        <td class="amount">1.000.000</td>
+      </tr>
+      <tr>
+        <td class="num">2</td>
+        <td>
+          Implementación Diseño Web
+          <div class="desc-sub">Implementación frontend + integración CMS</div>
+        </td>
+        <td class="qty">1</td>
+        <td class="unit">1.000.000</td>
+        <td class="amount">1.000.000</td>
+      </tr>
+      <tr>
+        <td class="num">3</td>
+        <td>
+          Sistema de linkeo a redes
+          <div class="desc-sub">Inbox + redes sociales asociadas</div>
+        </td>
+        <td class="qty">1</td>
+        <td class="unit">200.000</td>
+        <td class="amount">200.000</td>
+      </tr>
+      <tr>
+        <td class="num">4</td>
+        <td>
+          Registro y optimización SEO
+          <div class="desc-sub">Google Business Profile + Search Console</div>
+        </td>
+        <td class="qty">1</td>
+        <td class="unit">100.000</td>
+        <td class="amount">100.000</td>
+      </tr>
+      <tr>
+        <td class="num">5</td>
+        <td>
+          Implementación Analytics
+          <div class="desc-sub">Google Analytics 4</div>
+        </td>
+        <td class="qty">1</td>
+        <td class="unit">100.000</td>
+        <td class="amount">100.000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="totals-block">
+    <div class="totals">
+      <div class="row subtotal"><span class="label">Subtotal</span><span>2.400.000</span></div>
+      <div class="row"><span class="label">IVA (19%)</span><span>456.000</span></div>
+      <div class="row total"><span class="label">Total</span><span>2.856.000<span class="currency">CLP</span></span></div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h3>Anticipo</h3>
+    <p>50% del total fue cobrado al inicio del servicio según Cotización #{{COTIZACION_REF}}. <strong style="font-weight: 500; color: var(--ink);">Monto pendiente a pagar: 1.428.000 CLP</strong> · pagadero en 14 días desde la emisión de este invoice.</p>
+  </div>
+
+  <div class="payment-grid">
+    <div class="payment-card">
+      <h3>Datos bancarios</h3>
+      <div class="row"><span class="label">Titular</span><span class="value">Matías Cruzat</span></div>
+      <div class="row"><span class="label">RUT</span><span class="value">15.097.893-9</span></div>
+      <div class="row"><span class="label">Banco</span><span class="value">Bci · BCI</span></div>
+      <div class="row"><span class="label">Tipo</span><span class="value">Cuenta Corriente</span></div>
+      <div class="row"><span class="label">Número</span><span class="value">7779 15097 893</span></div>
+      <div class="row"><span class="label">Confirmar a</span><span class="value">riverhaus.xyz@gmail.com</span></div>
+    </div>
+    <div class="payment-card">
+      <h3>Términos de pago</h3>
+      <div class="row"><span class="label">Plazo</span><span class="value">14 días desde emisión</span></div>
+      <div class="row"><span class="label">Moneda</span><span class="value">CLP</span></div>
+      <div class="row"><span class="label">Método</span><span class="value">Transferencia bancaria</span></div>
+      <div class="row"><span class="label">Recargo mora</span><span class="value">2 UTM · día excedido</span></div>
+      <div class="row"><span class="label">Confirmación</span><span class="value">Enviar comprobante por email</span></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="geo">Quitacalzón · Valdivia · Los Ríos · Chile · riverhaus.xyz</span>
+    <span>Invoice {{NUMERO}} · Página 1 / 1</span>
+  </div>
+</section>
+
+</body>
+</html>

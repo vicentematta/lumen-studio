@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<title>Cotización · {{NUMERO}} · {{CLIENTE}} · Riverhaus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════════════════════════════
+   RIVERHAUS · COTIZACIÓN TEMPLATE · branded v1.0
+   Theme: Cal Viva (print) · Instrument Serif/Sans · ES primary
+   Variables: {{NUMERO}} {{FECHA}} {{CLIENTE}} {{RAZON_SOCIAL}}
+              {{DIRECCION}} {{EMAIL_CLIENTE}} {{REPRESENTANTE}}
+              {{SERVICIOS}} {{ITEMS}} {{TOTAL}}
+   ════════════════════════════════════════════════════════════════ */
+:root {
+  --paper: #FAF7F2;
+  --paper-warm: #F2EDE3;
+  --paper-deep: #E8E1D2;
+  --line: #D9D2C2;
+  --ink: #0A0907;
+  --ink-soft: #36312A;
+  --mute: #7A746A;
+  --rio: #1F4D5C;
+  --f-display: 'Instrument Serif', Georgia, serif;
+  --f-body: 'Instrument Sans', system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+@page { size: A4 portrait; margin: 0; }
+html { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 11pt; line-height: 1.6; }
+body { background: var(--paper); }
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 22mm 22mm 30mm;
+  background: var(--paper);
+  page-break-after: always;
+  position: relative;
+}
+.page:last-child { page-break-after: auto; }
+
+/* Doc header (every page) */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+.doc-header .wordmark img {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+.doc-header .meta {
+  text-align: right;
+  font-size: 9pt;
+  line-height: 13pt;
+  color: var(--mute);
+}
+.doc-header .meta strong {
+  display: block;
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 10pt;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+/* Doc title (first page only) */
+.doc-title {
+  margin: 24px 0 8px;
+}
+.doc-title .eyebrow {
+  font-size: 9pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rio);
+  margin-bottom: 6px;
+}
+.doc-title h1 {
+  font-family: var(--f-display);
+  font-size: 56pt;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+}
+.doc-title h1 .num {
+  color: var(--mute);
+}
+.doc-title .lead {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 18pt;
+  line-height: 1.2;
+  color: var(--ink-soft);
+  margin-top: 14px;
+  letter-spacing: -0.01em;
+}
+
+/* Section heading */
+.section {
+  margin-top: 28px;
+}
+.section h2 {
+  font-family: var(--f-body);
+  font-size: 11pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rio);
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+.section h2.serif {
+  font-family: var(--f-display);
+  font-size: 24pt;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.section .subtitle {
+  font-family: var(--f-body);
+  font-size: 10pt;
+  color: var(--mute);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* Bill-to grid (2 columns) */
+.bill-to {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: 12px;
+}
+.bill-to .col .label {
+  font-size: 8pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 6px;
+}
+.bill-to .col .body {
+  font-size: 10pt;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.bill-to .col .body strong {
+  font-weight: 500;
+}
+.bill-to .col .vigencia {
+  margin-top: 10px;
+  font-style: italic;
+  font-family: var(--f-display);
+  font-size: 9pt;
+  color: var(--ink-soft);
+}
+
+/* Services list */
+.services-list {
+  margin-top: 8px;
+}
+.service-item {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  padding: 4px 0;
+  font-size: 10pt;
+  line-height: 1.6;
+}
+.service-item .num {
+  font-family: var(--f-display);
+  font-style: italic;
+  color: var(--rio);
+  font-size: 11pt;
+  text-align: right;
+}
+.service-item .text {
+  color: var(--ink);
+}
+.service-sub {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 12px;
+  padding: 2px 0 2px 30px;
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.service-sub .num {
+  font-family: ui-monospace, "SF Mono", monospace;
+  font-size: 8pt;
+  color: var(--mute);
+  text-align: right;
+  padding-top: 2px;
+}
+
+/* Production timeline */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.timeline-cell {
+  padding: 14px 10px;
+  border-right: 1px solid var(--line);
+  text-align: center;
+  font-size: 9pt;
+}
+.timeline-cell:last-child { border-right: none; }
+.timeline-cell .step {
+  font-family: var(--f-body);
+  font-size: 9pt;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+.timeline-cell .step::before {
+  content: '→ ';
+  color: var(--rio);
+}
+.timeline-cell .week {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 10pt;
+  color: var(--mute);
+}
+
+/* Pricing table */
+.pricing {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+.pricing th, .pricing td {
+  padding: 10px 12px;
+  font-size: 10pt;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+.pricing th {
+  font-weight: 400;
+  font-size: 8pt;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mute);
+  border-bottom: 1px solid var(--ink);
+}
+.pricing td.qty,
+.pricing th.qty { text-align: center; width: 70px; }
+.pricing td.price,
+.pricing th.price { text-align: right; width: 130px; font-variant-numeric: tabular-nums; }
+.pricing tr.total td {
+  border-bottom: none;
+  border-top: 1px solid var(--ink);
+  padding-top: 14px;
+  font-family: var(--f-display);
+  font-size: 14pt;
+  letter-spacing: -0.01em;
+}
+.pricing tr.total td:first-child {
+  font-style: italic;
+}
+
+/* Notes list */
+.notes-list {
+  list-style: none;
+  margin-top: 6px;
+}
+.notes-list li {
+  padding: 5px 0 5px 22px;
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--ink);
+  position: relative;
+}
+.notes-list li::before {
+  content: counter(note) '.';
+  counter-increment: note;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  font-family: var(--f-display);
+  font-style: italic;
+  color: var(--rio);
+  font-size: 11pt;
+}
+.notes-list { counter-reset: note; }
+
+/* Bank info card */
+.bank-card {
+  background: var(--paper-warm);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 22px;
+  margin-top: 12px;
+}
+.bank-card .row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 16px;
+  padding: 4px 0;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+.bank-card .row .label {
+  font-size: 8pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+  padding-top: 4px;
+}
+.bank-card .row .value {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Terms */
+.terms {
+  margin-top: 12px;
+}
+.terms-block {
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.terms-block:last-child { border-bottom: none; }
+.terms-block h3 {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 13pt;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.terms-block ul {
+  list-style: none;
+  padding-left: 14px;
+}
+.terms-block ul li {
+  padding: 4px 0;
+  font-size: 9.5pt;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  position: relative;
+}
+.terms-block ul li::before {
+  content: '·';
+  color: var(--rio);
+  position: absolute;
+  left: -14px;
+  font-size: 14pt;
+  line-height: 1;
+}
+
+/* Page footer */
+.page-footer {
+  position: absolute;
+  bottom: 16mm;
+  left: 22mm;
+  right: 22mm;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8pt;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.page-footer .geo::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--rio);
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: 1px;
+}
+
+@media screen {
+  body { background: #ddd5c5; padding: 24px 0; }
+  .page { box-shadow: 0 10px 50px rgba(0,0,0,0.18); margin: 20px auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 1 — HEADER + BILL-TO + START OF SERVICES
+     ════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="doc-header">
+    <div class="wordmark">
+      <img src="../logo-riverhaus-dark.svg" alt="RIVERHAUS">
+    </div>
+    <div class="meta">
+      <strong>Cotización</strong>
+      <span style="font-family: var(--f-display); font-size: 16pt; color: var(--ink); display: block; margin: 4px 0; letter-spacing: -0.02em;">#{{NUMERO}}</span>
+      <span>{{FECHA}}</span><br>
+      <span style="font-style:italic;">vigencia 5 días hábiles</span>
+    </div>
+  </div>
+
+  <div class="doc-title">
+    <div class="eyebrow">Negocio + Diseño · Una sola firma</div>
+    <h1>Cotización <span class="num">#{{NUMERO}}</span></h1>
+    <p class="lead">Para {{CLIENTE}}.</p>
+  </div>
+
+  <div class="section">
+    <h2>Bill to</h2>
+    <div class="bill-to">
+      <div class="col">
+        <div class="label">Cotizante</div>
+        <div class="body">
+          <strong>{{RAZON_SOCIAL}}</strong><br>
+          {{DIRECCION}}<br>
+          {{EMAIL_CLIENTE}}<br>
+          <span style="color:var(--mute); font-size:9pt;">Representante: {{REPRESENTANTE}}</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="label">Datos de la cotización</div>
+        <div class="body">
+          <strong>N° {{NUMERO}}</strong><br>
+          Emisión · {{FECHA}}<br>
+          <span style="color:var(--mute); font-size:9pt;">Vigencia · 5 días hábiles</span>
+        </div>
+        <div class="vigencia">Esta cotización tiene una vigencia de 5 días hábiles desde su fecha de emisión.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Desglose · servicios</h2>
+    <div class="services-list">
+      <!-- ── REEMPLAZAR según servicio ── -->
+      <div class="service-item"><span class="num">1.</span><span class="text"><strong style="font-weight:500;">Implementación Diseño Web</strong></span></div>
+      <div class="service-sub"><span class="num">1.a</span><span>Diseño Layout estructura página web (12 págs)</span></div>
+      <div class="service-sub"><span class="num">1.b</span><span>Integración imágenes en layout</span></div>
+      <div class="service-sub"><span class="num">1.c</span><span>Integración textos en layout</span></div>
+      <div class="service-sub"><span class="num">1.d</span><span>Corrección textos en layout</span></div>
+      <div class="service-sub"><span class="num">1.e</span><span>Linkeo y navegación en web</span></div>
+      <div class="service-sub"><span class="num">1.f</span><span>Sitemap</span></div>
+
+      <div class="service-item" style="margin-top:10px;"><span class="num">2.</span><span class="text"><strong style="font-weight:500;">Sistema de linkeo a redes</strong></span></div>
+      <div class="service-sub"><span class="num">2.a</span><span>Sistema linkeo a inbox (correo electrónico)</span></div>
+      <div class="service-sub"><span class="num">2.b</span><span>Sistema linkeo a redes sociales asociadas</span></div>
+
+      <div class="service-item" style="margin-top:10px;"><span class="num">3.</span><span class="text"><strong style="font-weight:500;">Registro y optimización para Google Search Engine (SEO)</strong></span></div>
+      <div class="service-sub"><span class="num">3.a</span><span>Integración Google Business Profile</span></div>
+      <div class="service-sub"><span class="num">3.b</span><span>Integración Google Search Console</span></div>
+
+      <div class="service-item" style="margin-top:10px;"><span class="num">4.</span><span class="text"><strong style="font-weight:500;">Implementación Analytics</strong></span></div>
+      <div class="service-sub"><span class="num">4.a</span><span>Implementación Google Analytics</span></div>
+
+      <div class="service-item" style="margin-top:10px;"><span class="num">5.</span><span class="text"><strong style="font-weight:500;">Pago mensual online web</strong></span></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="geo">Quitacalzón · Valdivia · Los Ríos · Chile</span>
+    <span>Página 1 / 4</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 2 — PRODUCCIÓN + PRESUPUESTO + NOTAS
+     ════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="doc-header">
+    <div class="wordmark"><img src="../logo-riverhaus-dark.svg" alt="RIVERHAUS"></div>
+    <div class="meta">
+      <strong>Cotización #{{NUMERO}}</strong>
+      <span>{{CLIENTE}}</span><br>
+      <span>{{FECHA}}</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Producción · servicios</h2>
+    <p class="subtitle">Cronograma estándar de ocho semanas. Sujeto a entrega oportuna de contenidos por parte del cotizante.</p>
+    <div class="timeline">
+      <div class="timeline-cell"><span class="step">Propuesta Uno</span><span class="week">Semana 1–2</span></div>
+      <div class="timeline-cell"><span class="step">Revisión Uno</span><span class="week">Semana 3</span></div>
+      <div class="timeline-cell"><span class="step">Corrección</span><span class="week">Semana 4–5</span></div>
+      <div class="timeline-cell"><span class="step">Revisión Dos</span><span class="week">Semana 6</span></div>
+      <div class="timeline-cell"><span class="step">Entrega</span><span class="week">Semana 7</span></div>
+      <div class="timeline-cell"><span class="step">Revisión Final</span><span class="week">Semana 8</span></div>
+    </div>
+    <p class="subtitle" style="margin-top: 14px; font-style: italic; font-family: var(--f-display); font-size: 10pt;">La oportuna entrega de información que beneficie el correcto proceso de desarrollo del servicio propuesto será responsabilidad del cotizante.</p>
+  </div>
+
+  <div class="section">
+    <h2>Presupuesto · servicio</h2>
+    <table class="pricing">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th class="qty">Cant.</th>
+          <th class="price">Precio CLP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ── REEMPLAZAR según servicio ── -->
+        <tr><td>Diseño Web</td><td class="qty">1</td><td class="price">1.000.000</td></tr>
+        <tr><td>Implementación Diseño Web</td><td class="qty">1</td><td class="price">1.000.000</td></tr>
+        <tr><td>Sistema de Linkeo a Redes</td><td class="qty">1</td><td class="price">200.000</td></tr>
+        <tr><td>Registro y Optimización para SEO</td><td class="qty">1</td><td class="price">100.000</td></tr>
+        <tr><td>Implementación Analytics</td><td class="qty">1</td><td class="price">100.000</td></tr>
+        <tr><td>Pago Mensual Online Web (anual)</td><td class="qty">1</td><td class="price">120.000</td></tr>
+        <tr class="total"><td colspan="2">Valor total (sin I.V.A.)</td><td class="price">CLP 2.520.000</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Notas · entregables del cotizante</h2>
+    <p class="subtitle">Para cumplir con los objetivos y marcos de tiempo propuestos, se requiere por parte del cotizante la entrega de:</p>
+    <ol class="notes-list">
+      <li>Diseño propuesto para web</li>
+      <li>Tipografías</li>
+      <li>Paleta de color</li>
+      <li>Formatos de logo</li>
+      <li>Total de imágenes a integrar y su disposición en layout</li>
+      <li>Total de textos a integrar y su disposición en layout</li>
+      <li>Claves de acceso a cuentas asociadas</li>
+    </ol>
+  </div>
+
+  <div class="page-footer">
+    <span class="geo">Quitacalzón · Valdivia · Los Ríos · Chile</span>
+    <span>Página 2 / 4</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 3 — FORMA DE PAGO + DATOS BANCARIOS + TÉRMINOS (start)
+     ════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="doc-header">
+    <div class="wordmark"><img src="../logo-riverhaus-dark.svg" alt="RIVERHAUS"></div>
+    <div class="meta">
+      <strong>Cotización #{{NUMERO}}</strong>
+      <span>{{CLIENTE}}</span><br>
+      <span>{{FECHA}}</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Forma de pago</h2>
+    <p style="font-size: 11pt; line-height: 1.7; color: var(--ink); margin-top: 6px;">
+      <strong style="font-weight: 500;">50%</strong> del total de la cotización al <em style="font-family: var(--f-display);">iniciar</em> el servicio.<br>
+      <strong style="font-weight: 500;">50%</strong> del total de la cotización al <em style="font-family: var(--f-display);">término</em> del servicio estipulado en esta cotización.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Datos bancarios</h2>
+    <div class="bank-card">
+      <div class="row"><span class="label">Titular</span><span class="value">Matías Cruzat</span></div>
+      <div class="row"><span class="label">RUT</span><span class="value">15.097.893-9</span></div>
+      <div class="row"><span class="label">Banco</span><span class="value">Bci · Banco Crédito e Inversiones</span></div>
+      <div class="row"><span class="label">Tipo de cuenta</span><span class="value">Cuenta Corriente</span></div>
+      <div class="row"><span class="label">Número de cuenta</span><span class="value">7779&nbsp;15097&nbsp;893</span></div>
+      <div class="row"><span class="label">Email confirmación</span><span class="value">riverhaus.xyz@gmail.com</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2 class="serif">Sobre el servicio cotizado</h2>
+
+    <div class="terms">
+      <div class="terms-block">
+        <h3>Marco temporal</h3>
+        <ul>
+          <li>El marco de tiempo propuesto en el apartado <em style="font-family: var(--f-display);">Producción Servicios</em> está sujeto a la entrega en tiempo y forma de los contenidos a entregar por el cotizante.</li>
+        </ul>
+      </div>
+
+      <div class="terms-block">
+        <h3>Administración</h3>
+        <ul>
+          <li>Una vez concluido el servicio indicado, el cotizante recibirá toda la información necesaria para acceder y auto-administrar las plataformas utilizadas.</li>
+          <li>Esta cotización no considera la solución de problemas o imprevistos surgidos producto de la auto-administración de las plataformas por parte del cotizante.</li>
+        </ul>
+      </div>
+
+      <div class="terms-block">
+        <h3>Política de revisión</h3>
+        <ul>
+          <li>Esta cotización considera tres etapas de revisión: <em style="font-family: var(--f-display);">Revisión Uno, Revisión Dos y Revisión Final</em>. Toda observación o cambio debe consolidarse dentro de estas instancias.</li>
+          <li>Eventos posteriores de corrección y/o ajuste no están considerados en esta cotización y tendrán valor adicional.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="geo">Quitacalzón · Valdivia · Los Ríos · Chile</span>
+    <span>Página 3 / 4</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 4 — TÉRMINOS (continuation) + close
+     ════════════════════════════════════════════════════════ -->
+<section class="page">
+  <div class="doc-header">
+    <div class="wordmark"><img src="../logo-riverhaus-dark.svg" alt="RIVERHAUS"></div>
+    <div class="meta">
+      <strong>Cotización #{{NUMERO}}</strong>
+      <span>{{CLIENTE}}</span><br>
+      <span>{{FECHA}}</span>
+    </div>
+  </div>
+
+  <div class="section" style="margin-top:0;">
+    <div class="terms">
+      <div class="terms-block">
+        <h3>Plazo de respuesta del cotizante</h3>
+        <ul>
+          <li>Una vez realizadas las entregas por parte de Riverhaus, el cotizante dispondrá de <strong style="font-weight: 500;">dos días hábiles</strong> para responder con el debido input para continuar el proceso.</li>
+          <li>En caso contrario, el cotizante suscribirá una multa de <strong style="font-weight: 500;">2 UTM por día excedido</strong> de este plazo.</li>
+        </ul>
+      </div>
+
+      <div class="terms-block">
+        <h3>Política de actualización</h3>
+        <ul>
+          <li>Todo servicio propuesto, producido y debidamente entregado y aprobado por el cotizante dentro de los márgenes de esta cotización <em style="font-family: var(--f-display);">no considera actualizaciones</em> de ninguna clase una vez realizada su correcta entrega.</li>
+          <li>Toda actualización y/o cambio solicitado posterior a la aprobación final estará sujeto a una nueva cotización.</li>
+        </ul>
+      </div>
+
+      <div class="terms-block">
+        <h3>Cláusula de crédito profesional</h3>
+        <ul>
+          <li>Riverhaus se reserva el derecho de mostrar el proyecto resultante de esta cotización en su portfolio y/o en redes, a menos de que se estipule lo contrario por escrito.</li>
+        </ul>
+      </div>
+
+      <div class="terms-block">
+        <h3>Política de cobro</h3>
+        <ul>
+          <li>Todo cambio, ajuste, reedición, implementación o reconsideración solicitado posterior al cierre del servicio cotizado tendrá un valor adicional, con sistema de cobro <em style="font-family: var(--f-display);">por hora de producción</em>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signature block -->
+  <div class="section" style="margin-top: 56px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-top: 24px; border-top: 1px solid var(--line);">
+      <div>
+        <div style="font-family: var(--f-display); font-style: italic; font-size: 16pt; color: var(--ink); letter-spacing: -0.01em;">Matías Cruzat</div>
+        <div style="font-size: 9pt; color: var(--mute); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 4px;">Founder · Riverhaus</div>
+        <div style="font-size: 9pt; color: var(--ink-soft); margin-top: 14px; line-height: 1.5;">
+          riverhaus.xyz@gmail.com<br>
+          +56 9 9233 9054<br>
+          riverhaus.xyz
+        </div>
+      </div>
+      <div>
+        <div style="border-bottom: 1px solid var(--ink); padding-bottom: 4px; min-height: 36px;"></div>
+        <div style="font-size: 9pt; color: var(--mute); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 6px;">Aprobación del cotizante</div>
+        <div style="font-size: 9pt; color: var(--ink-soft); margin-top: 8px; line-height: 1.5;">
+          {{REPRESENTANTE}}<br>
+          {{RAZON_SOCIAL}}<br>
+          Fecha: ___________________
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span class="geo">Quitacalzón · Valdivia · Los Ríos · Chile · riverhaus.xyz</span>
+    <span>Página 4 / 4</span>
+  </div>
+</section>
+
+</body>
+</html>

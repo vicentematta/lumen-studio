@@ -1,0 +1,245 @@
+{
+  "url": "http://localhost:5180/",
+  "title": "\ud83d\udc34 Liquid Glass Studio",
+  "viewport": {
+    "w": 1512,
+    "h": 806
+  },
+  "root": {
+    "background": "rgba(0, 0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "colorScheme": "dark",
+    "font": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\""
+  },
+  "body": {
+    "background": "rgb(0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "font": "Barlow, system-ui, sans-serif"
+  },
+  "cssVars": {
+    "--bg": "#000000",
+    "--fg": "#ffffff"
+  },
+  "samples": [
+    {
+      "sel": "main",
+      "tag": "MAIN",
+      "class": "flex-1",
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "backdropFilter": "none",
+      "border": "0px solid rgb(229, 231, 235)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "none"
+    },
+    {
+      "sel": "section",
+      "tag": "SECTION",
+      "class": "relative flex min-h-screen flex-col overflow-hidden",
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "backdropFilter": "none",
+      "border": "0px solid rgb(229, 231, 235)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "none"
+    },
+    {
+      "sel": "section",
+      "tag": "SECTION",
+      "class": "relative bg-black px-6 pt-24 pb-12 md:pt-32",
+      "background": "rgb(0, 0, 0)",
+      "backgroundImage": "none",
+      "backdropFilter": "none",
+      "border": "0px solid rgb(229, 231, 235)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "none"
+    },
+    {
+      "sel": "header",
+      "tag": "HEADER",
+      "class": "absolute inset-x-0 top-0 z-30 px-4 pt-5 sm:px-6 sm:pt-6",
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "backdropFilter": "none",
+      "border": "0px solid rgb(229, 231, 235)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "none"
+    },
+    {
+      "sel": "nav",
+      "tag": "NAV",
+      "class": "mx-auto flex max-w-5xl items-center justify-between px-5 py-3",
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "none",
+      "backdropFilter": "none",
+      "border": "0px solid rgb(229, 231, 235)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "none"
+    },
+    {
+      "sel": "footer",
+      "tag": "FOOTER",
+      "class": "relative overflow-hidden bg-black pb-12 pt-24",
+      "background": "rgb(0, 0, 0)",
+      "backgroundImage": "none",
+      "backdropFilter": "none",
+      "border": "0px solid rgb(229, 231, 235)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "none"
+    },
+    {
+      "sel": ".liquid-glass",
+      "tag": "DIV",
+      "class": "liquid-glass flex items-center rounded-full p-0.5",
+      "background": "rgba(255, 255, 255, 0.01)",
+      "backgroundImage": "none",
+      "backdropFilter": "blur(4px)",
+      "border": "0px none rgb(255, 255, 255)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset"
+    },
+    {
+      "sel": ".liquid-glass",
+      "tag": "BUTTON",
+      "class": "liquid-glass flex h-9 w-9 items-center justify-center rounded-full text-white md",
+      "background": "rgba(255, 255, 255, 0.01)",
+      "backgroundImage": "none",
+      "backdropFilter": "blur(4px)",
+      "border": "0px none rgb(255, 255, 255)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset"
+    },
+    {
+      "sel": ".liquid-glass-strong",
+      "tag": "A",
+      "class": "inline-flex items-center justify-center gap-2 font-medium transition-all duratio",
+      "background": "rgba(255, 255, 255, 0.04)",
+      "backgroundImage": "none",
+      "backdropFilter": "blur(14px) saturate(1.4)",
+      "border": "0px none rgb(255, 255, 255)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "rgba(255, 255, 255, 0.18) 0px 1px 1px 0px inset, rgba(0, 0, 0, 0.35) 0px 8px 32px 0px"
+    },
+    {
+      "sel": ".liquid-glass-strong",
+      "tag": "A",
+      "class": "inline-flex items-center justify-center gap-2 font-medium transition-all duratio",
+      "background": "rgba(255, 255, 255, 0.04)",
+      "backgroundImage": "none",
+      "backdropFilter": "blur(14px) saturate(1.4)",
+      "border": "0px none rgb(255, 255, 255)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "rgba(255, 255, 255, 0.18) 0px 1px 1px 0px inset, rgba(0, 0, 0, 0.35) 0px 8px 32px 0px"
+    },
+    {
+      "sel": ".glass-divider",
+      "tag": "DIV",
+      "class": "glass-divider",
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.12), rgba(0, 0, 0",
+      "backdropFilter": "none",
+      "border": "0px solid rgb(229, 231, 235)",
+      "color": "rgb(255, 255, 255)",
+      "boxShadow": "none"
+    }
+  ],
+  "uniqueColors": [
+    "text:rgb(255, 255, 255)",
+    "bg:rgb(0, 0, 0)",
+    "text:rgba(255, 255, 255, 0.7)",
+    "bg:rgba(255, 255, 255, 0.01)",
+    "bg:rgba(255, 255, 255, 0.15)",
+    "text:rgba(255, 255, 255, 0.4)",
+    "bg:rgba(255, 255, 255, 0.04)",
+    "text:rgb(0, 0, 0)",
+    "text:rgba(255, 255, 255, 0.85)",
+    "bg:rgb(255, 255, 255)",
+    "text:rgba(255, 255, 255, 0.5)",
+    "text:rgba(255, 255, 255, 0.55)",
+    "text:rgba(255, 255, 255, 0.45)",
+    "text:rgba(255, 255, 255, 0.6)",
+    "border:rgba(255, 255, 255, 0.1)"
+  ],
+  "fontsLoaded": [
+    "Barlow 300 normal",
+    "Barlow 400 normal",
+    "Barlow 500 normal",
+    "Barlow 600 normal",
+    "Instrument Serif 400 italic",
+    "Instrument Serif 400 normal",
+    "Work Sans 100 900 italic",
+    "Work Sans 100 900 normal"
+  ],
+  "headings": [
+    {
+      "tag": "h1",
+      "text": "Conquista tu categor\u00eda.\u200b\u200b\u200b\u200b\u200c\ufeff\u200d\ufeff\u200b\u200d\u200b\u200d\u200c\u200d\ufeff\ufeff\u200c\ufeff\u200b\u200d\u200c\u200d\u200d\u200c\u200c\u200d\u200c\ufeff\u200c\u200d\u200d\u200c\u200c\u200d\ufeff\u200d\u200b\u200d\u200b\u200d\u200b\ufeff\u200d\u200d\u200b\u200d\u200b\u200d\u200c\ufeff\u200b\ufeff\u200c\u200d\u200b\u200c\u200c",
+      "fontFamily": "\"Instrument Serif\"",
+      "fontSize": "144px",
+      "fontWeight": "400",
+      "lineHeight": "136.8px",
+      "letterSpacing": "-3.6px",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "h2",
+      "text": "Evidente.\u200b\u200b\u200b\u200b\u200c\ufeff\u200d\ufeff\u200b\u200d\u200b\u200d\u200c\u200d\ufeff\ufeff\u200c\ufeff\u200b\u200d\u200c\u200d\u200d\u200c\u200c\u200d\u200c\ufeff\u200c\u200d\u200d\u200c\u200c\u200d\ufeff\u200d\u200b\u200d\u200b\u200d\u200b\ufeff\u200d\u200d\u200b\u200d\u200b\u200d\u200c\ufeff\u200b\ufeff\u200c\u200d\u200b\u200c\u200c\u200d\ufeff\u200d\u200c\u200d\u200d\u200c\u200c\ufeff\u200c\u200b\u200c\ufeff\u200d",
+      "fontFamily": "\"Instrument Serif\"",
+      "fontSize": "72px",
+      "fontWeight": "400",
+      "lineHeight": "72px",
+      "letterSpacing": "-1.8px",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "h2",
+      "text": "C\u00f3mo lo hacemos\u200b\u200b\u200b\u200b\u200c\ufeff\u200d\ufeff\u200b\u200d\u200b\u200d\u200c\u200d\ufeff\ufeff\u200c\ufeff\u200b\u200d\u200c\u200d\u200d\u200c\u200c\u200d\u200c\ufeff\u200c\u200d\u200d\u200c\u200c\u200d\ufeff\u200d\u200b\u200d\u200b\u200d\u200b\ufeff\u200d\u200d\u200b\u200d\u200b\u200d\u200c\ufeff\u200b\ufeff\u200c\u200d\u200b\u200c\u200c\u200d\ufeff\u200d\u200c\u200d\u200d\u200c\u200c",
+      "fontFamily": "\"Instrument Serif\"",
+      "fontSize": "96px",
+      "fontWeight": "400",
+      "lineHeight": "96px",
+      "letterSpacing": "-2.4px",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "h2",
+      "text": "Tres modelos para establecer tu liderazgo\u200b\u200b\u200b\u200b\u200c\ufeff\u200d\ufeff\u200b\u200d\u200b\u200d\u200c\u200d\ufeff\ufeff\u200c\ufeff\u200b\u200d\u200c\u200d\u200d\u200c\u200c\u200d\u200c\ufeff\u200c\u200d\u200d\u200c\u200c\u200d\ufeff\u200d\u200b\u200d\u200b",
+      "fontFamily": "\"Instrument Serif\"",
+      "fontSize": "48px",
+      "fontWeight": "400",
+      "lineHeight": "48px",
+      "letterSpacing": "-1.2px",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "h3",
+      "text": "Estrategia Comercial\u200b\u200b\u200b\u200b\u200c\ufeff\u200d\ufeff\u200b\u200d\u200b\u200d\u200c\u200d\ufeff\ufeff\u200c\ufeff\u200b\u200d\u200c\u200d\u200d\u200c\u200c\u200d\u200c\ufeff\u200c\u200d\u200d\u200c\u200c\u200d\ufeff\u200d\u200b\u200d\u200b\u200d\u200b\ufeff\u200d\u200d\u200b\u200d\u200b\u200d\u200c\ufeff\u200b\ufeff\u200c\u200d\u200b\u200c\u200c\u200d\ufeff\u200d",
+      "fontFamily": "\"Instrument Serif\"",
+      "fontSize": "30px",
+      "fontWeight": "400",
+      "lineHeight": "36px",
+      "letterSpacing": "-0.75px",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "h3",
+      "text": "Identidad Digital\u200b\u200b\u200b\u200b\u200c\ufeff\u200d\ufeff\u200b\u200d\u200b\u200d\u200c\u200d\ufeff\ufeff\u200c\ufeff\u200b\u200d\u200c\u200d\u200d\u200c\u200c\u200d\u200c\ufeff\u200c\u200d\u200d\u200c\u200c\u200d\ufeff\u200d\u200b\u200d\u200b\u200d\u200b\ufeff\u200d\u200d\u200b\u200d\u200b\u200d\u200c\ufeff\u200b\ufeff\u200c\u200d\u200b\u200c\u200c\u200d\ufeff\u200d\u200c\u200d\u200d",
+      "fontFamily": "\"Instrument Serif\"",
+      "fontSize": "30px",
+      "fontWeight": "400",
+      "lineHeight": "36px",
+      "letterSpacing": "-0.75px",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "tag": "h3",
+      "text": "Negocio + Dise\u00f1o\u200b\u200b\u200b\u200b\u200c\ufeff\u200d\ufeff\u200b\u200d\u200b\u200d\u200c\u200d\ufeff\ufeff\u200c\ufeff\u200b\u200d\u200c\u200d\u200d\u200c\u200c\u200d\u200c\ufeff\u200c\u200d\u200d\u200c\u200c\u200d\ufeff\u200d\u200b\u200d\u200b\u200d\u200b\ufeff\u200d\u200d\u200b\u200d\u200b\u200d\u200c\ufeff\u200b\ufeff\u200c\u200d\u200b\u200c\u200c\u200d\ufeff\u200d\u200c\u200d\u200d\u200c",
+      "fontFamily": "\"Instrument Serif\"",
+      "fontSize": "30px",
+      "fontWeight": "400",
+      "lineHeight": "36px",
+      "letterSpacing": "-0.75px",
+      "color": "rgb(255, 255, 255)"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "url": "https://www.instrument.com/",
+  "title": "\ud83d\udc34 Instrument | A technology-led brand, product, & marketing agency | Instrument",
+  "meta_description": "We are a design and technology company helping brands unlock their full potential.",
+  "viewport": {
+    "w": 2560,
+    "h": 1216
+  },
+  "page_height": 9965,
+  "fonts_loaded": [
+    "Instrument-Sans | 400 | normal",
+    "Instrument-Serif-Italic | 400 | normal",
+    "Instrument-Serif | 400 | normal",
+    "Instrument-Mono | 400 | normal",
+    "swiper-icons | 400 | normal",
+    "Work Sans | 100 900 | italic",
+    "Work Sans | 100 900 | normal"
+  ],
+  "headings": {
+    "h1": {
+      "count": 0,
+      "samples": []
+    },
+    "h2": {
+      "count": 10,
+      "samples": [
+        {
+          "text": "RECENT WORK",
+          "font_family": "Instrument-Sans, Helvetica, sans-serif",
+          "font_size": "16px",
+          "font_weight": "400",
+          "line_height": "21.3333px",
+          "letter_spacing": "1.76px",
+          "text_transform": "uppercase",
+          "margin": "0px 0px 0px 0px",
+          "color": "rgb(7, 7, 8)"
+        },
+        {
+          "text": "CLIENT ROSTER",
+          "font_family": "Instrument-Sans, Helvetica, sans-serif",
+          "font_size": "16px",
+          "font_weight": "400",
+          "line_height": "21.3333px",
+          "letter_spacing": "1.76px",
+          "text_transform": "uppercase",
+          "margin": "0px 0px 0px 0px",
+          "color": "rgb(7, 7, 8)"
+        },
+        {
+          "text": "SERVICES",
+          "font_family": "Instrument-Sans, Helvetica, sans-serif",
+          "font_size": "16px",
+          "font_weight": "400",
+          "line_height": "21.3333px",
+          "letter_spacing": "1.76px",
+          "text_transform": "uppercase",
+          "margin": "0px 0px 0px 0px",
+          "color": "rgb(7, 7, 8)"
+        }
+      ]
+    },
+    "h3": {
+      "count": 2,
+      "samples": [
+        {
+          "text": "We make brands, products, websites, and campaigns.",
+          "font_family": "Instrument-Sans, Helvetica, sans-serif",
+          "font_size": "48px",
+          "font_weight": "400",
+          "line_height": "53.3333px",
+          "letter_spacing": "-0.72px",
+          "text_transform": "none",
+          "margin": "0px 0px 0px 0px",
+          "color": "rgb(7, 7, 8)"
+        },
+        {
+          "text": "Shape a better future.",
+          "font_family": "Instrument-Sans, Helvetica, sans-serif",
+          "font_size": "58.6667px",
+          "font_weight": "400",
+          "line_height": "64px",
+          "letter_spacing": "-1.76px",
+          "text_transform": "none",
+          "margin": "0px 0px 0px 0px",
+          "color": "rgb(7, 7, 8)"
+        }
+      ]
+    },
+    "h4": {
+      "count": 0,
+      "samples": []
+    },
+    "h5": {
+      "count": 0,
+      "samples": []
+    },
+    "h6": {
+      "count": 0,
+      "samples": []
+    }
+  },
+  "paragraphs": [
+    {
+      "text": "We use cookies to track website performance. View our Privacy Policy for details",
+      "font_family": "Instrument-Sans, Helvetica, sans-serif",
+      "font_size": "20px",
+      "font_weight": "400",
+      "line_height": "32px",
+      "letter_spacing": "0.4px",
+      "margin": "0px 0px",
+      "max_width": "none"
+    },
+    {
+      "text": "CAMPAIGN US WINNERS: DESIGN STUDIO AGENCY OF THE YEAR 2026! \nSEE MORE",
+      "font_family": "Instrument-Sans, Helvetica, sans-serif",
+      "font_size": "18.6667px",
+      "font_weight": "400",
+      "line_height": "26.6667px",
+      "letter_spacing": "1.49333px",
+      "margin": "0px 0px",
+      "max_width": "none"
+    },
+    {
+      "text": "We\u2019re a digital-first design agency where creativity meets technology.\nView All ",
+      "font_family": "Instrument-Serif, Times, serif",
+      "font_size": "104px",
+      "font_weight": "400",
+      "line_height": "106.667px",
+      "letter_spacing": "-2.08px",
+      "margin": "0px 0px",
+      "max_width": "1722.24px"
+    },
+    {
+      "text": "Feeld",
+      "font_family": "Instrument-Sans, Helvetica, sans-serif",
+      "font_size": "26.6667px",
+      "font_weight": "400",
+      "line_height": "32px",
+      "letter_spacing": "normal",
+      "margin": "0px 10.6667px",
+      "max_width": "none"
+    },
+    {
+      "text": "\u014cURA",
+      "font_family": "Instrument-Sans, Helvetica, sans-serif",
+      "font_size": "26.6667px",
+      "font_weight": "400",
+      "line_height": "32px",
+      "letter_spacing": "normal",
+      "margin": "0px 10.6667px",
+      "max_width": "none"
+    }
+  ],
+  "body": {
+    "font_family": "Instrument-Sans, Helvetica, sans-serif",
+    "font_size": "16px",
+    "font_weight": "400",
+    "line_height": "16px",
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(7, 7, 8)"
+  }
+}

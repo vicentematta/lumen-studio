@@ -1,0 +1,681 @@
+{
+  "home": {
+    "url": "https://www.instrument.com/",
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    },
+    "page_height": 6656,
+    "type_groups": [
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Serif",
+        "font_size": "64px",
+        "font_weight": "400",
+        "line_height": "72px",
+        "letter_spacing": "-1.28px",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "We\u2019re a digital-first design agency where creativity meets t",
+          "Our latest & greatest\nSee what\u2019s new"
+        ]
+      },
+      {
+        "tag_examples": "LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "52px",
+        "font_weight": "400",
+        "line_height": "56px",
+        "letter_spacing": "-1.3px",
+        "text_transform": "none",
+        "count": 10,
+        "samples": [
+          "Home",
+          "Work"
+        ]
+      },
+      {
+        "tag_examples": "H3,P",
+        "font_family": "Instrument-Sans",
+        "font_size": "36px",
+        "font_weight": "400",
+        "line_height": "40px",
+        "letter_spacing": "-0.9px",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "Shape a better future.",
+          "To create brand experiences of the highest caliber, we take "
+        ]
+      },
+      {
+        "tag_examples": "H3",
+        "font_family": "Instrument-Sans",
+        "font_size": "28px",
+        "font_weight": "400",
+        "line_height": "32px",
+        "letter_spacing": "-0.28px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "We make brands, products, websites, and campaigns."
+        ]
+      },
+      {
+        "tag_examples": "H2",
+        "font_family": "Instrument-Sans",
+        "font_size": "23px",
+        "font_weight": "400",
+        "line_height": "28px",
+        "letter_spacing": "-0.115px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Keep up to date with our quarterly newsletter, \u201cYou\u2019ve got m"
+        ]
+      },
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Sans",
+        "font_size": "19px",
+        "font_weight": "400",
+        "line_height": "24px",
+        "letter_spacing": "0.095px",
+        "text_transform": "none",
+        "count": 16,
+        "samples": [
+          "Feeld",
+          "\u014cURA"
+        ]
+      },
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Sans",
+        "font_size": "18px",
+        "font_weight": "400",
+        "line_height": "28px",
+        "letter_spacing": "0.36px",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "Since our inception, we\u2019ve been committed to using our creat",
+          "We are united by a strong set of values that drive us in all"
+        ]
+      },
+      {
+        "tag_examples": "LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 42,
+        "samples": [
+          "WORK",
+          "Brand"
+        ]
+      },
+      {
+        "tag_examples": "LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "uppercase",
+        "count": 4,
+        "samples": [
+          "ALL",
+          "BRAND"
+        ]
+      },
+      {
+        "tag_examples": "P,LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "15px",
+        "font_weight": "400",
+        "line_height": "24px",
+        "letter_spacing": "0.45px",
+        "text_transform": "none",
+        "count": 16,
+        "samples": [
+          "We use cookies to track website performance. View our Privac",
+          "We design across brand, product, and marketing, so\nevery tou"
+        ]
+      },
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Sans",
+        "font_size": "14px",
+        "font_weight": "400",
+        "line_height": "20px",
+        "letter_spacing": "1.12px",
+        "text_transform": "uppercase",
+        "count": 1,
+        "samples": [
+          "CAMPAIGN US WINNERS: DESIGN STUDIO AGENCY OF THE YEAR 2026! "
+        ]
+      },
+      {
+        "tag_examples": "H2",
+        "font_family": "Instrument-Sans",
+        "font_size": "12px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "1.32px",
+        "text_transform": "uppercase",
+        "count": 9,
+        "samples": [
+          "RECENT WORK",
+          "CLIENT ROSTER"
+        ]
+      },
+      {
+        "tag_examples": "LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "11px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "0.55px",
+        "text_transform": "none",
+        "count": 3,
+        "samples": [
+          "Sitemap",
+          "Privacy Policy"
+        ]
+      }
+    ],
+    "body_color": "rgb(7, 7, 8)",
+    "body_bg": "rgb(255, 255, 255)"
+  },
+  "about": {
+    "url": "https://www.instrument.com/about/",
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    },
+    "page_height": 6911,
+    "type_groups": [
+      {
+        "tag_examples": "H3",
+        "font_family": "Instrument-Serif",
+        "font_size": "184px",
+        "font_weight": "400",
+        "line_height": "184px",
+        "letter_spacing": "-3.68px",
+        "text_transform": "none",
+        "count": 4,
+        "samples": [
+          "20 Years",
+          "300+ Employees"
+        ]
+      },
+      {
+        "tag_examples": "LI,P",
+        "font_family": "Instrument-Sans",
+        "font_size": "52px",
+        "font_weight": "400",
+        "line_height": "56px",
+        "letter_spacing": "-1.3px",
+        "text_transform": "none",
+        "count": 11,
+        "samples": [
+          "Home",
+          "Work"
+        ]
+      },
+      {
+        "tag_examples": "H3",
+        "font_family": "Instrument-Sans",
+        "font_size": "44px",
+        "font_weight": "400",
+        "line_height": "48px",
+        "letter_spacing": "-1.1px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Meet our talented team of creators and technologists."
+        ]
+      },
+      {
+        "tag_examples": "P,H2",
+        "font_family": "Instrument-Sans",
+        "font_size": "36px",
+        "font_weight": "400",
+        "line_height": "40px",
+        "letter_spacing": "-0.9px",
+        "text_transform": "none",
+        "count": 3,
+        "samples": [
+          "We\u2019re a company committed to shaping better futures. We put ",
+          "Our values are part of everything we create at Instrument."
+        ]
+      },
+      {
+        "tag_examples": "H2",
+        "font_family": "Instrument-Sans",
+        "font_size": "23px",
+        "font_weight": "400",
+        "line_height": "28px",
+        "letter_spacing": "-0.115px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Keep up to date with our quarterly newsletter, \u201cYou\u2019ve got m"
+        ]
+      },
+      {
+        "tag_examples": "LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 15,
+        "samples": [
+          "WORK",
+          "Brand"
+        ]
+      },
+      {
+        "tag_examples": "P,LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "15px",
+        "font_weight": "400",
+        "line_height": "24px",
+        "letter_spacing": "0.45px",
+        "text_transform": "none",
+        "count": 24,
+        "samples": [
+          "We use cookies to track website performance. View our Privac",
+          "We\u2019re a diverse group of designers, strategists, engineers, "
+        ]
+      },
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Sans",
+        "font_size": "14px",
+        "font_weight": "400",
+        "line_height": "20px",
+        "letter_spacing": "1.12px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Campaign US Winners: Design Studio Agency of the Year 2026! "
+        ]
+      },
+      {
+        "tag_examples": "H2",
+        "font_family": "Instrument-Sans",
+        "font_size": "12px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "1.32px",
+        "text_transform": "uppercase",
+        "count": 4,
+        "samples": [
+          "OUR VALUES",
+          "GET IN TOUCH"
+        ]
+      },
+      {
+        "tag_examples": "P,LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "11px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "0.55px",
+        "text_transform": "none",
+        "count": 7,
+        "samples": [
+          "We\u2019re proud of the impactful work we\u2019ve done and the recogni",
+          "We\u2019re a diverse group of creatives and technologists.\u00a0We don"
+        ]
+      }
+    ],
+    "body_color": "rgb(255, 255, 255)",
+    "body_bg": "rgb(134, 136, 149)"
+  },
+  "feeld": {
+    "url": "https://www.instrument.com/work/feeld-app",
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    },
+    "page_height": 11851,
+    "type_groups": [
+      {
+        "tag_examples": "H1",
+        "font_family": "Instrument-Serif",
+        "font_size": "184px",
+        "font_weight": "400",
+        "line_height": "184px",
+        "letter_spacing": "-3.68px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Feeld"
+        ]
+      },
+      {
+        "tag_examples": "LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "52px",
+        "font_weight": "400",
+        "line_height": "56px",
+        "letter_spacing": "-1.3px",
+        "text_transform": "none",
+        "count": 10,
+        "samples": [
+          "Home",
+          "Work"
+        ]
+      },
+      {
+        "tag_examples": "H4,H3",
+        "font_family": "Instrument-Sans",
+        "font_size": "28px",
+        "font_weight": "400",
+        "line_height": "32px",
+        "letter_spacing": "-0.28px",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "Instrument partnered with Feeld\u2019s design team in a deeply co",
+          "Our Roles"
+        ]
+      },
+      {
+        "tag_examples": "H2",
+        "font_family": "Instrument-Sans",
+        "font_size": "23px",
+        "font_weight": "400",
+        "line_height": "28px",
+        "letter_spacing": "-0.115px",
+        "text_transform": "none",
+        "count": 7,
+        "samples": [
+          "The Challenge",
+          "Listening Deeply, Designing With Intention"
+        ]
+      },
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Sans",
+        "font_size": "19px",
+        "font_weight": "400",
+        "line_height": "24px",
+        "letter_spacing": "0.095px",
+        "text_transform": "none",
+        "count": 4,
+        "samples": [
+          "\u014cURA",
+          "Eventbrite"
+        ]
+      },
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Sans",
+        "font_size": "18px",
+        "font_weight": "400",
+        "line_height": "28px",
+        "letter_spacing": "0.36px",
+        "text_transform": "none",
+        "count": 9,
+        "samples": [
+          "Feeld had reimagined its brand with a bold new strategy and ",
+          "While traditional dating apps optimize for swipes and surfac"
+        ]
+      },
+      {
+        "tag_examples": "LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 22,
+        "samples": [
+          "WORK",
+          "Brand"
+        ]
+      },
+      {
+        "tag_examples": "P,LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "15px",
+        "font_weight": "400",
+        "line_height": "24px",
+        "letter_spacing": "0.45px",
+        "text_transform": "none",
+        "count": 34,
+        "samples": [
+          "We use cookies to track website performance. View our Privac",
+          "User Research"
+        ]
+      },
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Sans",
+        "font_size": "14px",
+        "font_weight": "400",
+        "line_height": "20px",
+        "letter_spacing": "1.12px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Campaign US Winners: Design Studio Agency of the Year 2026! "
+        ]
+      },
+      {
+        "tag_examples": "H4,H2",
+        "font_family": "Instrument-Sans",
+        "font_size": "12px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "1.32px",
+        "text_transform": "uppercase",
+        "count": 7,
+        "samples": [
+          "STRATEGY",
+          "DESIGN"
+        ]
+      },
+      {
+        "tag_examples": "LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "11px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "0.55px",
+        "text_transform": "none",
+        "count": 3,
+        "samples": [
+          "Sitemap",
+          "Privacy Policy"
+        ]
+      }
+    ],
+    "body_color": "rgb(244, 246, 255)",
+    "body_bg": "rgb(57, 74, 203)"
+  },
+  "brand": {
+    "url": "https://www.instrument.com/services/brand",
+    "viewport": {
+      "w": 1440,
+      "h": 900
+    },
+    "page_height": 4157,
+    "type_groups": [
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Serif",
+        "font_size": "64px",
+        "font_weight": "400",
+        "line_height": "72px",
+        "letter_spacing": "-1.28px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "We design brand systems that scale and flex across entire ec"
+        ]
+      },
+      {
+        "tag_examples": "LI,P",
+        "font_family": "Instrument-Sans",
+        "font_size": "52px",
+        "font_weight": "400",
+        "line_height": "56px",
+        "letter_spacing": "-1.3px",
+        "text_transform": "none",
+        "count": 11,
+        "samples": [
+          "Home",
+          "Work"
+        ]
+      },
+      {
+        "tag_examples": "H4",
+        "font_family": "Instrument-Sans",
+        "font_size": "36px",
+        "font_weight": "400",
+        "line_height": "40px",
+        "letter_spacing": "-0.9px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "This isn\u2019t a design tweak. It\u2019s a signal. Of where we\u2019re goi"
+        ]
+      },
+      {
+        "tag_examples": "H2",
+        "font_family": "Instrument-Sans",
+        "font_size": "23px",
+        "font_weight": "400",
+        "line_height": "28px",
+        "letter_spacing": "-0.115px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Keep up to date with our quarterly newsletter, \u201cYou\u2019ve got m"
+        ]
+      },
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Sans",
+        "font_size": "19px",
+        "font_weight": "400",
+        "line_height": "24px",
+        "letter_spacing": "0.095px",
+        "text_transform": "none",
+        "count": 4,
+        "samples": [
+          "Google Design",
+          "Electronic Arts"
+        ]
+      },
+      {
+        "tag_examples": "LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 15,
+        "samples": [
+          "WORK",
+          "Brand"
+        ]
+      },
+      {
+        "tag_examples": "P,LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "15px",
+        "font_weight": "400",
+        "line_height": "24px",
+        "letter_spacing": "0.45px",
+        "text_transform": "none",
+        "count": 21,
+        "samples": [
+          "We use cookies to track website performance. View our Privac",
+          "Building brands that stand out\u2014in-feed, in-store, and in cul"
+        ]
+      },
+      {
+        "tag_examples": "P",
+        "font_family": "Instrument-Sans",
+        "font_size": "14px",
+        "font_weight": "400",
+        "line_height": "20px",
+        "letter_spacing": "1.12px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Campaign US Winners: Design Studio Agency of the Year 2026! "
+        ]
+      },
+      {
+        "tag_examples": "H2",
+        "font_family": "Instrument-Sans",
+        "font_size": "14px",
+        "font_weight": "400",
+        "line_height": "20px",
+        "letter_spacing": "1.12px",
+        "text_transform": "uppercase",
+        "count": 2,
+        "samples": [
+          "BRAND CAPABILITIES",
+          "RELATED READINGS"
+        ]
+      },
+      {
+        "tag_examples": "H2",
+        "font_family": "Instrument-Sans",
+        "font_size": "12px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "1.32px",
+        "text_transform": "uppercase",
+        "count": 3,
+        "samples": [
+          "GET IN TOUCH",
+          "SEE MORE"
+        ]
+      },
+      {
+        "tag_examples": "P,LI",
+        "font_family": "Instrument-Sans",
+        "font_size": "11px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "0.55px",
+        "text_transform": "none",
+        "count": 7,
+        "samples": [
+          "Helping Google imagine a future where design is driven by hy",
+          "The evolution of EA: from gaming legacy to entertainment lea"
+        ]
+      },
+      {
+        "tag_examples": "FIGCAPTION",
+        "font_family": "Instrument-Sans",
+        "font_size": "10px",
+        "font_weight": "400",
+        "line_height": "12px",
+        "letter_spacing": "1.1px",
+        "text_transform": "uppercase",
+        "count": 1,
+        "samples": [
+          "Colin Flemming\nCMO, SERVICENOW"
+        ]
+      }
+    ],
+    "body_color": "rgb(221, 216, 232)",
+    "body_bg": "rgb(39, 6, 59)"
+  }
+}

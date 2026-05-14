@@ -1,0 +1,1260 @@
+{
+  "about": {
+    "url": "https://www.instrument.com/about/",
+    "page_height": 7274,
+    "viewport": {
+      "w": 1512,
+      "h": 806
+    },
+    "body": {
+      "font_family": "Instrument-Sans, Helvetica, sans-serif",
+      "font_size": "16px",
+      "line_height": "16px",
+      "bg": "rgb(134, 136, 149)",
+      "color": "rgb(255, 255, 255)"
+    },
+    "type_groups": [
+      {
+        "tag": "H3",
+        "font_family": "Instrument-Serif, Times, serif",
+        "font_size": "193.2px",
+        "font_weight": "400",
+        "line_height": "193.2px",
+        "letter_spacing": "-3.864px",
+        "text_transform": "none",
+        "count": 4,
+        "samples": [
+          "20 Years",
+          "300+ Employees"
+        ]
+      },
+      {
+        "tag": "LI",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "54.6px",
+        "font_weight": "400",
+        "line_height": "58.8px",
+        "letter_spacing": "-1.365px",
+        "text_transform": "none",
+        "count": 10,
+        "samples": [
+          "Home",
+          "Work"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "54.6px",
+        "font_weight": "400",
+        "line_height": "58.8px",
+        "letter_spacing": "-1.365px",
+        "text_transform": "none",
+        "count": 9,
+        "samples": [
+          "Home",
+          "Work"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "54.6px",
+        "font_weight": "400",
+        "line_height": "58.8px",
+        "letter_spacing": "-1.365px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Work of the highest caliber doesn\u2019t happen by accident. We leverage unique persp"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "54.6px",
+        "font_weight": "400",
+        "line_height": "58.8px",
+        "letter_spacing": "-1.365px",
+        "text_transform": "none",
+        "count": 28,
+        "samples": [
+          "Work",
+          "of"
+        ]
+      },
+      {
+        "tag": "H3",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "46.2px",
+        "font_weight": "400",
+        "line_height": "50.4px",
+        "letter_spacing": "-1.155px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Meet our talented team of creators and technologists."
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "37.8px",
+        "font_weight": "400",
+        "line_height": "42px",
+        "letter_spacing": "-0.945px",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "We\u2019re a company committed to shaping better futures. We put people first \u2014 our c",
+          "Think you'd be a good addition to our team?\nCareers"
+        ]
+      },
+      {
+        "tag": "H2",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "37.8px",
+        "font_weight": "400",
+        "line_height": "42px",
+        "letter_spacing": "-0.945px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Our values are part of everything we create at Instrument."
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "37.8px",
+        "font_weight": "400",
+        "line_height": "42px",
+        "letter_spacing": "-0.945px",
+        "text_transform": "none",
+        "count": 8,
+        "samples": [
+          "Think",
+          "you'd"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "37.8px",
+        "font_weight": "400",
+        "line_height": "42px",
+        "letter_spacing": "-0.945px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Careers"
+        ]
+      },
+      {
+        "tag": "H2",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "24.15px",
+        "font_weight": "400",
+        "line_height": "29.4px",
+        "letter_spacing": "-0.12075px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Keep up to date with our quarterly newsletter, \u201cYou\u2019ve got mail.\u201d"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "19.95px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.09975px",
+        "text_transform": "none",
+        "count": 4,
+        "samples": [
+          "People First",
+          "Pursuit of Excellence"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "19.95px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.09975px",
+        "text_transform": "none",
+        "count": 8,
+        "samples": [
+          "Laurel Burton",
+          "Chief Executive Officer"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "18.9px",
+        "font_weight": "400",
+        "line_height": "29.4px",
+        "letter_spacing": "0.378px",
+        "text_transform": "none",
+        "count": 4,
+        "samples": [
+          "Our Services",
+          "Our Services"
+        ]
+      },
+      {
+        "tag": "LI",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 15,
+        "samples": [
+          "WORK",
+          "Brand"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 3,
+        "samples": [
+          "Instagram",
+          "Twitter"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Keep up to date with our quarterly newsletter, \u201cYou\u2019ve got mail.\u201d\nSubscribe"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 10,
+        "samples": [
+          "We use cookies to track website performance. View our Privacy Policy for details",
+          "We\u2019re a diverse group of designers, strategists, engineers, and wordsmiths who m"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "View our Privacy Policy for details.",
+          "We apply our capabilities and resources towards a shared purpose of shaping a be"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "ENABLE COOKIES\nDISABLE COOKIES"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "15.75px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "Subscribe",
+          "Subscribe"
+        ]
+      },
+      {
+        "tag": "LI",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 14,
+        "samples": [
+          "Start a Project",
+          "Join the Team"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "14.7px",
+        "font_weight": "400",
+        "line_height": "21px",
+        "letter_spacing": "1.176px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Campaign US Winners: Design Studio Agency of the Year 2026! See More"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "14.7px",
+        "font_weight": "400",
+        "line_height": "21px",
+        "letter_spacing": "1.176px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "See More"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "12.6px",
+        "font_weight": "400",
+        "line_height": "16.8px",
+        "letter_spacing": "1.386px",
+        "text_transform": "uppercase",
+        "count": 24,
+        "samples": [
+          "ENABLE COOKIES",
+          "ENABLE COOKIES"
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "tag": "SECTION",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "0px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "100.8px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "201.6px 50.4px 50.4px 50.4px",
+        "margin_y": "0px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "0px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "SECTION",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "33.6px 100.8px",
+        "max_width": "none",
+        "width": "1411.2px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "0px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "33.6px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "12.6px 0px 0px 0px",
+        "margin_y": "0px 8.4px",
+        "max_width": "none",
+        "width": "1411.2px"
+      }
+    ],
+    "max_widths": [
+      "1070.9px",
+      "639.36px"
+    ]
+  },
+  "feeld": {
+    "url": "https://www.instrument.com/work/feeld-app",
+    "page_height": 12463,
+    "viewport": {
+      "w": 1512,
+      "h": 806
+    },
+    "body": {
+      "font_family": "Instrument-Sans, Helvetica, sans-serif",
+      "font_size": "16px",
+      "line_height": "16px",
+      "bg": "rgb(57, 74, 203)",
+      "color": "rgb(244, 246, 255)"
+    },
+    "type_groups": [
+      {
+        "tag": "H1",
+        "font_family": "Instrument-Serif, Times, serif",
+        "font_size": "193.2px",
+        "font_weight": "400",
+        "line_height": "193.2px",
+        "letter_spacing": "-3.864px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Feeld"
+        ]
+      },
+      {
+        "tag": "LI",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "54.6px",
+        "font_weight": "400",
+        "line_height": "58.8px",
+        "letter_spacing": "-1.365px",
+        "text_transform": "none",
+        "count": 10,
+        "samples": [
+          "Home",
+          "Work"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "54.6px",
+        "font_weight": "400",
+        "line_height": "58.8px",
+        "letter_spacing": "-1.365px",
+        "text_transform": "none",
+        "count": 8,
+        "samples": [
+          "Home",
+          "Work"
+        ]
+      },
+      {
+        "tag": "H4",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "29.4px",
+        "font_weight": "400",
+        "line_height": "33.6px",
+        "letter_spacing": "-0.294px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Instrument partnered with Feeld\u2019s design team in a deeply collaborative, iterati"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "29.4px",
+        "font_weight": "400",
+        "line_height": "33.6px",
+        "letter_spacing": "-0.294px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Instrument partnered with Feeld\u2019s design team in a deeply collaborative, iterati"
+        ]
+      },
+      {
+        "tag": "H3",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "29.4px",
+        "font_weight": "400",
+        "line_height": "33.6px",
+        "letter_spacing": "-0.294px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Our Roles"
+        ]
+      },
+      {
+        "tag": "H2",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "24.15px",
+        "font_weight": "400",
+        "line_height": "29.4px",
+        "letter_spacing": "-0.12075px",
+        "text_transform": "none",
+        "count": 7,
+        "samples": [
+          "The Challenge",
+          "Listening Deeply, Designing With Intention"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "19.95px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.09975px",
+        "text_transform": "none",
+        "count": 4,
+        "samples": [
+          "\u014cURA",
+          "Eventbrite"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "18.9px",
+        "font_weight": "400",
+        "line_height": "29.4px",
+        "letter_spacing": "0.378px",
+        "text_transform": "none",
+        "count": 9,
+        "samples": [
+          "Feeld had reimagined its brand with a bold new strategy and visual identity, but",
+          "While traditional dating apps optimize for swipes and surface-level matches, Fee"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "18.9px",
+        "font_weight": "400",
+        "line_height": "29.4px",
+        "letter_spacing": "0.378px",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "Get in Touch",
+          "Get in Touch"
+        ]
+      },
+      {
+        "tag": "LI",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 22,
+        "samples": [
+          "WORK",
+          "Brand"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 8,
+        "samples": [
+          "Instagram",
+          "Twitter"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "Get in Touch",
+          "Keep up to date with our quarterly newsletter, \u201cYou\u2019ve got mail.\u201d\nSubscribe"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "We use cookies to track website performance. View our Privacy Policy for details"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "View our Privacy Policy for details."
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "ENABLE COOKIES\nDISABLE COOKIES"
+        ]
+      },
+      {
+        "tag": "LI",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 33,
+        "samples": [
+          "User Research",
+          "Product Requirements"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "15.75px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "Subscribe",
+          "Subscribe"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "14.7px",
+        "font_weight": "400",
+        "line_height": "21px",
+        "letter_spacing": "1.176px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Campaign US Winners: Design Studio Agency of the Year 2026! See More"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "14.7px",
+        "font_weight": "400",
+        "line_height": "21px",
+        "letter_spacing": "1.176px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "See More"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "14.7px",
+        "font_weight": "400",
+        "line_height": "21px",
+        "letter_spacing": "1.176px",
+        "text_transform": "uppercase",
+        "count": 1,
+        "samples": [
+          "HOME\nWORK\nFEELD APP"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "14.7px",
+        "font_weight": "400",
+        "line_height": "21px",
+        "letter_spacing": "1.176px",
+        "text_transform": "uppercase",
+        "count": 1,
+        "samples": [
+          "FEELD APP"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "12.6px",
+        "font_weight": "400",
+        "line_height": "16.8px",
+        "letter_spacing": "1.386px",
+        "text_transform": "uppercase",
+        "count": 38,
+        "samples": [
+          "ENABLE COOKIES",
+          "ENABLE COOKIES"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "12.6px",
+        "font_weight": "600",
+        "line_height": "16.8px",
+        "letter_spacing": "1.386px",
+        "text_transform": "uppercase",
+        "count": 3,
+        "samples": [
+          "Brand",
+          "Marketing"
+        ]
+      },
+      {
+        "tag": "H4",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "12.6px",
+        "font_weight": "400",
+        "line_height": "16.8px",
+        "letter_spacing": "1.386px",
+        "text_transform": "uppercase",
+        "count": 3,
+        "samples": [
+          "STRATEGY",
+          "DESIGN"
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "tag": "SECTION",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "0px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "SECTION",
+        "padding": "25.2px 50.4px 0px 50.4px",
+        "margin_y": "201.6px 50.4px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "50.4px 33.6px",
+        "max_width": "none",
+        "width": "1411.2px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 50.4px 0px 50.4px",
+        "margin_y": "0px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "33.6px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "0px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "0px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "100.8px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      }
+    ],
+    "max_widths": [
+      "1296.35px",
+      "1006.99px"
+    ]
+  },
+  "brand": {
+    "url": "https://www.instrument.com/services/brand",
+    "page_height": 4378,
+    "viewport": {
+      "w": 1512,
+      "h": 806
+    },
+    "body": {
+      "font_family": "Instrument-Sans, Helvetica, sans-serif",
+      "font_size": "16px",
+      "line_height": "16px",
+      "bg": "rgb(39, 6, 59)",
+      "color": "rgb(221, 216, 232)"
+    },
+    "type_groups": [
+      {
+        "tag": "P",
+        "font_family": "Instrument-Serif, Times, serif",
+        "font_size": "67.2px",
+        "font_weight": "400",
+        "line_height": "75.6px",
+        "letter_spacing": "-1.344px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "We design brand systems that scale and flex across entire ecosystems.\nGet in tou"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Serif, Times, serif",
+        "font_size": "67.2px",
+        "font_weight": "400",
+        "line_height": "75.6px",
+        "letter_spacing": "-1.344px",
+        "text_transform": "none",
+        "count": 11,
+        "samples": [
+          "We",
+          "design"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Serif, Times, serif",
+        "font_size": "67.2px",
+        "font_weight": "400",
+        "line_height": "75.6px",
+        "letter_spacing": "-1.344px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Get in touch"
+        ]
+      },
+      {
+        "tag": "LI",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "54.6px",
+        "font_weight": "400",
+        "line_height": "58.8px",
+        "letter_spacing": "-1.365px",
+        "text_transform": "none",
+        "count": 10,
+        "samples": [
+          "Home",
+          "Work"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "54.6px",
+        "font_weight": "400",
+        "line_height": "58.8px",
+        "letter_spacing": "-1.365px",
+        "text_transform": "none",
+        "count": 9,
+        "samples": [
+          "Home",
+          "Work"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "54.6px",
+        "font_weight": "400",
+        "line_height": "58.8px",
+        "letter_spacing": "-1.365px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "We\u2019d love to work with you and your team.\nGet in touch"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "54.6px",
+        "font_weight": "400",
+        "line_height": "58.8px",
+        "letter_spacing": "-1.365px",
+        "text_transform": "none",
+        "count": 9,
+        "samples": [
+          "We\u2019d",
+          "love"
+        ]
+      },
+      {
+        "tag": "H4",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "37.8px",
+        "font_weight": "400",
+        "line_height": "42px",
+        "letter_spacing": "-0.945px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "This isn\u2019t a design tweak. It\u2019s a signal. Of where we\u2019re going, how fast we\u2019re m"
+        ]
+      },
+      {
+        "tag": "H2",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "24.15px",
+        "font_weight": "400",
+        "line_height": "29.4px",
+        "letter_spacing": "-0.12075px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Keep up to date with our quarterly newsletter, \u201cYou\u2019ve got mail.\u201d"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "19.95px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.09975px",
+        "text_transform": "none",
+        "count": 9,
+        "samples": [
+          "Brand Strategy & Architecture",
+          "Brand Naming & Verbal Identity"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "19.95px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.09975px",
+        "text_transform": "none",
+        "count": 4,
+        "samples": [
+          "Google Design",
+          "Electronic Arts"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "19.95px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.09975px",
+        "text_transform": "none",
+        "count": 4,
+        "samples": [
+          "Brand Systems Matter More Than Ever: They're no longer a strategic luxury\u2014they\u2019r",
+          "Accelerated by AI: Building New Tools for Today: We\u2019re harnessing AI-driven cust"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "18.9px",
+        "font_weight": "400",
+        "line_height": "29.4px",
+        "letter_spacing": "0.378px",
+        "text_transform": "none",
+        "count": 8,
+        "samples": [
+          "Get in touch",
+          "Get in touch"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "18.9px",
+        "font_weight": "400",
+        "line_height": "29.4px",
+        "letter_spacing": "0.378px",
+        "text_transform": "none",
+        "count": 4,
+        "samples": [
+          "View Case Study",
+          "View Case Study"
+        ]
+      },
+      {
+        "tag": "LI",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 15,
+        "samples": [
+          "WORK",
+          "Brand"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 3,
+        "samples": [
+          "Instagram",
+          "Twitter"
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "16px",
+        "font_weight": "400",
+        "line_height": "16px",
+        "letter_spacing": "normal",
+        "text_transform": "none",
+        "count": 14,
+        "samples": [
+          "Google Design\n\nHelping Google imagine a future where design is driven by hyper-p",
+          "Electronic Arts\n\nThe evolution of EA: from gaming legacy to entertainment leader"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 7,
+        "samples": [
+          "We use cookies to track website performance. View our Privacy Policy for details",
+          "Building brands that stand out\u2014in-feed, in-store, and in culture."
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "View our Privacy Policy for details."
+        ]
+      },
+      {
+        "tag": "DIV",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "ENABLE COOKIES\nDISABLE COOKIES"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "capitalize",
+        "count": 1,
+        "samples": [
+          "Colin Flemming"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "15.75px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 2,
+        "samples": [
+          "Subscribe",
+          "Subscribe"
+        ]
+      },
+      {
+        "tag": "LI",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "15.75px",
+        "font_weight": "400",
+        "line_height": "25.2px",
+        "letter_spacing": "0.4725px",
+        "text_transform": "none",
+        "count": 14,
+        "samples": [
+          "Start a Project",
+          "Join the Team"
+        ]
+      },
+      {
+        "tag": "P",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "14.7px",
+        "font_weight": "400",
+        "line_height": "21px",
+        "letter_spacing": "1.176px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "Campaign US Winners: Design Studio Agency of the Year 2026! See More"
+        ]
+      },
+      {
+        "tag": "SPAN",
+        "font_family": "Instrument-Sans, Helvetica, sans-serif",
+        "font_size": "14.7px",
+        "font_weight": "400",
+        "line_height": "21px",
+        "letter_spacing": "1.176px",
+        "text_transform": "none",
+        "count": 1,
+        "samples": [
+          "See More"
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "tag": "SECTION",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "0px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "50.4px 33.6px",
+        "max_width": "none",
+        "width": "1411.2px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "4.2px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "SECTION",
+        "padding": "0px 100.8px 0px 100.8px",
+        "margin_y": "100.8px 100.8px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "100.8px 100.8px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "100.8px 0px",
+        "max_width": "none",
+        "width": "1512px"
+      },
+      {
+        "tag": "DIV",
+        "padding": "12.6px 0px 0px 0px",
+        "margin_y": "0px 8.4px",
+        "max_width": "none",
+        "width": "1411.2px"
+      },
+      {
+        "tag": "SECTION",
+        "padding": "0px 0px 0px 0px",
+        "margin_y": "100.8px 100.8px",
+        "max_width": "none",
+        "width": "1411.2px"
+      }
+    ],
+    "max_widths": [
+      "1112.75px",
+      "1070.9px",
+      "639.36px"
+    ]
+  }
+}
