@@ -269,16 +269,16 @@ function ServiceNavCard({ service, direction }: NavCardProps) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
         </div>
-        <div className="flex items-center justify-between px-6 py-5">
-          <div>
+        <div className="flex items-center justify-between gap-4 px-6 py-6 md:px-8 md:py-7">
+          <div className="min-w-0">
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">
               {isNext ? 'Siguiente' : 'Anterior'}
             </p>
-            <p className="mt-1 font-display text-base tracking-tight text-white">
+            <p className="mt-2 font-display text-2xl leading-tight tracking-tight text-white md:text-3xl">
               {service.name}
             </p>
           </div>
-          <span className="flex h-8 w-8 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45">
+          <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45 md:h-11 md:w-11">
             {isNext ? (
               <ArrowRight className="h-4 w-4" />
             ) : (
