@@ -37,18 +37,6 @@ export default async function WorkDetailPage({ params }: Props) {
 
   if (!project) notFound()
 
-  const idx = allProjects.findIndex((p) => p.slug === slug)
-  const total = allProjects.length
-
-  const prev =
-    total >= 2 && idx !== -1
-      ? allProjects[(idx - 1 + total) % total]
-      : { ...project }
-  const next =
-    total >= 2 && idx !== -1
-      ? allProjects[(idx + 1) % total]
-      : { ...project }
-
   const ldJson = serializeSchema(
     creativeWorkSchema({
       client: project.client ?? '',
@@ -68,7 +56,7 @@ export default async function WorkDetailPage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson }} />
-      <WorkDetailView project={project} prev={prev} next={next} />
+      <WorkDetailView project={project} allProjects={allProjects} />
     </>
   )
 }

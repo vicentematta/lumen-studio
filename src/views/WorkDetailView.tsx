@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
 import { GlassCard } from '@/components/ui/GlassCard'
@@ -15,13 +16,50 @@ import {
 } from '@/lib/motion'
 import type { ProjectBlock, ProjectDoc, ProjectListItem } from '@/lib/queries/projects'
 
-interface Props {
-  project: ProjectDoc
-  prev: ProjectListItem
-  next: ProjectListItem
+const STORAGE_KEY = 'rh_visited_work'
+
+function useSuggestions(currentSlug: string, allProjects: ProjectListItem[]) {
+  const [suggestions, setSuggestions] = useState<ProjectListItem[]>([])
+
+  useEffect(() => {
+    const others = allProjects.filter((p) => p.slug !== currentSlug)
+    if (others.length === 0) return
+
+    let visited: Set<string>
+    try {
+      visited = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]'))
+    } catch {
+      visited = new Set()
+    }
+
+    // Mark current as visited
+    visited.add(currentSlug)
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...visited]))
+
+    const unvisited = others.filter((p) => !visited.has(p.slug ?? ''))
+
+    if (unvisited.length >= 2) {
+      setSuggestions(unvisited.slice(0, 2))
+    } else if (unvisited.length === 1) {
+      const fromVisited = others.filter((p) => visited.has(p.slug ?? '')).slice(0, 1)
+      setSuggestions([unvisited[0], ...fromVisited])
+    } else {
+      // Todos vistos — reset y vuelve desde el principio
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([currentSlug]))
+      setSuggestions(others.slice(0, 2))
+    }
+  }, [currentSlug, allProjects])
+
+  return suggestions
 }
 
-export function WorkDetailView({ project, prev, next }: Props) {
+interface Props {
+  project: ProjectDoc
+  allProjects: ProjectListItem[]
+}
+
+export function WorkDetailView({ project, allProjects }: Props) {
+  const suggestions = useSuggestions(project.slug ?? '', allProjects)
   return (
     <>
       {/* Hero — text-only (schema sin imagen/video) */}
@@ -163,31 +201,32 @@ export function WorkDetailView({ project, prev, next }: Props) {
         <BlockRenderer key={block._key} block={block} />
       ))}
 
-      {/* Prev / Next nav */}
-      <section className="px-6 pb-24 md:pb-32">
-        <Container width="lg">
-          <motion.div variants={stagger} {...inViewProps} className="mb-10">
-            <motion.p
-              variants={fadeRiseSmall}
-              className="text-xs uppercase tracking-[0.2em] text-white/40"
+      {/* Suggested projects */}
+      {suggestions.length > 0 ? (
+        <section className="px-6 pb-24 md:pb-32">
+          <Container width="lg">
+            <motion.div variants={stagger} {...inViewProps} className="mb-10">
+              <motion.p
+                variants={fadeRiseSmall}
+                className="text-xs uppercase tracking-[0.2em] text-white/40"
+              >
+                Otros proyectos
+              </motion.p>
+            </motion.div>
+            <motion.div
+              variants={stagger}
+              {...inViewProps}
+              className="grid grid-cols-1 gap-6 md:grid-cols-2"
             >
-              Otros proyectos
-            </motion.p>
-          </motion.div>
-          <motion.div
-            variants={stagger}
-            {...inViewProps}
-            className="grid grid-cols-1 gap-6 md:grid-cols-2"
-          >
-            <motion.div variants={fadeRise}>
-              <ProjectNavCard project={prev} direction="prev" />
+              {suggestions.map((p) => (
+                <motion.div key={p._id} variants={fadeRise}>
+                  <ProjectNavCard project={p} />
+                </motion.div>
+              ))}
             </motion.div>
-            <motion.div variants={fadeRise}>
-              <ProjectNavCard project={next} direction="next" />
-            </motion.div>
-          </motion.div>
-        </Container>
-      </section>
+          </Container>
+        </section>
+      ) : null}
     </>
   )
 }
@@ -320,21 +359,16 @@ function StatsBlock({ block }: BlockProps) {
 
 interface NavCardProps {
   project: ProjectListItem
-  direction: 'prev' | 'next'
 }
 
-function ProjectNavCard({ project, direction }: NavCardProps) {
-  const isNext = direction === 'next'
+function ProjectNavCard({ project }: NavCardProps) {
   return (
     <Link href={`/work/${project.slug}`} className="group block">
       <GlassCard rounded="3xl" className="overflow-hidden">
         <div className="flex items-center justify-between gap-4 px-6 py-8 md:px-8 md:py-10">
           <div className="min-w-0">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-white/40">
-              {isNext ? 'Siguiente' : 'Anterior'}
-            </p>
             {project.category ? (
-              <p className="mt-1 text-[11px] uppercase tracking-[0.15em] text-white/30">
+              <p className="text-[11px] uppercase tracking-[0.15em] text-white/30">
                 {project.category}
               </p>
             ) : null}
@@ -348,11 +382,7 @@ function ProjectNavCard({ project, direction }: NavCardProps) {
             ) : null}
           </div>
           <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45 md:h-11 md:w-11">
-            {isNext ? (
-              <ArrowRight className="h-4 w-4" />
-            ) : (
-              <ArrowLeft className="h-4 w-4" />
-            )}
+            <ArrowUpRight className="h-4 w-4" />
           </span>
         </div>
       </GlassCard>
