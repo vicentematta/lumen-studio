@@ -371,38 +371,27 @@ function StatsBlock({ block }: BlockProps) {
 
 function ImageBlock({ block }: BlockProps) {
   if (!block.image?.url) return null
-  const full = block.layout !== 'contained'
+  const contained = block.layout === 'contained'
   return (
-    <section className={`pb-6 md:pb-8 ${full ? '' : 'px-6'}`}>
-      {full ? (
+    <section className="px-6 pb-6 md:pb-8">
+      <Container width="lg">
         <img
           src={block.image.url}
           alt={block.image.alt ?? ''}
-          className="w-full object-cover"
           loading="lazy"
+          className={`w-full object-cover ${contained ? 'rounded-2xl' : ''}`}
         />
-      ) : (
-        <Container width="lg">
-          <img
-            src={block.image.url}
-            alt={block.image.alt ?? ''}
-            className="w-full rounded-2xl object-cover"
-            loading="lazy"
-          />
-        </Container>
-      )}
-      {block.image.caption ? (
-        <p className={`mt-3 text-xs text-white/30 ${full ? 'px-6' : ''}`}>
-          {block.image.caption}
-        </p>
-      ) : null}
+        {block.image.caption ? (
+          <p className="mt-3 text-xs text-white/30">{block.image.caption}</p>
+        ) : null}
+      </Container>
     </section>
   )
 }
 
 function VideoBlock({ block }: BlockProps) {
   if (!block.url) return null
-  const full = block.layout !== 'contained'
+  const contained = block.layout === 'contained'
   const video = (
     <video
       src={block.url}
@@ -412,12 +401,12 @@ function VideoBlock({ block }: BlockProps) {
       loop
       playsInline
       preload="metadata"
-      className={`w-full object-cover ${full ? '' : 'rounded-2xl'}`}
+      className={`w-full object-cover ${contained ? 'rounded-2xl' : ''}`}
     />
   )
   return (
-    <section className={`pb-6 md:pb-8 ${full ? '' : 'px-6'}`}>
-      {full ? video : <Container width="lg">{video}</Container>}
+    <section className="px-6 pb-6 md:pb-8">
+      <Container width="lg">{video}</Container>
     </section>
   )
 }
