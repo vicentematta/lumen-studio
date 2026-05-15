@@ -447,26 +447,54 @@ function VideoBlock({ block }: BlockProps) {
   )
 }
 
+function MediaColVideo({ src }: { src: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [muted, setMuted] = useState(true)
+  function toggleMute() {
+    if (!videoRef.current) return
+    const next = !muted
+    videoRef.current.muted = next
+    setMuted(next)
+  }
+  return (
+    <div className="relative h-full overflow-hidden rounded-2xl">
+      <video
+        ref={videoRef}
+        src={src}
+        autoPlay muted loop playsInline preload="metadata"
+        className="h-full w-full object-cover"
+      />
+      <button
+        onClick={toggleMute}
+        aria-label={muted ? 'Activar audio' : 'Silenciar'}
+        className="absolute bottom-3 right-3 liquid-glass flex h-8 w-8 items-center justify-center rounded-full text-white"
+      >
+        {muted ? <VolumeX className="h-3 w-3" /> : <Volume2 className="h-3 w-3" />}
+      </button>
+    </div>
+  )
+}
+
 function MediaColumnsBlock({ block }: BlockProps) {
   return (
     <section className="px-6 pb-24 md:pb-32">
       <Container width="lg">
-        <div className="grid grid-cols-3 gap-4 items-start">
-          {/* Columna izquierda — imagen larga */}
+        <div className="grid grid-cols-3 gap-4" style={{ height: '80vh' }}>
+          {/* Columna izquierda — imagen larga recortada por arriba */}
           {block.colImage?.url ? (
             <div className="overflow-hidden rounded-2xl">
               <img
                 src={block.colImage.url}
                 alt={block.colImage.alt ?? ''}
-                className="w-full object-cover"
+                className="h-full w-full object-cover object-top"
                 loading="lazy"
               />
             </div>
           ) : null}
-          {/* Columnas centro y derecha — videos */}
-          <div className="col-span-2 grid grid-cols-2 gap-4 items-start">
-            {block.url1 ? <VideoWithUnmute src={block.url1} rounded /> : null}
-            {block.url2 ? <VideoWithUnmute src={block.url2} rounded /> : null}
+          {/* Columnas centro y derecha — videos apilados */}
+          <div className="col-span-2 grid grid-rows-2 gap-4">
+            {block.url1 ? <MediaColVideo src={block.url1} /> : null}
+            {block.url2 ? <MediaColVideo src={block.url2} /> : null}
           </div>
         </div>
       </Container>
