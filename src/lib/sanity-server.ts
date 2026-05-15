@@ -55,7 +55,16 @@ export async function sanityFetch<T>(
   params: Record<string, unknown> = {},
   options: { tags?: string[]; revalidate?: number | false } = {},
 ): Promise<T> {
-  const { isEnabled: isDraft } = await draftMode()
+  // draftMode() lanza fuera de contexto HTTP (ej. generateStaticParams en build time).
+  // En ese caso siempre usamos el cliente publicado.
+  let isDraft = false
+  try {
+    const dm = await draftMode()
+    isDraft = dm.isEnabled
+  } catch {
+    isDraft = false
+  }
+
   const client = isDraft ? sanityDraft : sanityServer
 
   return client.fetch<T>(query, params, {
