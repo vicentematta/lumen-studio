@@ -77,7 +77,7 @@ export default {
 
       // ── Animations (preservado) ──────────────────────────────────
       animation: {
-        marquee: 'marquee 80s linear infinite',
+        marquee: 'marquee 70s linear infinite',
       },
       keyframes: {
         marquee: {

@@ -474,7 +474,7 @@ function ClientsStrip({ content }: { content: HomeContent }) {
     <section className="bg-black py-16 md:py-20">
       <Container width="lg">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-10 lg:gap-16">
-          <p className="shrink-0 font-display text-base italic text-white/45 md:text-lg">
+          <p className="shrink-0 font-display text-base italic text-white md:text-lg">
             {content.clientLogosEyebrow || 'Confiaron en nosotros'}
           </p>
           <div
@@ -508,7 +508,7 @@ function ClientsStrip({ content }: { content: HomeContent }) {
                           ? { transform: `scale(${scale})` }
                           : undefined
                       }
-                      className="max-h-10 max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0 md:max-h-12"
+                      className="max-h-10 max-w-full object-contain md:max-h-12"
                     />
                   </div>
                 )
