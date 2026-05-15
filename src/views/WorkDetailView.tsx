@@ -45,10 +45,10 @@ function useSuggestions(currentSlug: string, allProjects: ProjectListItem[]) {
     const fresh = others.filter((p) => !seenSet.has(p.slug ?? ''))
 
     let next: ProjectListItem[]
-    if (fresh.length > 0) {
+    if (fresh.length >= 2) {
       next = fresh.slice(0, 2)
     } else {
-      // Portfolio completo — reset y vuelve desde cero
+      // Quedan 0 o 1 — reset y vuelve desde cero para siempre mostrar 2
       seen = [currentSlug]
       next = others.slice(0, 2)
     }
