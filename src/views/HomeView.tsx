@@ -100,9 +100,13 @@ function Hero({ content }: { content: HomeContent }) {
             initial="hidden"
             animate="show"
             transition={{ delay: 0.3 }}
-            className="mt-6 max-w-2xl whitespace-pre-line text-base leading-[3] text-white/85 md:mt-8 md:text-lg lg:text-xl"
+            className="mt-6 max-w-2xl text-base leading-[3] text-white/85 md:mt-8 md:text-lg lg:text-xl"
           >
-            {content.heroSubtitle}
+            {content.heroSubtitle.split('\n').map((line, i) => (
+              <span key={i} className={`block ${i > 0 ? 'font-semibold text-white' : ''}`}>
+                {line}
+              </span>
+            ))}
           </motion.p>
         ) : null}
         <motion.form
