@@ -461,7 +461,7 @@ const LOGO_SCALE: Record<string, number> = {
   sernatur: 1.3,
   'the national gallery': 1.15,
   'sala sur': 1.15,
-  'honesto mike': 1.15,
+  'honesto mike': 1.8,
   'dg medios': 1.1,
 }
 
