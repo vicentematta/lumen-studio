@@ -95,4 +95,39 @@ La distribución del silencio visual funciona igual que la del sonido: si ponés
 
 ---
 
+---
+
+## 05 · El CMO no contrata una agencia — se juega el puesto
+
+**Contexto:** Análisis competitivo de BrandLab Chile como referente del mercado de branding estratégico en Santiago. Al estudiar cómo consiguen sus clientes — sin SEO, sin contenido, con 632 visitas al mes — el patrón que emergió no fue un modelo de captación digital. Fue un modelo de confianza personal concentrada en la figura del CMO.
+
+**Input (Matías):** "El CMO se juega la vida al contratar a un Riverhaus. Está fuera en 3 años. Y lo que funciona, lo replica. Un CMO no está leyendo Google ni le importa el SEO — le importa su propio KPI."
+
+**Perspectiva:**
+El CMO no compra branding. Compra certeza. Cuando firma con una agencia, está poniendo su nombre detrás de esa decisión frente a su CEO, su directorio, y su propio historial profesional. Si sale mal, es su presupuesto del año siguiente. Si sale bien, es su caso de éxito para el próximo trabajo.
+
+Eso cambia todo sobre cómo hay que venderle.
+
+No le importa cuántos años de experiencia tiene la agencia en abstracto. Le importa si esa agencia va a hacer que *él* quede bien. Le importa si el equipo que va a trabajar su marca entiende su industria, su presión interna, su jefe. Le importa si el proceso va a ser fácil de defender hacia arriba — con un lenguaje, con métricas, con una lógica que él pueda repetir en una reunión de directorio.
+
+La ventana es corta: el CMO promedio en Chile dura 2-3 años en el mismo rol. En esa ventana tiene que hacer algo visible y permanente. Un buen proyecto de marca es una de las pocas cosas que sobrevive su paso por una empresa. Por eso cuando encuentra una agencia que lo hace quedar bien, no la suelta — y cuando cambia de empresa, la lleva consigo.
+
+Eso explica el modelo de BrandLab: pocas cuentas, muchos proyectos por cuenta, alta fidelidad. No es un modelo de captación — es un modelo de instalación. El problema es que depende de que el CMO no se vaya o no cambie de criterio. Cuando eso pasa, la cuenta se cae entera.
+
+La oportunidad para Riverhaus no es reemplazar ese modelo. Es estar presente en el momento exacto en que ese modelo falla o aún no existe: el CMO nuevo, en su primer trimestre, mirando una marca con problemas, sin agencia instalada, necesitando una perspectiva externa que valide lo que ya está viendo y que lo ayude a construir el argumento para su CEO.
+
+Ese CMO no está buscando en Google. Pero sí está leyendo LinkedIn a las 11pm. Sí presta atención cuando alguien de su red habla con criterio sobre lo que él está viviendo. Sí recuerda quién lo contactó con una idea relevante antes de que él tuviera el problema claro.
+
+**Principio:**
+> No vendas branding. Aparece antes de que el CMO sepa que te necesita, con el lenguaje de su problema — no el tuyo.
+
+**Aplicación práctica:**
+- El pipeline real de Riverhaus no es "empresas que necesitan branding." Es "CMOs en su primer trimestre en un nuevo rol, con una marca que tiene problemas visibles."
+- Contenido en LinkedIn debe hablar el idioma del CMO: presupuesto justificable, resultado defendible ante el CEO, proceso sin sorpresas.
+- Los casos de estudio no son para mostrar qué hizo Riverhaus — son para mostrar cómo quedó el CMO que apostó por Riverhaus.
+- Una cuenta bien servida no termina cuando termina el proyecto. Termina cuando el CMO se va — y ahí empieza la siguiente cuenta, en su nueva empresa.
+- La métrica de éxito de un proyecto no es la aprobación del cliente. Es si ese CMO nos presenta a alguien más.
+
+---
+
 *Próximas entradas: tipografía como posicionamiento · el rol del silencio en el diseño dark · por qué los formularios de contacto mienten sobre la marca*

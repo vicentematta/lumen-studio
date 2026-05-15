@@ -663,7 +663,7 @@ function ProjectNavCard({ project }: NavCardProps) {
                 {project.client}
               </p>
               {project.title ? (
-                <p className="mt-1 font-display text-body italic text-white/60">
+                <p className="mt-1 font-body text-body italic text-white/60">
                   {project.title}
                 </p>
               ) : null}
