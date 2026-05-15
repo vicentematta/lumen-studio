@@ -1,14 +1,12 @@
 /**
- * Sanity client para uso EN SERVER COMPONENTS de Next.js.
+ * Sanity clients para Next.js App Router.
  *
- * - Usa el wrapper de next-sanity (integra con el cache de Next.js para ISR)
- * - Sin stega (Vite legacy lo necesita; Next.js usa Visual Editing por otro path en M5)
- * - useCdn=true en producción → respuestas servidas desde CDN edge
- *
- * NO importar desde Client Components ('use client'). Para client-side queries,
- * usar el legacy client en `@/lib/sanity` (que se elimina en M6).
+ * - sanityServer   → contenido publicado, CDN, sin token (rutas públicas)
+ * - sanityDraft    → borradores + stega encoding, con token Editor (draft mode)
+ * - sanityFetch()  → selector automático según draftMode() de Next.js
  */
 import { createClient } from 'next-sanity'
+import { draftMode } from 'next/headers'
 
 export const projectId =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? 'v9k35bzt'
@@ -20,33 +18,50 @@ if (!projectId) {
   throw new Error('Missing NEXT_PUBLIC_SANITY_PROJECT_ID en .env.local')
 }
 
+// Cliente público — producción, CDN, solo contenido publicado
 export const sanityServer = createClient({
   projectId,
   dataset,
   apiVersion,
   useCdn: true,
   perspective: 'published',
+  stega: false,
+})
+
+// Cliente draft — borradores en tiempo real, stega encoding para click-to-edit
+export const sanityDraft = createClient({
+  projectId,
+  dataset,
+  apiVersion,
+  useCdn: false,
+  perspective: 'previewDrafts',
+  token: process.env.SANITY_API_READ_TOKEN,
+  stega: {
+    enabled: true,
+    studioUrl: '/studio',
+  },
 })
 
 /**
- * Helper para fetch con tags de Next (revalidación granular vía webhook).
+ * Fetch con selección automática de cliente según draft mode.
  *
- * Uso típico:
- *   const data = await sanityFetch(QUERY, { tags: ['homePage'] })
+ * - Modo normal:  sanityServer (ISR cache, contenido publicado)
+ * - Draft mode:   sanityDraft  (sin cache, borradores, stega encoding)
  *
- * Cuando un documento de tipo homePage se publica en Sanity, un webhook
- * llama a /api/revalidate con tag='homePage' → Next.js invalida la cache
- * de esta query → próxima request regenera la página.
+ * Las tags de revalidación siguen activas en modo normal para el webhook.
  */
 export async function sanityFetch<T>(
   query: string,
   params: Record<string, unknown> = {},
   options: { tags?: string[]; revalidate?: number | false } = {},
 ): Promise<T> {
-  return sanityServer.fetch<T>(query, params, {
+  const { isEnabled: isDraft } = await draftMode()
+  const client = isDraft ? sanityDraft : sanityServer
+
+  return client.fetch<T>(query, params, {
     next: {
       tags: options.tags,
-      revalidate: options.revalidate ?? 60, // default 60s
+      revalidate: isDraft ? 0 : (options.revalidate ?? 60),
     },
   })
 }

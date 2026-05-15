@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
     root: path.resolve(__dirname),
   },
 
+  // Necesario para el Studio embebido — sanity y styled-components usan
+  // CJS/ESM mixtos que Turbopack no transpila por defecto
+  transpilePackages: ['sanity', 'styled-components', '@sanity/ui', '@sanity/icons'],
+
   // Las páginas Vite legacy viven en src/pages — excluirlas para que Next
   // no las trate como Pages Router mientras hacemos la migración M2-M6
   pageExtensions: ['tsx', 'ts'],
