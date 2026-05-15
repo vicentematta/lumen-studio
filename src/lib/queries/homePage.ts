@@ -24,6 +24,7 @@ export interface HomeContent {
   // Hero
   heroTitle: string | null
   heroSubtitle: string | null
+  heroSubtitle2: string | null
   heroPrimaryLabel: string | null
   heroSecondaryLabel: string | null
   // Post-Hero empathetic
@@ -63,7 +64,7 @@ export interface HomeContent {
 
 const QUERY = `*[_type == "homePage"][0]{
   _id,
-  heroTitle, heroSubtitle, heroPrimaryLabel, heroSecondaryLabel,
+  heroTitle, heroSubtitle, heroSubtitle2, heroPrimaryLabel, heroSecondaryLabel,
   aboutEyebrow, aboutTitle, aboutBody,
   featuredMethodLabel, featuredMethodBody, featuredExploreLabel,
   philosophyTitle,

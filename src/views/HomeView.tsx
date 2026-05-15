@@ -94,20 +94,25 @@ function Hero({ content }: { content: HomeContent }) {
         >
           {content.heroTitle}
         </motion.h1>
-        {content.heroSubtitle ? (
-          <motion.p
+        {(content.heroSubtitle || content.heroSubtitle2) ? (
+          <motion.div
             variants={fadeRise}
             initial="hidden"
             animate="show"
             transition={{ delay: 0.3 }}
-            className="mt-6 max-w-2xl text-base leading-[3] text-white/85 md:mt-8 md:text-lg lg:text-xl"
+            className="mt-6 max-w-2xl md:mt-8"
           >
-            {content.heroSubtitle.split('\n').map((line, i) => (
-              <span key={i} className={`block ${i > 0 ? 'font-semibold text-white' : ''}`}>
-                {line}
-              </span>
-            ))}
-          </motion.p>
+            {content.heroSubtitle ? (
+              <p className="text-base text-white/75 md:text-lg lg:text-xl">
+                {content.heroSubtitle}
+              </p>
+            ) : null}
+            {content.heroSubtitle2 ? (
+              <p className="mt-4 text-base font-semibold text-white md:text-lg lg:text-xl">
+                {content.heroSubtitle2}
+              </p>
+            ) : null}
+          </motion.div>
         ) : null}
         <motion.form
           variants={fadeRise}
