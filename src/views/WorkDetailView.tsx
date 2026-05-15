@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, Volume2, VolumeX } from 'lucide-react'
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
 import { GlassCard } from '@/components/ui/GlassCard'
@@ -391,6 +391,42 @@ function ImageBlock({ block }: BlockProps) {
   )
 }
 
+function VideoWithUnmute({ src, poster, rounded }: { src: string; poster?: string; rounded?: boolean }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [muted, setMuted] = useState(true)
+
+  function toggleMute() {
+    if (!videoRef.current) return
+    const next = !muted
+    videoRef.current.muted = next
+    setMuted(next)
+  }
+
+  return (
+    <div className="relative">
+      <video
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        style={{ maxHeight: '80vh', maxWidth: '100%' }}
+        className={`h-auto w-auto ${rounded ? 'rounded-2xl' : ''}`}
+      />
+      <button
+        onClick={toggleMute}
+        aria-label={muted ? 'Activar audio' : 'Silenciar'}
+        className="absolute bottom-4 right-4 liquid-glass flex h-9 w-9 items-center justify-center rounded-full text-white transition-opacity hover:opacity-80"
+      >
+        {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+      </button>
+    </div>
+  )
+}
+
 function VideoBlock({ block }: BlockProps) {
   if (!block.url) return null
   const contained = block.layout === 'contained'
@@ -398,16 +434,10 @@ function VideoBlock({ block }: BlockProps) {
     <section className="px-6 pb-24 md:pb-32">
       <Container width="lg">
         <div className="flex justify-center">
-          <video
+          <VideoWithUnmute
             src={block.url}
             poster={block.poster?.url ?? undefined}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            style={{ maxHeight: '80vh', maxWidth: '100%' }}
-            className={`h-auto w-auto ${block.layout === 'contained' ? 'rounded-2xl' : ''}`}
+            rounded={contained}
           />
         </div>
       </Container>
@@ -424,16 +454,7 @@ function VideoRowBlock({ block }: BlockProps) {
       <Container width="lg">
         <div className={`grid ${cols} gap-4`}>
           {urls.map((url, i) => (
-            <video
-              key={i}
-              src={url}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              className="w-full rounded-2xl object-cover"
-            />
+            <VideoWithUnmute key={i} src={url} rounded />
           ))}
         </div>
       </Container>
