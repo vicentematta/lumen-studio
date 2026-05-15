@@ -13,6 +13,7 @@
  */
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
+import { ScrollToTop } from '@/components/ScrollToTop'
 import { getSiteSettings } from '@/lib/queries/siteSettings'
 
 export default async function SiteLayout({
@@ -24,6 +25,7 @@ export default async function SiteLayout({
 
   return (
     <div className="relative flex min-h-screen flex-col bg-black">
+      <ScrollToTop />
       <Navbar settings={settings} />
       <main className="flex-1">{children}</main>
       <Footer settings={settings} />
