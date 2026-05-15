@@ -4,13 +4,22 @@
 import { sanityFetch } from '../sanity-server'
 
 export interface ProjectBlock {
-  _type: 'textBlock' | 'quoteBlock' | 'statsBlock'
+  _type: 'textBlock' | 'quoteBlock' | 'statsBlock' | 'imageBlock' | 'videoBlock'
   _key: string
+  // textBlock
   eyebrow?: string | null
   title?: string | null
   body?: string | null
+  // quoteBlock
   attribution?: string | null
+  // statsBlock
   items?: Array<{ value: string | null; label: string | null }>
+  // imageBlock
+  image?: { url: string | null; alt: string | null; caption?: string | null } | null
+  layout?: 'full' | 'contained' | 'pair' | null
+  // videoBlock
+  url?: string | null
+  poster?: { url: string | null; alt: string | null } | null
 }
 
 export interface ProjectMetaItem {
@@ -66,7 +75,11 @@ const DETAIL_QUERY = `*[_type == "project" && slug.current == $slug][0]{
     title,
     body,
     attribution,
-    "items": items[]{ value, label }
+    "items": items[]{ value, label },
+    layout,
+    "image": image{ "url": asset->url, alt, caption },
+    "poster": poster{ "url": asset->url, alt },
+    url
   },
   seoDescription
 }`

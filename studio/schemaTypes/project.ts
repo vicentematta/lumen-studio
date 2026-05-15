@@ -106,6 +106,72 @@ export const project = defineType({
           ],
           preview: { prepare: () => ({ title: 'Stats block' }) },
         },
+        {
+          type: 'object',
+          name: 'imageBlock',
+          title: 'Image',
+          fields: [
+            defineField({
+              name: 'image',
+              title: 'Image',
+              type: 'imageWithAlt',
+              validation: (r) => r.required(),
+            }),
+            defineField({
+              name: 'layout',
+              title: 'Layout',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'Full width — edge to edge', value: 'full' },
+                  { title: 'Contained — max width', value: 'contained' },
+                  { title: 'Pair — 2 columnas (subir de a 2)', value: 'pair' },
+                ],
+                layout: 'radio',
+              },
+              initialValue: 'full',
+            }),
+          ],
+          preview: {
+            select: { media: 'image', subtitle: 'layout' },
+            prepare: (v) => ({ title: `Image · ${v.subtitle ?? 'full'}`, media: v.media }),
+          },
+        },
+        {
+          type: 'object',
+          name: 'videoBlock',
+          title: 'Video',
+          fields: [
+            defineField({
+              name: 'url',
+              title: 'Video URL (.mp4 — CloudFront)',
+              type: 'url',
+              validation: (r) => r.required(),
+            }),
+            defineField({
+              name: 'poster',
+              title: 'Poster image (frame de preview)',
+              type: 'imageWithAlt',
+            }),
+            defineField({
+              name: 'layout',
+              title: 'Layout',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'Full width', value: 'full' },
+                  { title: 'Contained', value: 'contained' },
+                ],
+                layout: 'radio',
+              },
+              initialValue: 'full',
+            }),
+          ],
+          preview: {
+            select: { subtitle: 'url' },
+            prepare: (v) => ({ title: `Video · ${v.subtitle?.split('/').pop() ?? ''}` }),
+          },
+        },
       ],
     }),
 

@@ -255,6 +255,10 @@ function BlockRenderer({ block }: BlockProps) {
       return <QuoteBlock block={block} />
     case 'statsBlock':
       return <StatsBlock block={block} />
+    case 'imageBlock':
+      return <ImageBlock block={block} />
+    case 'videoBlock':
+      return <VideoBlock block={block} />
     default:
       return null
   }
@@ -361,6 +365,59 @@ function StatsBlock({ block }: BlockProps) {
           ))}
         </motion.div>
       </Container>
+    </section>
+  )
+}
+
+function ImageBlock({ block }: BlockProps) {
+  if (!block.image?.url) return null
+  const full = block.layout !== 'contained'
+  return (
+    <section className={`pb-6 md:pb-8 ${full ? '' : 'px-6'}`}>
+      {full ? (
+        <img
+          src={block.image.url}
+          alt={block.image.alt ?? ''}
+          className="w-full object-cover"
+          loading="lazy"
+        />
+      ) : (
+        <Container width="lg">
+          <img
+            src={block.image.url}
+            alt={block.image.alt ?? ''}
+            className="w-full rounded-2xl object-cover"
+            loading="lazy"
+          />
+        </Container>
+      )}
+      {block.image.caption ? (
+        <p className={`mt-3 text-xs text-white/30 ${full ? 'px-6' : ''}`}>
+          {block.image.caption}
+        </p>
+      ) : null}
+    </section>
+  )
+}
+
+function VideoBlock({ block }: BlockProps) {
+  if (!block.url) return null
+  const full = block.layout !== 'contained'
+  const video = (
+    <video
+      src={block.url}
+      poster={block.poster?.url ?? undefined}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      className={`w-full object-cover ${full ? '' : 'rounded-2xl'}`}
+    />
+  )
+  return (
+    <section className={`pb-6 md:pb-8 ${full ? '' : 'px-6'}`}>
+      {full ? video : <Container width="lg">{video}</Container>}
     </section>
   )
 }
