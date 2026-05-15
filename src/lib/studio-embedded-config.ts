@@ -14,6 +14,7 @@ const LIVE_URL =
     : 'https://riverhaus.xyz'
 
 export default defineConfig({
+  basePath: '/studio',
   name: 'liquid-glass-studio',
   title: 'Liquid Glass Studio',
   projectId: 'v9k35bzt',
