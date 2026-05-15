@@ -100,7 +100,7 @@ function Hero({ content }: { content: HomeContent }) {
             initial="hidden"
             animate="show"
             transition={{ delay: 0.3 }}
-            className="mt-6 max-w-2xl whitespace-pre-line text-base leading-loose text-white/85 md:mt-8 md:text-lg lg:text-xl"
+            className="mt-6 max-w-2xl whitespace-pre-line text-base leading-[1.75] text-white/85 md:mt-8 md:text-lg lg:text-xl"
           >
             {content.heroSubtitle}
           </motion.p>
