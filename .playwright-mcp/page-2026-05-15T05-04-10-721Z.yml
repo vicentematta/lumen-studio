@@ -1,0 +1,132 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - navigation [ref=e4]:
+        - generic [ref=e5]:
+          - link "Riverhaus" [ref=e6] [cursor=pointer]:
+            - /url: /
+            - img "Riverhaus" [ref=e7]
+          - list [ref=e8]:
+            - listitem [ref=e9]:
+              - link "Trabajos" [ref=e10] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=e11]:
+              - link "Servicios" [ref=e12] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e13]:
+              - link "Nosotros" [ref=e14] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e15]:
+              - link "Inversión" [ref=e16] [cursor=pointer]:
+                - /url: /pricing
+        - link "Agenda un meet" [ref=e20] [cursor=pointer]:
+          - /url: /contact
+          - generic [ref=e21]: Agenda un meet
+    - main [ref=e22]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]: Digital · Copywriting
+          - generic [ref=e28]: ·
+          - generic [ref=e29]: "2024"
+        - paragraph [ref=e30]: Masa Madre Asheville
+        - heading "Empanadas chilenas en Appalachia." [level=1] [ref=e31]
+        - paragraph [ref=e32]: Dirigidas por el fuego, en cocina móvil, hechas a mano.
+        - generic [ref=e33]:
+          - link "Agenda diagnóstico" [ref=e35] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e36]: Agenda diagnóstico
+          - link "Ver proyectos" [ref=e38] [cursor=pointer]:
+            - /url: /work
+            - generic [ref=e39]: Ver proyectos
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - paragraph [ref=e44]: Rol
+          - paragraph [ref=e45]: Estrategia, Identidad Digital, Copywriting bilingüe
+        - generic [ref=e46]:
+          - paragraph [ref=e47]: Duración
+          - paragraph [ref=e48]: 4 semanas
+        - generic [ref=e49]:
+          - paragraph [ref=e50]: Industria
+          - paragraph [ref=e51]: Food / Hospitality
+        - generic [ref=e52]:
+          - paragraph [ref=e53]: Ubicación
+          - paragraph [ref=e54]: Asheville, NC, EE.UU.
+        - generic [ref=e55]:
+          - paragraph [ref=e56]: Servicios
+          - paragraph [ref=e57]: Estrategia · Landing · Copy ES/EN
+      - generic [ref=e60]:
+        - paragraph [ref=e62]: Resumen
+        - paragraph [ref=e64]: En el centro de Appalachia, Masa Madre Asheville produce sus impecables empanadas en horno de leña, en cocina móvil. Necesitaban una landing simple pero con copy que comunicara su autenticidad chilena a un público estadounidense.
+      - button "Activar audio" [ref=e70] [cursor=pointer]:
+        - img [ref=e71]
+      - generic [ref=e76]:
+        - paragraph [ref=e78]: Otros proyectos
+        - generic [ref=e79]:
+          - link "Identidad · Digital ACRES S.A. 25 años de liderazgo, refrescados." [ref=e81] [cursor=pointer]:
+            - /url: /work/acres
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - paragraph [ref=e85]: Identidad · Digital
+                - paragraph [ref=e86]: ACRES S.A.
+                - paragraph [ref=e87]: 25 años de liderazgo, refrescados.
+              - img [ref=e89]
+          - 'link "Audiovisual · Producción #ChileChallenge Sernatur convoca jóvenes desde redes sociales." [ref=e93] [cursor=pointer]':
+            - /url: /work/chilechallenge
+            - generic [ref=e95]:
+              - generic [ref=e96]:
+                - paragraph [ref=e97]: Audiovisual · Producción
+                - paragraph [ref=e98]: "#ChileChallenge"
+                - paragraph [ref=e99]: Sernatur convoca jóvenes desde redes sociales.
+              - img [ref=e101]
+    - contentinfo [ref=e104]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - paragraph [ref=e109]: Tu competencia vende lo mismo que tú
+            - heading "Fortalece tu posición. Supera a tu competencia.." [level=3] [ref=e110]:
+              - text: Fortalece tu posición.
+              - emphasis [ref=e111]: Supera a tu competencia.
+              - text: .
+            - paragraph [ref=e112]: Diagnostiquemos tu posición, construyamos tu diferenciación y apliquémosla donde tu negocio compite — digital o físico.
+            - generic [ref=e113]:
+              - link "Agenda un Meet de 20 mins" [ref=e115] [cursor=pointer]:
+                - /url: /contact
+                - generic [ref=e116]: Agenda un Meet de 20 mins
+              - link "Ver trabajos" [ref=e118] [cursor=pointer]:
+                - /url: /work
+                - generic [ref=e119]: Ver trabajos
+          - generic [ref=e120]:
+            - generic [ref=e121]:
+              - paragraph [ref=e122]: Estudio
+              - list [ref=e123]:
+                - listitem [ref=e124]:
+                  - link "Nosotros" [ref=e125] [cursor=pointer]:
+                    - /url: /about
+                - listitem [ref=e126]:
+                  - link "Trabajos" [ref=e127] [cursor=pointer]:
+                    - /url: /work
+                - listitem [ref=e128]:
+                  - link "Inversión" [ref=e129] [cursor=pointer]:
+                    - /url: /pricing
+            - generic [ref=e130]:
+              - paragraph [ref=e131]: Servicios
+              - list [ref=e132]:
+                - listitem [ref=e133]:
+                  - link "Estrategia Comercial" [ref=e134] [cursor=pointer]:
+                    - /url: /services/estrategia-comercial
+                - listitem [ref=e135]:
+                  - link "Identidad Digital" [ref=e136] [cursor=pointer]:
+                    - /url: /services/identidad-digital
+                - listitem [ref=e137]:
+                  - link "Negocio + Diseño" [ref=e138] [cursor=pointer]:
+                    - /url: /services/negocio-diseno
+            - generic [ref=e139]:
+              - paragraph [ref=e140]: Contacto
+              - list [ref=e141]:
+                - listitem [ref=e142]:
+                  - link "Escríbenos" [ref=e143] [cursor=pointer]:
+                    - /url: /contact
+        - paragraph [ref=e145]: © 2026 RIVERHAUS · Valdivia, Chile
+  - button "Open Next.js Dev Tools" [ref=e151] [cursor=pointer]:
+    - img [ref=e152]
+  - alert [ref=e155]

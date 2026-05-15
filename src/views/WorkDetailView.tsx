@@ -261,6 +261,8 @@ function BlockRenderer({ block }: BlockProps) {
       return <VideoBlock block={block} />
     case 'videoRowBlock':
       return <VideoRowBlock block={block} />
+    case 'mediaColumnsBlock':
+      return <MediaColumnsBlock block={block} />
     default:
       return null
   }
@@ -439,6 +441,33 @@ function VideoBlock({ block }: BlockProps) {
             poster={block.poster?.url ?? undefined}
             rounded={contained}
           />
+        </div>
+      </Container>
+    </section>
+  )
+}
+
+function MediaColumnsBlock({ block }: BlockProps) {
+  return (
+    <section className="px-6 pb-24 md:pb-32">
+      <Container width="lg">
+        <div className="grid grid-cols-3 gap-4 items-start">
+          {/* Columna izquierda — imagen larga */}
+          {block.colImage?.url ? (
+            <div className="overflow-hidden rounded-2xl">
+              <img
+                src={block.colImage.url}
+                alt={block.colImage.alt ?? ''}
+                className="w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          ) : null}
+          {/* Columnas centro y derecha — videos */}
+          <div className="col-span-2 grid grid-cols-2 gap-4 items-start">
+            {block.url1 ? <VideoWithUnmute src={block.url1} rounded /> : null}
+            {block.url2 ? <VideoWithUnmute src={block.url2} rounded /> : null}
+          </div>
         </div>
       </Container>
     </section>

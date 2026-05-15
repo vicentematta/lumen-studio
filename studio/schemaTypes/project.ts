@@ -174,6 +174,17 @@ export const project = defineType({
         },
         {
           type: 'object',
+          name: 'mediaColumnsBlock',
+          title: 'Media Columns (imagen + 2 videos)',
+          fields: [
+            defineField({ name: 'image', title: 'Columna izquierda — imagen', type: 'imageWithAlt' }),
+            defineField({ name: 'url1', title: 'Columna centro — video URL', type: 'url' }),
+            defineField({ name: 'url2', title: 'Columna derecha — video URL', type: 'url' }),
+          ],
+          preview: { prepare: () => ({ title: 'Media Columns · imagen + 2 videos' }) },
+        },
+        {
+          type: 'object',
           name: 'videoRowBlock',
           title: 'Video Row (hasta 3 en fila)',
           fields: [
