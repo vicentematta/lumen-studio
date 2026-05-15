@@ -50,4 +50,27 @@ En este caso la alternativa existía desde el principio: los videos ya estaban h
 
 ---
 
+## 03 · La disposición es seducción — el layout no puede ser plano ni repetitivo
+
+**Contexto:** Al construir las páginas de work con bloques de video e imagen, la primera implementación apilaba todos los elementos verticalmente, en el mismo formato, uno sobre otro.
+
+**Input (Matías):** "Importante es disponer de los elementos de forma atractiva no lineal. Necesitamos seducir a los visitantes. Nada debe ser plano ni repetitivo."
+
+**Perspectiva:**
+Una galería de elementos todos del mismo tamaño y ritmo no es un layout — es una lista. Y una lista no seduce: informa. La diferencia entre un portafolio que convierte y uno que cataloga está en si el ojo del visitante tiene razón para seguir bajando. El ritmo visual — alternancia de formatos, variación de escala, respiración entre bloques — es lo que crea ese impulso.
+
+Disponer contenido de forma atractiva no es decoración: es argumento. Cada cambio de formato dice *esto es diferente a lo anterior, seguí mirando*. La repetición dice *ya sé lo que viene*, y el ojo se desconecta.
+
+**Principio:**
+> El layout es la primera capa de copy. Si es plano, el contenido no importa. Si seduce, el contenido ya ganó la mitad de la batalla antes de ser leído.
+
+**Aplicación práctica:**
+- Mezclar formatos: full-width, contenido en grid, elementos solos + en fila, proporciones distintas.
+- Nunca apilar más de 2 elementos del mismo formato y tamaño consecutivamente.
+- La variación de ritmo no es caos — es arquitectura: cada cambio debe tener una razón compositiva.
+- En portafolios: combinar videos landscape con grillas de portrait, imágenes solas con parejas, texto con silencio visual.
+- El primer elemento y el último de una página tienen peso especial — el primero engancha, el último convierte.
+
+---
+
 *Próximas entradas: tipografía como posicionamiento · el rol del silencio en el diseño dark · por qué los formularios de contacto mienten sobre la marca*
