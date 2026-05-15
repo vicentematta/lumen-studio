@@ -150,9 +150,11 @@ export const project = defineType({
             }),
             defineField({
               name: 'poster',
-              title: 'Poster image (frame de preview)',
+              title: 'Poster image (frame de preview — Sanity)',
               type: 'imageWithAlt',
             }),
+            defineField({ name: 'posterUrl', title: 'Poster URL externa (Cargo CDN)', type: 'url' }),
+            defineField({ name: 'posterAlt', title: 'Poster alt text', type: 'string' }),
             defineField({
               name: 'layout',
               title: 'Layout',
@@ -175,13 +177,58 @@ export const project = defineType({
         {
           type: 'object',
           name: 'mediaColumnsBlock',
-          title: 'Media Columns (imagen + 2 videos)',
+          title: 'Media Columns (imagen izq + items der)',
           fields: [
-            defineField({ name: 'image', title: 'Columna izquierda — imagen', type: 'imageWithAlt' }),
-            defineField({ name: 'url1', title: 'Columna centro — video URL', type: 'url' }),
-            defineField({ name: 'url2', title: 'Columna derecha — video URL', type: 'url' }),
+            defineField({ name: 'image', title: 'Columna izquierda — imagen Sanity', type: 'imageWithAlt' }),
+            defineField({ name: 'leftImageUrl', title: 'Columna izquierda — URL externa (Cargo CDN)', type: 'url' }),
+            defineField({ name: 'leftImageAlt', title: 'Columna izquierda — alt text', type: 'string' }),
+            defineField({
+              name: 'rightItems',
+              title: 'Columna derecha — items',
+              type: 'array',
+              of: [
+                {
+                  type: 'object',
+                  name: 'videoItem',
+                  title: 'Video',
+                  fields: [
+                    defineField({ name: 'url', title: 'Video URL (.mp4)', type: 'url' }),
+                    defineField({ name: 'alt', title: 'Descripción / alt', type: 'string' }),
+                  ],
+                  preview: {
+                    select: { subtitle: 'url' },
+                    prepare: (v: { subtitle?: string }) => ({ title: `Video · ${v.subtitle?.split('/').pop() ?? ''}` }),
+                  },
+                },
+                {
+                  type: 'object',
+                  name: 'imageItem',
+                  title: 'Imagen',
+                  fields: [
+                    defineField({ name: 'url', title: 'URL imagen (Cargo CDN)', type: 'url' }),
+                    defineField({ name: 'alt', title: 'Alt text', type: 'string' }),
+                    defineField({ name: 'widthPct', title: 'Ancho (%)', type: 'number', initialValue: 100, description: 'Porcentaje del ancho de la columna. Ej: 60 = 60%' }),
+                  ],
+                  preview: {
+                    select: { subtitle: 'url' },
+                    prepare: (v: { subtitle?: string }) => ({ title: `Imagen · ${v.subtitle?.split('/').pop() ?? ''}` }),
+                  },
+                },
+                {
+                  type: 'object',
+                  name: 'spacerItem',
+                  title: 'Espacio',
+                  fields: [
+                    defineField({ name: 'height', title: 'Altura (px)', type: 'number', initialValue: 80 }),
+                  ],
+                  preview: { prepare: () => ({ title: '— Espacio' }) },
+                },
+              ],
+            }),
+            defineField({ name: 'url1', title: '[Legacy] Video 1', type: 'url', hidden: true }),
+            defineField({ name: 'url2', title: '[Legacy] Video 2', type: 'url', hidden: true }),
           ],
-          preview: { prepare: () => ({ title: 'Media Columns · imagen + 2 videos' }) },
+          preview: { prepare: () => ({ title: 'Media Columns · imagen + media' }) },
         },
         {
           type: 'object',

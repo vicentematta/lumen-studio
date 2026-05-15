@@ -20,11 +20,31 @@ export interface ProjectBlock {
   // videoBlock
   url?: string | null
   poster?: { url: string | null; alt: string | null } | null
+  posterUrl?: string | null
+  posterAlt?: string | null
+  // videoRowBlock + mediaColumnsBlock legacy
+  url1?: string | null
+  url2?: string | null
+  url3?: string | null
+  // mediaColumnsBlock
+  colImage?: { url: string | null; alt: string | null } | null
+  leftImageUrl?: string | null
+  leftImageAlt?: string | null
+  rightItems?: ProjectRightItem[] | null
 }
 
 export interface ProjectMetaItem {
   label: string | null
   value: string | null
+}
+
+export interface ProjectRightItem {
+  _type: 'videoItem' | 'imageItem' | 'spacerItem'
+  _key: string
+  url?: string | null
+  alt?: string | null
+  height?: number | null
+  widthPct?: number | null
 }
 
 export interface ProjectListItem {
@@ -34,6 +54,7 @@ export interface ProjectListItem {
   title: string | null
   category: string | null
   year: string | null
+  heroVideoUrl?: string | null
 }
 
 export interface ProjectDoc extends ProjectListItem {
@@ -52,7 +73,12 @@ const LIST_QUERY = `*[_type == "project"] | order(_createdAt asc){
   client,
   "title":    coalesce(title.es,    title.en),
   "category": coalesce(category.es, category.en),
-  year
+  year,
+  "heroVideoUrl": coalesce(
+    blocks[_type == "videoBlock"][0].url,
+    blocks[_type == "videoRowBlock"][0].url1,
+    blocks[_type == "mediaColumnsBlock"][0].rightItems[_type == "videoItem"][0].url
+  )
 }`
 
 const DETAIL_QUERY = `*[_type == "project" && slug.current == $slug][0]{
@@ -79,9 +105,21 @@ const DETAIL_QUERY = `*[_type == "project" && slug.current == $slug][0]{
     layout,
     "image": image{ "url": asset->url, alt, caption },
     "poster": poster{ "url": asset->url, alt },
+    posterUrl,
+    posterAlt,
     url,
     url1, url2, url3,
-    "colImage": image{ "url": asset->url, alt }
+    "colImage": image{ "url": asset->url, alt },
+    leftImageUrl,
+    leftImageAlt,
+    "rightItems": rightItems[]{
+      _type,
+      _key,
+      url,
+      alt,
+      height,
+      widthPct
+    }
   },
   seoDescription
 }`

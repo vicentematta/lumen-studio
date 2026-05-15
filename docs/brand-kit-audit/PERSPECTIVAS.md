@@ -73,4 +73,26 @@ Disponer contenido de forma atractiva no es decoración: es argumento. Cada camb
 
 ---
 
+---
+
+## 04 · El espacio vacío solo construye ritmo cuando está distribuido
+
+**Contexto:** Al construir la columna derecha del layout DDR, se colocó un único spacer entre dos ítems. Ese spacer absorbió todo el espacio disponible (~600px), creando un agujero visual en el centro mientras los demás ítems quedaban comprimidos en los extremos.
+
+**Perspectiva:**
+Un espaciador único en una columna larga no distribuye — concentra. Todo el aire del diseño colapsa en un punto, produciendo el efecto opuesto a la intención: en vez de ritmo, una fractura. El ojo siente que algo falta, no que algo respira.
+
+La distribución del silencio visual funciona igual que la del sonido: si ponés toda la pausa en un compás y el resto del tema es continuo, no es ritmo — es un corte y un ruido.
+
+**Principio:**
+> El espacio en blanco construye ritmo solo cuando está repartido. Un espacio único y masivo no es respiración — es un error de composición.
+
+**Aplicación práctica:**
+- En columnas con múltiples ítems de distinto peso visual: colocar un spacer entre cada par de ítems consecutivos.
+- Patrón correcto: ítem → espacio → ítem → espacio → ítem → espacio → ítem.
+- Nunca: ítem → ítem → ESPACIO ENORME → ítem → ítem.
+- El aire entre elementos debe ser proporcional y consistente — no un residuo de lo que sobró.
+
+---
+
 *Próximas entradas: tipografía como posicionamiento · el rol del silencio en el diseño dark · por qué los formularios de contacto mienten sobre la marca*

@@ -434,11 +434,11 @@ function VideoBlock({ block }: BlockProps) {
   const contained = block.layout === 'contained'
   return (
     <section className="px-6 pb-24 md:pb-32">
-      <Container width="lg">
+      <Container width={contained ? 'sm' : 'lg'}>
         <div className="flex justify-center">
           <VideoWithUnmute
             src={block.url}
-            poster={block.poster?.url ?? undefined}
+            poster={block.posterUrl ?? block.poster?.url ?? undefined}
             rounded={contained}
           />
         </div>
@@ -447,27 +447,34 @@ function VideoBlock({ block }: BlockProps) {
   )
 }
 
-function MediaColVideo({ src }: { src: string }) {
+function RightColumnVideo({ src, alt }: { src: string; alt?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [muted, setMuted] = useState(true)
+
   function toggleMute() {
     if (!videoRef.current) return
     const next = !muted
     videoRef.current.muted = next
     setMuted(next)
   }
+
   return (
-    <div className="relative h-full overflow-hidden rounded-2xl">
+    <div className="relative overflow-hidden rounded-2xl">
       <video
         ref={videoRef}
         src={src}
-        autoPlay muted loop playsInline preload="metadata"
-        className="h-full w-full object-cover"
+        aria-label={alt || undefined}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="h-auto w-full"
       />
       <button
         onClick={toggleMute}
         aria-label={muted ? 'Activar audio' : 'Silenciar'}
-        className="absolute bottom-3 right-3 liquid-glass flex h-8 w-8 items-center justify-center rounded-full text-white"
+        className="absolute bottom-3 right-3 liquid-glass flex h-8 w-8 items-center justify-center rounded-full text-white transition-opacity hover:opacity-80"
       >
         {muted ? <VolumeX className="h-3 w-3" /> : <Volume2 className="h-3 w-3" />}
       </button>
@@ -476,25 +483,59 @@ function MediaColVideo({ src }: { src: string }) {
 }
 
 function MediaColumnsBlock({ block }: BlockProps) {
+  const leftUrl = block.leftImageUrl ?? block.colImage?.url
+  const leftAlt = block.leftImageAlt ?? block.colImage?.alt ?? ''
+  const items = block.rightItems ?? []
+  const legacyUrls = [block.url1, block.url2].filter((u): u is string => Boolean(u))
+
   return (
     <section className="px-6 pb-24 md:pb-32">
       <Container width="lg">
-        <div className="grid grid-cols-3 gap-4" style={{ height: '80vh' }}>
-          {/* Columna izquierda — imagen larga recortada por arriba */}
-          {block.colImage?.url ? (
+        <div className={`grid gap-6 ${leftUrl ? 'grid-cols-[1fr_2fr]' : 'grid-cols-1'}`}>
+          {/* Columna izquierda — imagen a altura natural */}
+          {leftUrl ? (
             <div className="overflow-hidden rounded-2xl">
               <img
-                src={block.colImage.url}
-                alt={block.colImage.alt ?? ''}
-                className="h-full w-full object-cover object-top"
+                src={leftUrl}
+                alt={leftAlt}
+                className="h-auto w-full"
                 loading="lazy"
               />
             </div>
           ) : null}
-          {/* Columnas centro y derecha — videos apilados */}
-          <div className="col-span-2 grid grid-rows-2 gap-4">
-            {block.url1 ? <MediaColVideo src={block.url1} /> : null}
-            {block.url2 ? <MediaColVideo src={block.url2} /> : null}
+
+          {/* Columna derecha — items flexibles, se estiran hasta el final */}
+          <div className="flex h-full flex-col gap-6">
+            {items.length > 0
+              ? items.map((item) => {
+                  if (item._type === 'videoItem' && item.url) {
+                    return <RightColumnVideo key={item._key} src={item.url} alt={item.alt ?? ''} />
+                  }
+                  if (item._type === 'imageItem' && item.url) {
+                    const w = item.widthPct && item.widthPct < 100 ? `${item.widthPct}%` : undefined
+                    return (
+                      <div
+                        key={item._key}
+                        style={w ? { width: w } : undefined}
+                        className={`overflow-hidden rounded-2xl${w ? ' mx-auto' : ''}`}
+                      >
+                        <img
+                          src={item.url}
+                          alt={item.alt ?? ''}
+                          className="w-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                    )
+                  }
+                  if (item._type === 'spacerItem') {
+                    return <div key={item._key} aria-hidden="true" style={{ flexGrow: 1 }} />
+                  }
+                  return null
+                })
+              : legacyUrls.map((url, i) => (
+                  <RightColumnVideo key={i} src={url} />
+                ))}
           </div>
         </div>
       </Container>

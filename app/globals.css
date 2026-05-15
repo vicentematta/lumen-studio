@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes film-grain {
+  0%   { transform: translate(0, 0) }
+  20%  { transform: translate(-3%, -4%) }
+  40%  { transform: translate(2%, 3%) }
+  60%  { transform: translate(-2%, 1%) }
+  80%  { transform: translate(3%, -2%) }
+  100% { transform: translate(0, 0) }
+}
+.film-grain { animation: film-grain 0.35s steps(5) infinite; }
+
 /* ════════════════════════════════════════════════════════════
    Riverhaus brand kit v1.5 · Dark theme (primario) por defecto
    Light theme se activa con [data-theme="light"] en un ancestor.
