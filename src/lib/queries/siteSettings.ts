@@ -21,6 +21,7 @@ export interface SiteSettings {
   footerCopyright: string | null
 
   // Top navbar
+  navCtaLabel: string | null
   navLinkServices: string | null
   navLinkPricing: string | null
 
@@ -49,7 +50,7 @@ const QUERY = `*[_type == "siteSettings"][0]{
   siteName, siteTagline,
   footerEyebrow, footerHeading, footerHeadingItalic, footerSubtitle,
   footerCtaBook, footerCtaWork, footerCopyright,
-  navLinkServices, navLinkPricing,
+  navCtaLabel, navLinkServices, navLinkPricing,
   navCol1Heading, navLinkAbout, navLinkWork,
   navCol2Heading, navLinkStrategy, navLinkDesign, navLinkEngineering,
   navCol3Heading, navLinkContact, navLinkLogin, navLinkSignup,

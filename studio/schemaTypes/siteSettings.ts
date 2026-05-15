@@ -22,6 +22,8 @@ export const siteSettings = defineType({
     defineField({ name: 'footerCopyright', title: 'Footer · Copyright text', type: 'string' }),
 
     // ── Top Navbar ────────────────────────────────────────────────────────
+    defineField({ name: 'navCtaLabel', title: 'Nav · CTA button label', type: 'string',
+      description: 'Texto del botón de acción en la barra de navegación. Ej: "Agenda un meet"' }),
     defineField({ name: 'navLinkServices', title: 'Nav · Services label', type: 'string' }),
     defineField({ name: 'navLinkPricing', title: 'Nav · Pricing label', type: 'string' }),
 
