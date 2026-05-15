@@ -16,11 +16,10 @@ import {
 } from '@/lib/motion'
 import type { ProjectBlock, ProjectDoc, ProjectListItem } from '@/lib/queries/projects'
 
-const STORAGE_KEY = 'rh_visited_work'
+const STORAGE_KEY = 'rh_seen_work'
 
 function useSuggestions(currentSlug: string, allProjects: ProjectListItem[]) {
   const [suggestions, setSuggestions] = useState<ProjectListItem[]>([])
-  // Ref para acceder a allProjects sin ponerlo en deps (es estable por página)
   const projectsRef = useRef(allProjects)
   projectsRef.current = allProjects
 
@@ -29,36 +28,37 @@ function useSuggestions(currentSlug: string, allProjects: ProjectListItem[]) {
     const others = all.filter((p) => p.slug !== currentSlug)
     if (others.length === 0) return
 
-    // Leer historial
-    let visitedList: string[]
+    // "Seen" = visitado O mostrado como sugerencia. Una vez visto, no vuelve.
+    let seen: string[]
     try {
-      visitedList = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]')
-      if (!Array.isArray(visitedList)) visitedList = []
+      seen = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]')
+      if (!Array.isArray(seen)) seen = []
     } catch {
-      visitedList = []
+      seen = []
     }
 
-    // Marcar el actual como visto (si no estaba ya)
-    if (!visitedList.includes(currentSlug)) {
-      visitedList = [...visitedList, currentSlug]
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(visitedList))
-    }
+    // Marcar página actual como vista
+    if (!seen.includes(currentSlug)) seen = [...seen, currentSlug]
 
-    const visitedSet = new Set(visitedList)
-    const unvisited = others.filter((p) => !visitedSet.has(p.slug ?? ''))
+    // Proyectos que el visitante aún no ha visto ni le hemos sugerido
+    const seenSet = new Set(seen)
+    const fresh = others.filter((p) => !seenSet.has(p.slug ?? ''))
 
-    if (unvisited.length >= 2) {
-      setSuggestions(unvisited.slice(0, 2))
-    } else if (unvisited.length === 1) {
-      // Queda uno — rellena con el primero visitado que no sea el actual
-      const fallback = others.filter((p) => visitedSet.has(p.slug ?? '')).slice(0, 1)
-      setSuggestions([unvisited[0], ...fallback])
+    let next: ProjectListItem[]
+    if (fresh.length > 0) {
+      next = fresh.slice(0, 2)
     } else {
-      // Todos vistos — reset: borra historial y empieza desde cero
-      localStorage.setItem(STORAGE_KEY, JSON.stringify([currentSlug]))
-      setSuggestions(others.slice(0, 2))
+      // Portfolio completo — reset y vuelve desde cero
+      seen = [currentSlug]
+      next = others.slice(0, 2)
     }
-  }, [currentSlug]) // Solo cambia cuando cambia la página, no el array
+
+    // Marcar los que vamos a mostrar como "vistos" ya en este momento
+    next.forEach((p) => { if (p.slug && !seen.includes(p.slug)) seen = [...seen, p.slug] })
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(seen))
+
+    setSuggestions(next)
+  }, [currentSlug])
 
   return suggestions
 }
