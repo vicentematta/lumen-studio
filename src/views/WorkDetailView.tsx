@@ -373,7 +373,7 @@ function ImageBlock({ block }: BlockProps) {
   if (!block.image?.url) return null
   const contained = block.layout === 'contained'
   return (
-    <section className="px-6 pb-6 md:pb-8">
+    <section className="px-6 pb-24 md:pb-32">
       <Container width="lg">
         <img
           src={block.image.url}
@@ -405,7 +405,7 @@ function VideoBlock({ block }: BlockProps) {
     />
   )
   return (
-    <section className="px-6 pb-6 md:pb-8">
+    <section className="px-6 pb-24 md:pb-32">
       <Container width="lg">{video}</Container>
     </section>
   )
