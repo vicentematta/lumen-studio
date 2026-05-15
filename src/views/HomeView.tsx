@@ -108,7 +108,7 @@ function Hero({ content }: { content: HomeContent }) {
               </p>
             ) : null}
             {content.heroSubtitle2 ? (
-              <p className="mt-[0.4rem] text-base italic text-white/75 md:text-lg lg:text-xl">
+              <p className="mt-[0.35rem] text-base italic text-white/75 md:text-lg lg:text-xl">
                 {content.heroSubtitle2}
               </p>
             ) : null}
