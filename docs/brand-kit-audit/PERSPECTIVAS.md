@@ -26,4 +26,28 @@ La web que cuida ese detalle comunica algo distinto: *te estoy prestando atenci�
 
 ---
 
+## 02 · No asumir gasto sin preguntar — y cuando preguntes, lleva alternativas
+
+**Contexto:** Al integrar videos en los proyectos de /work, subí un archivo directamente a Sanity sin consultar si el cliente tenía plan de almacenamiento o estaba dispuesto a pagar ese costo. El archivo fue borrado, pero el error ya había ocurrido.
+
+**Input (Matías):** "No asumas que voy a comprar espacio en Sanity. Pregunta antes de facilitar implementación de cobro. Y si lo haces, hazlo al menos entregando alternativas para optimizar recursos."
+
+**Perspectiva:**
+El costo de una decisión técnica no es solo técnico. Cuando un agente (humano o IA) ejecuta algo que genera un costo sin consultar, está tomando una decisión financiera por cuenta ajena. Eso no es eficiencia — es descuido disfrazado de proactividad.
+
+El estándar correcto tiene dos partes: primero, preguntar antes de cualquier acción que implique gasto nuevo. Segundo, si vas a proponer algo que tiene costo, llegar con las alternativas ya mapeadas — no solo el camino caro, sino también el camino gratis y el camino intermedio — para que la decisión sea informada y el cliente elija con contexto, no con presión.
+
+En este caso la alternativa existía desde el principio: los videos ya estaban hosteados en Cargo, que el cliente ya paga. No era necesario subirlos a ningún lado.
+
+**Principio:**
+> Antes de ejecutar cualquier acción con costo, preguntar. Y cuando preguntes, llegar con alternativas — la opción cara, la opción gratis, y por qué cada una.
+
+**Aplicación práctica:**
+- Almacenamiento de media: usar primero lo que ya está pagado (Cargo CDN, Cloudfront existente, repositorio propio).
+- Antes de proponer una plataforma de pago, auditar qué infraestructura tiene activa el cliente.
+- El camino de menor fricción económica es casi siempre el correcto hasta que haya una razón técnica concreta para escalarlo.
+- Nunca ejecutar un upload, una suscripción o un deployment de pago sin confirmación explícita.
+
+---
+
 *Próximas entradas: tipografía como posicionamiento · el rol del silencio en el diseño dark · por qué los formularios de contacto mienten sobre la marca*
