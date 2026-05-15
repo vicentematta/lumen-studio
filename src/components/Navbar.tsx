@@ -21,7 +21,6 @@ export function Navbar({ settings }: Props) {
     { label: settings?.navLinkServices ?? '', href: '/services' },
     { label: settings?.navLinkAbout ?? '', href: '/about' },
     { label: settings?.navLinkPricing ?? '', href: '/pricing' },
-    { label: settings?.navLinkContact ?? '', href: '/contact' },
   ]
 
   return (
@@ -61,7 +60,7 @@ export function Navbar({ settings }: Props) {
         <div className="flex items-center gap-3">
           {/* CTA: solo desde lg (≥1024px). Apunta a /contact (Auth eliminado en M2a) */}
           <div className="hidden lg:block">
-            <GlassButton to="/contact" variant="glass-strong" size="sm" className="whitespace-nowrap">
+            <GlassButton to="/contact" variant="solid" size="sm" className="whitespace-nowrap">
               {settings?.navCtaLabel ?? 'Agenda diagnóstico'}
             </GlassButton>
           </div>
@@ -93,7 +92,7 @@ export function Navbar({ settings }: Props) {
             <li className="mt-2 px-4">
               <GlassButton
                 to="/contact"
-                variant="glass-strong"
+                variant="solid"
                 size="sm"
                 className="w-full justify-center"
                 onClick={() => setOpen(false)}
