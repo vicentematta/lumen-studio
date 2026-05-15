@@ -392,21 +392,23 @@ function ImageBlock({ block }: BlockProps) {
 function VideoBlock({ block }: BlockProps) {
   if (!block.url) return null
   const contained = block.layout === 'contained'
-  const video = (
-    <video
-      src={block.url}
-      poster={block.poster?.url ?? undefined}
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="metadata"
-      className={`w-full object-cover ${contained ? 'rounded-2xl' : ''}`}
-    />
-  )
   return (
     <section className="px-6 pb-24 md:pb-32">
-      <Container width="lg">{video}</Container>
+      <Container width="lg">
+        <div className="flex justify-center">
+          <video
+            src={block.url}
+            poster={block.poster?.url ?? undefined}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            style={{ maxHeight: '80vh', maxWidth: '100%' }}
+            className={`h-auto w-auto ${contained ? 'rounded-2xl' : ''}`}
+          />
+        </div>
+      </Container>
     </section>
   )
 }
