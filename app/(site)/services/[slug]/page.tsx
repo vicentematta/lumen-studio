@@ -6,6 +6,7 @@ import {
   getServiceSlugs,
 } from '@/lib/queries/services'
 import { ServiceDetailView } from '@/views/ServiceDetailView'
+import { serviceSchema, breadcrumbSchema, serializeSchema } from '@/lib/jsonld'
 
 /**
  * generateStaticParams pre-renderiza todas las páginas de servicios en
@@ -58,5 +59,23 @@ export default async function ServiceDetailPage({ params }: Props) {
       ? allServices[(idx + 1) % total]
       : ({ ...service, _id: service._id })
 
-  return <ServiceDetailView service={service} prev={prev} next={next} />
+  const ldJson = serializeSchema(
+    serviceSchema({
+      name: service.name ?? service.slug ?? '',
+      slug: service.slug ?? '',
+      description: service.seoDescription ?? service.summary,
+    }),
+    breadcrumbSchema([
+      { name: 'Inicio', href: '/' },
+      { name: 'Servicios', href: '/services' },
+      { name: service.name ?? '' },
+    ]),
+  )
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson }} />
+      <ServiceDetailView service={service} prev={prev} next={next} />
+    </>
+  )
 }

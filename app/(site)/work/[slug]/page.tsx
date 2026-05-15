@@ -6,6 +6,7 @@ import {
   getProjectSlugs,
 } from '@/lib/queries/projects'
 import { WorkDetailView } from '@/views/WorkDetailView'
+import { creativeWorkSchema, breadcrumbSchema, serializeSchema } from '@/lib/jsonld'
 
 export async function generateStaticParams() {
   const slugs = await getProjectSlugs()
@@ -48,5 +49,26 @@ export default async function WorkDetailPage({ params }: Props) {
       ? allProjects[(idx + 1) % total]
       : { ...project }
 
-  return <WorkDetailView project={project} prev={prev} next={next} />
+  const ldJson = serializeSchema(
+    creativeWorkSchema({
+      client: project.client ?? '',
+      title: project.title,
+      slug: project.slug ?? '',
+      year: project.year,
+      category: project.category,
+      description: project.seoDescription ?? project.overview,
+    }),
+    breadcrumbSchema([
+      { name: 'Inicio', href: '/' },
+      { name: 'Proyectos', href: '/work' },
+      { name: project.client ?? '' },
+    ]),
+  )
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: ldJson }} />
+      <WorkDetailView project={project} prev={prev} next={next} />
+    </>
+  )
 }

@@ -2,6 +2,13 @@ import type { Metadata, Viewport } from 'next'
 import { Instrument_Serif, Instrument_Sans } from 'next/font/google'
 import { draftMode } from 'next/headers'
 import { VisualEditing } from 'next-sanity/visual-editing'
+import {
+  organizationSchema,
+  localBusinessSchema,
+  personSchema,
+  websiteSchema,
+  serializeSchema,
+} from '@/lib/jsonld'
 import './globals.css'
 
 const instrumentSerif = Instrument_Serif({
@@ -78,6 +85,19 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       className={`${instrumentSerif.variable} ${instrumentSans.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeSchema(
+              organizationSchema(),
+              localBusinessSchema(),
+              personSchema(),
+              websiteSchema(),
+            ),
+          }}
+        />
+      </head>
       {/* suppressHydrationWarning ignora atributos inyectados por extensiones
           de Chrome (ColorZilla, Grammarly, etc.) que añaden al <body> antes
           de que React hidrate. Sin esto, React tira un warning permanente. */}
