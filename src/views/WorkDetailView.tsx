@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
-import { ArrowUpRight, Volume2, VolumeX } from 'lucide-react'
+import { ArrowUpRight, Maximize2 } from 'lucide-react'
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
 import { GlassCard } from '@/components/ui/GlassCard'
@@ -17,6 +17,7 @@ import {
 import type { ProjectBlock, ProjectDoc, ProjectListItem } from '@/lib/queries/projects'
 
 const STORAGE_KEY = 'rh_seen_work'
+const HISTORY_KEY = 'rh_work_history' // últimos 2 slugs realmente visitados
 
 function useSuggestions(currentSlug: string, allProjects: ProjectListItem[]) {
   const [suggestions, setSuggestions] = useState<ProjectListItem[]>([])
@@ -28,32 +29,39 @@ function useSuggestions(currentSlug: string, allProjects: ProjectListItem[]) {
     const others = all.filter((p) => p.slug !== currentSlug)
     if (others.length === 0) return
 
-    // "Seen" = visitado O mostrado como sugerencia. Una vez visto, no vuelve.
+    // Historial de navegación real — nunca sugerir los últimos 2 visitados
+    let history: string[]
+    try {
+      history = JSON.parse(localStorage.getItem(HISTORY_KEY) ?? '[]')
+      if (!Array.isArray(history)) history = []
+    } catch { history = [] }
+    history = [currentSlug, ...history.filter((s) => s !== currentSlug)].slice(0, 2)
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history))
+    const neverSuggest = new Set(history)
+
+    // Lista de vistos (visitados + mostrados como sugerencia)
     let seen: string[]
     try {
       seen = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]')
       if (!Array.isArray(seen)) seen = []
-    } catch {
-      seen = []
-    }
-
-    // Marcar página actual como vista
+    } catch { seen = [] }
     if (!seen.includes(currentSlug)) seen = [...seen, currentSlug]
 
-    // Proyectos que el visitante aún no ha visto ni le hemos sugerido
     const seenSet = new Set(seen)
-    const fresh = others.filter((p) => !seenSet.has(p.slug ?? ''))
+    const fresh = others.filter(
+      (p) => !seenSet.has(p.slug ?? '') && !neverSuggest.has(p.slug ?? ''),
+    )
 
     let next: ProjectListItem[]
     if (fresh.length >= 2) {
       next = fresh.slice(0, 2)
     } else {
-      // Quedan 0 o 1 — reset y vuelve desde cero para siempre mostrar 2
+      // Reset del seen — pero los últimos 2 visitados siguen excluidos siempre
       seen = [currentSlug]
-      next = others.slice(0, 2)
+      const resetPool = others.filter((p) => !neverSuggest.has(p.slug ?? ''))
+      next = resetPool.slice(0, 2)
     }
 
-    // Marcar los que vamos a mostrar como "vistos" ya en este momento
     next.forEach((p) => { if (p.slug && !seen.includes(p.slug)) seen = [...seen, p.slug] })
     localStorage.setItem(STORAGE_KEY, JSON.stringify(seen))
 
@@ -419,11 +427,20 @@ function VideoWithUnmute({ src, poster, rounded }: { src: string; poster?: strin
         className={`h-auto w-auto ${rounded ? 'rounded-2xl' : ''}`}
       />
       <button
+        onClick={() => videoRef.current?.requestFullscreen().catch(() => {})}
+        aria-label="Pantalla completa"
+        className="absolute right-4 top-4 liquid-glass flex h-9 w-9 items-center justify-center rounded-full text-white transition-opacity hover:opacity-80"
+      >
+        <Maximize2 className="h-4 w-4" />
+      </button>
+      <button
         onClick={toggleMute}
         aria-label={muted ? 'Activar audio' : 'Silenciar'}
-        className="absolute bottom-4 right-4 liquid-glass flex h-9 w-9 items-center justify-center rounded-full text-white transition-opacity hover:opacity-80"
+        className="absolute bottom-4 right-4 liquid-glass flex items-center rounded-full px-3 py-1.5 text-white transition-opacity hover:opacity-80"
       >
-        {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+        <span className="text-[10px] font-medium uppercase tracking-[0.15em]">
+          {muted ? 'Sound Off' : 'Sound On'}
+        </span>
       </button>
     </div>
   )
@@ -434,7 +451,7 @@ function VideoBlock({ block }: BlockProps) {
   const contained = block.layout === 'contained'
   return (
     <section className="px-6 pb-24 md:pb-32">
-      <Container width={contained ? 'sm' : 'lg'}>
+      <Container width={contained ? 'md' : 'lg'}>
         <div className="flex justify-center">
           <VideoWithUnmute
             src={block.url}
@@ -472,11 +489,20 @@ function RightColumnVideo({ src, alt }: { src: string; alt?: string }) {
         className="h-auto w-full"
       />
       <button
+        onClick={() => videoRef.current?.requestFullscreen().catch(() => {})}
+        aria-label="Pantalla completa"
+        className="absolute right-3 top-3 liquid-glass flex h-8 w-8 items-center justify-center rounded-full text-white transition-opacity hover:opacity-80"
+      >
+        <Maximize2 className="h-3.5 w-3.5" />
+      </button>
+      <button
         onClick={toggleMute}
         aria-label={muted ? 'Activar audio' : 'Silenciar'}
-        className="absolute bottom-3 right-3 liquid-glass flex h-8 w-8 items-center justify-center rounded-full text-white transition-opacity hover:opacity-80"
+        className="absolute bottom-3 right-3 liquid-glass flex items-center rounded-full px-3 py-1.5 text-white transition-opacity hover:opacity-80"
       >
-        {muted ? <VolumeX className="h-3 w-3" /> : <Volume2 className="h-3 w-3" />}
+        <span className="text-[10px] font-medium uppercase tracking-[0.15em]">
+          {muted ? 'Sound Off' : 'Sound On'}
+        </span>
       </button>
     </div>
   )
@@ -567,30 +593,87 @@ interface NavCardProps {
 }
 
 function ProjectNavCard({ project }: NavCardProps) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const startTimeRef = useRef(0)
+
+  function onEnter() {
+    const v = videoRef.current
+    if (!v || !project.heroVideoUrl) return
+    const startPlay = () => {
+      const fromStart = project.slug === 'undurraga-wines'
+      const t = fromStart ? 0 : (v.duration && isFinite(v.duration) ? v.duration / 2 : 0)
+      startTimeRef.current = t
+      v.currentTime = t
+      v.play().catch(() => {})
+    }
+    if (v.readyState >= 1) startPlay()
+    else v.addEventListener('loadedmetadata', startPlay, { once: true })
+  }
+
+  function onLeave() {
+    videoRef.current?.pause()
+  }
+
   return (
-    <Link href={`/work/${project.slug}`} className="group block">
-      <GlassCard rounded="3xl" className="overflow-hidden">
-        <div className="flex items-center justify-between gap-4 px-6 py-8 md:px-8 md:py-10">
-          <div className="min-w-0">
-            {project.category ? (
-              <p className="text-[11px] uppercase tracking-[0.15em] text-white/30">
-                {project.category}
+    <div onMouseEnter={onEnter} onMouseLeave={onLeave}>
+      <Link href={`/work/${project.slug}`} className="group block">
+        <GlassCard rounded="3xl" className="relative overflow-hidden">
+          {project.heroVideoUrl ? (
+            <div
+              className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              style={{ clipPath: 'inset(0 round 1.5rem)' }}
+            >
+              <video
+                ref={videoRef}
+                src={project.heroVideoUrl}
+                muted
+                playsInline
+                preload="metadata"
+                onTimeUpdate={(e) => {
+                  const v = e.currentTarget
+                  if (v.currentTime >= startTimeRef.current + 8) v.currentTime = startTimeRef.current
+                }}
+                className="absolute inset-0 h-full w-full object-cover"
+                style={{
+                  transform: 'scale(1.3)',
+                  transformOrigin: 'center center',
+                  opacity: 0.27,
+                  filter: 'contrast(1.15) brightness(0.82) saturate(0.72) sepia(0.12)',
+                }}
+              />
+              <div
+                className="film-grain pointer-events-none absolute inset-[-20%] h-[140%] w-[140%]"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")`,
+                  backgroundSize: '180px 180px',
+                  opacity: 0.09,
+                  mixBlendMode: 'overlay',
+                }}
+              />
+            </div>
+          ) : null}
+          <div className="relative z-10 flex items-center justify-between gap-4 px-6 py-8 md:px-8 md:py-10">
+            <div className="min-w-0">
+              {project.category ? (
+                <p className="text-[11px] uppercase tracking-[0.15em] text-white/30">
+                  {project.category}
+                </p>
+              ) : null}
+              <p className="mt-3 font-body text-h4 font-normal uppercase !tracking-[0.05em] text-white">
+                {project.client}
               </p>
-            ) : null}
-            <p className="mt-3 font-body text-h4 font-normal uppercase !tracking-[0.05em] text-white">
-              {project.client}
-            </p>
-            {project.title ? (
-              <p className="mt-1 font-display text-body italic text-white/60">
-                {project.title}
-              </p>
-            ) : null}
+              {project.title ? (
+                <p className="mt-1 font-display text-body italic text-white/60">
+                  {project.title}
+                </p>
+              ) : null}
+            </div>
+            <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45 md:h-11 md:w-11">
+              <ArrowUpRight className="h-4 w-4" />
+            </span>
           </div>
-          <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45 md:h-11 md:w-11">
-            <ArrowUpRight className="h-4 w-4" />
-          </span>
-        </div>
-      </GlassCard>
-    </Link>
+        </GlassCard>
+      </Link>
+    </div>
   )
 }

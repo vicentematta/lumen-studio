@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Instagram, Twitter, Globe } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { GlassButton } from '@/components/ui/GlassButton'
+import { WorkCTAButton } from '@/components/WorkCTAButton'
 import type { SiteSettings } from '@/lib/queries/siteSettings'
 
 interface Props {
@@ -64,9 +65,7 @@ export function Footer({ settings }: Props) {
               <GlassButton to="/contact" variant="solid" size="lg">
                 {settings?.footerCtaBook ?? 'Agenda diagnóstico'}
               </GlassButton>
-              <GlassButton to="/work" variant="glass" size="lg">
-                {settings?.footerCtaWork ?? 'Ver trabajos'}
-              </GlassButton>
+              <WorkCTAButton label={settings?.footerCtaWork ?? 'Ver trabajos'} />
             </div>
           </div>
 

@@ -94,7 +94,7 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
                 style={{
                   transform: 'scale(1.3)',
                   transformOrigin: 'center center',
-                  opacity: 0.42,
+                  opacity: 0.27,
                   filter: 'contrast(1.15) brightness(0.82) saturate(0.72) sepia(0.12)',
                 }}
               />
