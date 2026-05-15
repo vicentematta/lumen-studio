@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
@@ -20,35 +20,45 @@ const STORAGE_KEY = 'rh_visited_work'
 
 function useSuggestions(currentSlug: string, allProjects: ProjectListItem[]) {
   const [suggestions, setSuggestions] = useState<ProjectListItem[]>([])
+  // Ref para acceder a allProjects sin ponerlo en deps (es estable por página)
+  const projectsRef = useRef(allProjects)
+  projectsRef.current = allProjects
 
   useEffect(() => {
-    const others = allProjects.filter((p) => p.slug !== currentSlug)
+    const all = projectsRef.current
+    const others = all.filter((p) => p.slug !== currentSlug)
     if (others.length === 0) return
 
-    let visited: Set<string>
+    // Leer historial
+    let visitedList: string[]
     try {
-      visited = new Set(JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]'))
+      visitedList = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]')
+      if (!Array.isArray(visitedList)) visitedList = []
     } catch {
-      visited = new Set()
+      visitedList = []
     }
 
-    // Mark current as visited
-    visited.add(currentSlug)
-    localStorage.setItem(STORAGE_KEY, JSON.stringify([...visited]))
+    // Marcar el actual como visto (si no estaba ya)
+    if (!visitedList.includes(currentSlug)) {
+      visitedList = [...visitedList, currentSlug]
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(visitedList))
+    }
 
-    const unvisited = others.filter((p) => !visited.has(p.slug ?? ''))
+    const visitedSet = new Set(visitedList)
+    const unvisited = others.filter((p) => !visitedSet.has(p.slug ?? ''))
 
     if (unvisited.length >= 2) {
       setSuggestions(unvisited.slice(0, 2))
     } else if (unvisited.length === 1) {
-      const fromVisited = others.filter((p) => visited.has(p.slug ?? '')).slice(0, 1)
-      setSuggestions([unvisited[0], ...fromVisited])
+      // Queda uno — rellena con el primero visitado que no sea el actual
+      const fallback = others.filter((p) => visitedSet.has(p.slug ?? '')).slice(0, 1)
+      setSuggestions([unvisited[0], ...fallback])
     } else {
-      // Todos vistos — reset y vuelve desde el principio
+      // Todos vistos — reset: borra historial y empieza desde cero
       localStorage.setItem(STORAGE_KEY, JSON.stringify([currentSlug]))
       setSuggestions(others.slice(0, 2))
     }
-  }, [currentSlug, allProjects])
+  }, [currentSlug]) // Solo cambia cuando cambia la página, no el array
 
   return suggestions
 }
