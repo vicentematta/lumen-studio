@@ -8,7 +8,7 @@ const isLocal =
   typeof window !== 'undefined' && window.location.hostname === 'localhost'
 
 const LIVE_URL = isLocal
-  ? 'http://localhost:5180'
+  ? 'http://localhost:3000'
   : 'https://liquid-glass-studio.vercel.app'
 
 export default defineConfig({
@@ -21,7 +21,11 @@ export default defineConfig({
     structureTool(),
     visionTool(),
     presentationTool({
-      previewUrl: { origin: LIVE_URL, preview: '/' },
+      previewUrl: {
+        origin: LIVE_URL,
+        preview: '/',
+        draftMode: { enable: '/api/draft-mode/enable' },
+      },
       resolve: {
         // URL → document mapping. When the preview iframe navigates to any
         // of these routes, the Studio's left panel auto-opens the matching

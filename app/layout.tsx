@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Instrument_Serif, Instrument_Sans } from 'next/font/google'
+import { draftMode } from 'next/headers'
+import { VisualEditing } from 'next-sanity/visual-editing'
 import './globals.css'
 
 const instrumentSerif = Instrument_Serif({
@@ -68,7 +70,8 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const { isEnabled } = await draftMode()
   return (
     <html
       lang="es-CL"
@@ -80,6 +83,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           de que React hidrate. Sin esto, React tira un warning permanente. */}
       <body className="bg-paper text-ink" suppressHydrationWarning>
         {children}
+        {isEnabled && <VisualEditing />}
       </body>
     </html>
   )
