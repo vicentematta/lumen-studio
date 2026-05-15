@@ -4,7 +4,7 @@
 import { sanityFetch } from '../sanity-server'
 
 export interface ProjectBlock {
-  _type: 'textBlock' | 'quoteBlock' | 'statsBlock' | 'imageBlock' | 'videoBlock'
+  _type: 'textBlock' | 'quoteBlock' | 'statsBlock' | 'imageBlock' | 'videoBlock' | 'videoRowBlock'
   _key: string
   // textBlock
   eyebrow?: string | null
@@ -79,7 +79,8 @@ const DETAIL_QUERY = `*[_type == "project" && slug.current == $slug][0]{
     layout,
     "image": image{ "url": asset->url, alt, caption },
     "poster": poster{ "url": asset->url, alt },
-    url
+    url,
+    url1, url2, url3
   },
   seoDescription
 }`

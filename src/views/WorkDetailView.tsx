@@ -259,6 +259,8 @@ function BlockRenderer({ block }: BlockProps) {
       return <ImageBlock block={block} />
     case 'videoBlock':
       return <VideoBlock block={block} />
+    case 'videoRowBlock':
+      return <VideoRowBlock block={block} />
     default:
       return null
   }
@@ -379,7 +381,7 @@ function ImageBlock({ block }: BlockProps) {
           src={block.image.url}
           alt={block.image.alt ?? ''}
           loading="lazy"
-          className={`w-full object-cover ${contained ? 'rounded-2xl' : ''}`}
+          className={`w-full object-cover ${block.layout === 'contained' ? 'rounded-2xl' : ''}`}
         />
         {block.image.caption ? (
           <p className="mt-3 text-xs text-white/30">{block.image.caption}</p>
@@ -405,8 +407,34 @@ function VideoBlock({ block }: BlockProps) {
             playsInline
             preload="metadata"
             style={{ maxHeight: '80vh', maxWidth: '100%' }}
-            className={`h-auto w-auto ${contained ? 'rounded-2xl' : ''}`}
+            className={`h-auto w-auto ${block.layout === 'contained' ? 'rounded-2xl' : ''}`}
           />
+        </div>
+      </Container>
+    </section>
+  )
+}
+
+function VideoRowBlock({ block }: BlockProps) {
+  const urls = [block.url1, block.url2, block.url3].filter(Boolean) as string[]
+  if (urls.length === 0) return null
+  const cols = urls.length === 1 ? 'grid-cols-1' : urls.length === 2 ? 'grid-cols-2' : 'grid-cols-3'
+  return (
+    <section className="px-6 pb-24 md:pb-32">
+      <Container width="lg">
+        <div className={`grid ${cols} gap-4`}>
+          {urls.map((url, i) => (
+            <video
+              key={i}
+              src={url}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="w-full rounded-2xl object-cover"
+            />
+          ))}
         </div>
       </Container>
     </section>

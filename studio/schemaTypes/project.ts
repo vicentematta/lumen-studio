@@ -172,6 +172,17 @@ export const project = defineType({
             prepare: (v) => ({ title: `Video · ${v.subtitle?.split('/').pop() ?? ''}` }),
           },
         },
+        {
+          type: 'object',
+          name: 'videoRowBlock',
+          title: 'Video Row (hasta 3 en fila)',
+          fields: [
+            defineField({ name: 'url1', title: 'Video 1', type: 'url' }),
+            defineField({ name: 'url2', title: 'Video 2', type: 'url' }),
+            defineField({ name: 'url3', title: 'Video 3', type: 'url' }),
+          ],
+          preview: { prepare: () => ({ title: 'Video Row' }) },
+        },
       ],
     }),
 
