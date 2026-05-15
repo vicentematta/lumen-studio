@@ -58,10 +58,13 @@ export const service = defineType({
     }),
     defineField({
       name: 'seoDescription',
-      title: 'SEO Description (≤160 chars)',
+      title: 'SEO Description — legacy',
       type: 'string',
       validation: (r) => r.max(160),
+      description: 'Usar el objeto SEO de abajo. Este campo se mantiene por compatibilidad.',
     }),
+    defineField({ name: 'coverImage', title: 'Cover image', type: 'imageWithAlt' }),
+    defineField({ name: 'seo', title: 'SEO', type: 'seo' }),
   ],
   preview: { select: { title: 'name', subtitle: 'slug.current' } },
 })

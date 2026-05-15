@@ -45,7 +45,16 @@ export const siteSettings = defineType({
     // ── Social links ──────────────────────────────────────────────────────
     defineField({ name: 'socialInstagram', title: 'Social · Instagram URL', type: 'url' }),
     defineField({ name: 'socialTwitter', title: 'Social · Twitter/X URL', type: 'url' }),
+    defineField({ name: 'socialLinkedin', title: 'Social · LinkedIn URL', type: 'url' }),
     defineField({ name: 'socialWebsite', title: 'Social · Website URL', type: 'url' }),
+
+    // ── SEO global fallback ───────────────────────────────────────────────
+    defineField({
+      name: 'seo',
+      title: 'SEO Global (fallback)',
+      type: 'seo',
+      description: 'Valores por defecto cuando una página no tiene SEO propio configurado.',
+    }),
   ],
   preview: { prepare: () => ({ title: 'Site Settings' }) },
 })

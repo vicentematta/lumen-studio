@@ -126,7 +126,9 @@ export const project = defineType({
     }),
 
     // SEO
-    defineField({ name: 'seoDescription', title: 'SEO Description (≤160 chars)', type: 'string', validation: (r) => r.max(160) }),
+    defineField({ name: 'seoDescription', title: 'SEO Description — legacy', type: 'string', validation: (r) => r.max(160) }),
+    defineField({ name: 'coverImage', title: 'Cover image', type: 'imageWithAlt' }),
+    defineField({ name: 'seo', title: 'SEO', type: 'seo' }),
   ],
   preview: {
     select: { title: 'client', subtitle: 'year' },

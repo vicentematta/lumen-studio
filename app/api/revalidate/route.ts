@@ -1,4 +1,4 @@
-import { revalidateTag } from 'next/cache'
+import { revalidatePath } from 'next/cache'
 import { type NextRequest, NextResponse } from 'next/server'
 import { createHmac, timingSafeEqual } from 'node:crypto'
 
@@ -57,7 +57,10 @@ export async function POST(req: NextRequest) {
 
   const type = body._type ?? ''
   const tags = TAG_MAP[type] ?? []
-  tags.forEach(revalidateTag)
+  // revalidatePath con 'layout' invalida toda la cache del layout incluyendo
+  // los fetch tags de sanityFetch para el tipo de documento modificado.
+  // Más compatible con Next.js 16 que revalidateTag (cuya firma cambió).
+  revalidatePath('/', 'layout')
 
   console.log(`[revalidate] type=${type} tags=${tags.join(',')}`)
   return NextResponse.json({ revalidated: true, type, tags })
