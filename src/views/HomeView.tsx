@@ -113,7 +113,7 @@ function Hero({ content }: { content: HomeContent }) {
           eager
           position="object-[center_-110px]"
           overlayClassName="bg-gradient-to-b from-black/50 via-transparent to-black"
-          className="scale-[1.18]"
+          className="scale-[1.25]"
         />
       </div>
 
