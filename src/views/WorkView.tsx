@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
@@ -16,68 +16,39 @@ interface Props {
 
 function ProjectCard({ p }: { p: ProjectListItem }) {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const overlayRef = useRef<HTMLDivElement>(null)
   const startTimeRef = useRef(0)
-  const [brightBg, setBrightBg] = useState(false)
-
-  function sampleBrightness() {
-    const v = videoRef.current
-    if (!v) return
-    try {
-      const canvas = document.createElement('canvas')
-      canvas.width = 16; canvas.height = 9
-      const ctx = canvas.getContext('2d')
-      if (!ctx) return
-      ctx.drawImage(v, 0, 0, 16, 9)
-      const { data } = ctx.getImageData(0, 0, 16, 9)
-      let sum = 0
-      for (let i = 0; i < data.length; i += 4) {
-        sum += 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2]
-      }
-      setBrightBg(sum / (data.length / 4) > 160)
-    } catch { /* CORS — texto queda en blanco */ }
-  }
 
   function onEnter() {
+    if (overlayRef.current) overlayRef.current.style.opacity = '1'
     const v = videoRef.current
     if (!v || !p.heroVideoUrl) return
-
     const startPlay = () => {
-      const fromStart = p.slug === 'undurraga-wines'
-      const t = fromStart ? 0 : (v.duration && isFinite(v.duration) ? v.duration / 2 : 0)
+      const t = p.slug === 'undurraga-wines' ? 5 : (v.duration && isFinite(v.duration) ? v.duration / 2 : 0)
       startTimeRef.current = t
       v.currentTime = t
       v.play().catch(() => {})
-      setTimeout(sampleBrightness, 300)
     }
-
-    // preload="metadata" — readyState >= 1 casi siempre al hacer hover
-    if (v.readyState >= 1) {
-      startPlay()
-    } else {
-      v.addEventListener('loadedmetadata', startPlay, { once: true })
-    }
+    if (v.readyState >= 1) startPlay()
+    else v.addEventListener('loadedmetadata', startPlay, { once: true })
   }
 
   function onLeave() {
+    if (overlayRef.current) overlayRef.current.style.opacity = '0'
     videoRef.current?.pause()
-    setBrightBg(false)
   }
 
-  const textPrimary = brightBg ? 'text-gray-900' : 'text-white'
-  const textMuted   = brightBg ? 'text-gray-500' : 'text-white/40'
-  const textItalic  = brightBg ? 'text-gray-700' : 'text-white/70'
-  const textYear    = brightBg ? 'text-gray-400' : 'text-white/30'
-
   return (
-    <motion.div variants={fadeRise} onMouseEnter={onEnter} onMouseLeave={onLeave}>
-      <Link href={`/work/${p.slug}`} className="group block h-full">
+    <motion.div variants={fadeRise} className="group" onMouseEnter={onEnter} onMouseLeave={onLeave}>
+      <Link href={`/work/${p.slug}`} className="block h-full">
         <GlassCard rounded="3xl" className="relative flex h-full flex-col overflow-hidden">
 
           {/* Video — film filter + grain overlay */}
           {p.heroVideoUrl ? (
             <div
-              className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-              style={{ clipPath: 'inset(0 round 1.5rem)' }}
+              ref={overlayRef}
+              className="absolute inset-0 transition-opacity duration-500"
+              style={{ clipPath: 'inset(0 round 1.5rem)', opacity: 0 }}
             >
               {/* Video con color grade cinemático */}
               <video
@@ -115,15 +86,15 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
           <div className="relative z-10 flex flex-1 items-start justify-between gap-4 p-7 md:p-9">
             <div className="min-w-0">
               {p.category ? (
-                <span className={`text-eyebrow uppercase transition-colors duration-300 ${textMuted}`}>
+                <span className="text-eyebrow uppercase text-white/40">
                   {p.category}
                 </span>
               ) : null}
-              <p className={`mt-3 font-body text-h4 font-normal uppercase !tracking-[0.05em] transition-colors duration-300 ${textPrimary}`}>
+              <p className="mt-3 font-body text-h4 font-normal uppercase !tracking-[0.05em] text-white">
                 {p.client}
               </p>
               {p.title ? (
-                <p className={`mt-1 font-display text-h3 italic transition-colors duration-300 ${textItalic}`}>
+                <p className="mt-1 font-display text-h3 italic text-white/70">
                   {p.title}
                 </p>
               ) : null}
@@ -135,7 +106,7 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
 
           {p.year ? (
             <div className="relative z-10 border-t border-white/5 px-7 py-4 md:px-9">
-              <span className={`text-[11px] uppercase tracking-[0.15em] tabular-nums transition-colors duration-300 ${textYear}`}>
+              <span className="text-[11px] uppercase tracking-[0.15em] tabular-nums text-white/30">
                 {p.year}
               </span>
             </div>

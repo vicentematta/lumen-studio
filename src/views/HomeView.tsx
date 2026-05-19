@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, ArrowUpRight } from 'lucide-react'
-import { useState, type FormEvent } from 'react'
+import { useState, useRef, useEffect, type FormEvent } from 'react'
 import { useRouter } from 'next/navigation'
 import { VideoBackground } from '@/components/ui/VideoBackground'
 import { GlassButton } from '@/components/ui/GlassButton'
@@ -23,6 +23,38 @@ import { stegaClean } from '@sanity/client/stega'
 
 interface Props {
   content: HomeContent
+}
+
+// ── Lazy video: preload="none" + IntersectionObserver para below-fold ────────
+function LazyVideo({ src, className }: { src: string; className: string }) {
+  const ref = useRef<HTMLVideoElement>(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.load()
+          el.play().catch(() => {})
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+  return (
+    <video
+      ref={ref}
+      src={src}
+      muted
+      playsInline
+      loop
+      preload="none"
+      className={className}
+    />
+  )
 }
 
 // ── Sub-component types (Sanity puede devolver null en cualquier campo) ──────
@@ -81,19 +113,15 @@ function Hero({ content }: { content: HomeContent }) {
           eager
           position="object-[center_-110px]"
           overlayClassName="bg-gradient-to-b from-black/50 via-transparent to-black"
+          className="scale-[1.18]"
         />
       </div>
 
       {/* Contenido — no fade */}
       <div className="relative z-10 flex min-h-screen flex-1 flex-col items-center justify-center px-6 pt-32 text-center">
-        <motion.h1
-          variants={blurIn}
-          initial="hidden"
-          animate="show"
-          className="font-display text-5xl leading-[1.02] tracking-tight text-white sm:text-7xl md:text-[clamp(3.5rem,11vw,9rem)] md:leading-[0.95] md:whitespace-nowrap"
-        >
+        <h1 className="hero-blur-in font-display text-5xl leading-[1.02] tracking-tight text-white sm:text-7xl md:text-[clamp(3.5rem,11vw,9rem)] md:leading-[0.95] md:whitespace-nowrap">
           {content.heroTitle}
-        </motion.h1>
+        </h1>
         {(content.heroSubtitle || content.heroSubtitle2) ? (
           <motion.div
             variants={fadeRise}
@@ -210,13 +238,8 @@ function Featured({ content }: { content: HomeContent }) {
           {...inViewProps}
           className="relative aspect-video overflow-hidden rounded-3xl"
         >
-          <video
+          <LazyVideo
             src={stegaClean(content.videoFeatured ?? '') || VIDEOS.featured.mp4}
-            muted
-            autoPlay
-            loop
-            playsInline
-            preload="metadata"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -270,16 +293,8 @@ function Philosophy({ content }: { content: HomeContent }) {
             {...inViewProps}
             className="aspect-[4/3] overflow-hidden rounded-3xl"
           >
-            <video
-              src={
-                stegaClean(content.videoPhilosophy ?? '') ||
-                VIDEOS.philosophy.mp4
-              }
-              muted
-              autoPlay
-              loop
-              playsInline
-              preload="metadata"
+            <LazyVideo
+              src={stegaClean(content.videoPhilosophy ?? '') || VIDEOS.philosophy.mp4}
               className="h-full w-full object-cover"
             />
           </motion.div>
@@ -407,13 +422,8 @@ function Services({ content }: { content: HomeContent }) {
             >
               <GlassCard rounded="3xl" className="overflow-hidden">
                 <div className="relative aspect-video overflow-hidden">
-                  <video
+                  <LazyVideo
                     src={card.videoSrc}
-                    muted
-                    autoPlay
-                    loop
-                    playsInline
-                    preload="metadata"
                     className="h-full w-full object-cover transition-transform duration-700 ease-glass group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

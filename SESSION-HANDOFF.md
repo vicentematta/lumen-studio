@@ -30,7 +30,6 @@ Claude Code leerá este archivo + el git log + los archivos de memoria y retomar
 | `acres` | ACRES S.A. | ✅ Completo |
 | `cruzat-excom` | Cruzat Excom | ✅ Completo |
 | `undurraga-wines` | Viña Undurraga / T.H | ✅ Completo |
-| `masa-madre` | Masa Madre | ❌ No existe en Sanity |
 
 ### Bloques de contenido disponibles
 - `videoBlock` — video full o contained. `contained` usa Container `md`. Tiene `posterUrl` (externa), fullscreen btn, Sound On/Off pill

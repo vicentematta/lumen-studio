@@ -67,7 +67,7 @@ export interface ProjectDoc extends ProjectListItem {
   seoDescription: string | null
 }
 
-const LIST_QUERY = `*[_type == "project"] | order(_createdAt asc){
+const LIST_QUERY = `*[_type == "project"] | order(order asc){
   _id,
   "slug": slug.current,
   client,

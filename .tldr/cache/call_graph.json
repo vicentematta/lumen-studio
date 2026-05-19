@@ -1,0 +1,358 @@
+{
+  "edges": [
+    {
+      "from_file": "genera.py",
+      "from_func": "tbody_inv",
+      "to_file": "genera.py",
+      "to_func": "clp"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_cotizacion",
+      "to_file": "genera.py",
+      "to_func": "tbody_cot"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_invoice",
+      "to_file": "genera.py",
+      "to_func": "en_dias"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_invoice",
+      "to_file": "genera.py",
+      "to_func": "pedir_items_inv"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "main",
+      "to_file": "genera.py",
+      "to_func": "generar_invoice"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "main",
+      "to_file": "genera.py",
+      "to_func": "generar_cotizacion"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_invoice",
+      "to_file": "genera.py",
+      "to_func": "ask"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_cotizacion",
+      "to_file": "genera.py",
+      "to_func": "pedir_items_cot"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_invoice",
+      "to_file": "genera.py",
+      "to_func": "abrir"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_cotizacion",
+      "to_file": "genera.py",
+      "to_func": "abrir"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_invoice",
+      "to_file": "genera.py",
+      "to_func": "hoy"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_cotizacion",
+      "to_file": "genera.py",
+      "to_func": "hoy"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "<module>",
+      "to_file": "genera.py",
+      "to_func": "main"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_invoice",
+      "to_file": "genera.py",
+      "to_func": "tbody_inv"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "tbody_cot",
+      "to_file": "genera.py",
+      "to_func": "clp"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_cotizacion",
+      "to_file": "genera.py",
+      "to_func": "ask"
+    },
+    {
+      "from_file": "genera.py",
+      "from_func": "generar_invoice",
+      "to_file": "genera.py",
+      "to_func": "clp"
+    },
+    {
+      "from_file": "app/layout.tsx",
+      "from_func": "RootLayout",
+      "to_file": "src/lib/jsonld.ts",
+      "to_func": "localBusinessSchema"
+    },
+    {
+      "from_file": "app/(site)/contact/page.tsx",
+      "from_func": "ContactPage",
+      "to_file": "src/lib/queries/contactPage.ts",
+      "to_func": "getContactPage"
+    },
+    {
+      "from_file": "app/(site)/services/[slug]/page.tsx",
+      "from_func": "ServiceDetailPage",
+      "to_file": "src/lib/jsonld.ts",
+      "to_func": "breadcrumbSchema"
+    },
+    {
+      "from_file": "src/views/WorkView.tsx",
+      "from_func": "ProjectCard",
+      "to_file": "src/views/WorkView.tsx",
+      "to_func": "startPlay"
+    },
+    {
+      "from_file": "src/lib/queries/siteSettings.ts",
+      "from_func": "getSiteSettings",
+      "to_file": "src/lib/sanity-server.ts",
+      "to_func": "sanityFetch"
+    },
+    {
+      "from_file": "src/views/WorkView.tsx",
+      "from_func": "onEnter",
+      "to_file": "src/views/WorkView.tsx",
+      "to_func": "startPlay"
+    },
+    {
+      "from_file": "app/(site)/services/[slug]/page.tsx",
+      "from_func": "ServiceDetailPage",
+      "to_file": "src/lib/jsonld.ts",
+      "to_func": "serializeSchema"
+    },
+    {
+      "from_file": "app/(site)/services/[slug]/page.tsx",
+      "from_func": "ServiceDetailPage",
+      "to_file": "src/lib/queries/services.ts",
+      "to_func": "getServices"
+    },
+    {
+      "from_file": "src/views/WorkDetailView.tsx",
+      "from_func": "onEnter",
+      "to_file": "src/views/WorkDetailView.tsx",
+      "to_func": "startPlay"
+    },
+    {
+      "from_file": "app/(site)/services/[slug]/page.tsx",
+      "from_func": "generateMetadata",
+      "to_file": "src/lib/queries/services.ts",
+      "to_func": "getServiceBySlug"
+    },
+    {
+      "from_file": "app/(site)/work/[slug]/page.tsx",
+      "from_func": "WorkDetailPage",
+      "to_file": "src/lib/queries/projects.ts",
+      "to_func": "getProjects"
+    },
+    {
+      "from_file": "app/(site)/work/[slug]/page.tsx",
+      "from_func": "generateStaticParams",
+      "to_file": "src/lib/queries/projects.ts",
+      "to_func": "getProjectSlugs"
+    },
+    {
+      "from_file": "src/lib/queries/services.ts",
+      "from_func": "getServiceBySlug",
+      "to_file": "src/lib/sanity-server.ts",
+      "to_func": "sanityFetch"
+    },
+    {
+      "from_file": "src/components/ui/VideoBackground.tsx",
+      "from_func": "onEnded",
+      "to_file": "src/components/ui/VideoBackground.tsx",
+      "to_func": "animateOpacity"
+    },
+    {
+      "from_file": "src/lib/queries/pricingPage.ts",
+      "from_func": "getPricingPage",
+      "to_file": "src/lib/sanity-server.ts",
+      "to_func": "sanityFetch"
+    },
+    {
+      "from_file": "app/(site)/work/[slug]/page.tsx",
+      "from_func": "WorkDetailPage",
+      "to_file": "src/lib/queries/projects.ts",
+      "to_func": "getProjectBySlug"
+    },
+    {
+      "from_file": "src/components/ui/VideoBackground.tsx",
+      "from_func": "onCanPlay",
+      "to_file": "src/components/ui/VideoBackground.tsx",
+      "to_func": "animateOpacity"
+    },
+    {
+      "from_file": "src/lib/queries/contactPage.ts",
+      "from_func": "getContactPage",
+      "to_file": "src/lib/sanity-server.ts",
+      "to_func": "sanityFetch"
+    },
+    {
+      "from_file": "src/lib/queries/projects.ts",
+      "from_func": "getProjectBySlug",
+      "to_file": "src/lib/sanity-server.ts",
+      "to_func": "sanityFetch"
+    },
+    {
+      "from_file": "app/(site)/work/[slug]/page.tsx",
+      "from_func": "generateMetadata",
+      "to_file": "src/lib/queries/projects.ts",
+      "to_func": "getProjectBySlug"
+    },
+    {
+      "from_file": "src/components/ui/VideoBackground.tsx",
+      "from_func": "onTimeUpdate",
+      "to_file": "src/components/ui/VideoBackground.tsx",
+      "to_func": "animateOpacity"
+    },
+    {
+      "from_file": "app/(site)/services/page.tsx",
+      "from_func": "ServicesPage",
+      "to_file": "src/lib/queries/services.ts",
+      "to_func": "getServices"
+    },
+    {
+      "from_file": "app/(site)/about/page.tsx",
+      "from_func": "AboutPage",
+      "to_file": "src/lib/queries/aboutPage.ts",
+      "to_func": "getAboutPage"
+    },
+    {
+      "from_file": "app/(site)/work/[slug]/page.tsx",
+      "from_func": "WorkDetailPage",
+      "to_file": "src/lib/jsonld.ts",
+      "to_func": "breadcrumbSchema"
+    },
+    {
+      "from_file": "app/layout.tsx",
+      "from_func": "RootLayout",
+      "to_file": "src/lib/jsonld.ts",
+      "to_func": "websiteSchema"
+    },
+    {
+      "from_file": "app/(site)/work/[slug]/page.tsx",
+      "from_func": "WorkDetailPage",
+      "to_file": "src/lib/jsonld.ts",
+      "to_func": "serializeSchema"
+    },
+    {
+      "from_file": "app/api/revalidate/route.ts",
+      "from_func": "POST",
+      "to_file": "app/api/revalidate/route.ts",
+      "to_func": "verifySignature"
+    },
+    {
+      "from_file": "src/lib/queries/projects.ts",
+      "from_func": "getProjects",
+      "to_file": "src/lib/sanity-server.ts",
+      "to_func": "sanityFetch"
+    },
+    {
+      "from_file": "src/lib/queries/homePage.ts",
+      "from_func": "getHomePage",
+      "to_file": "src/lib/sanity-server.ts",
+      "to_func": "sanityFetch"
+    },
+    {
+      "from_file": "app/(site)/layout.tsx",
+      "from_func": "SiteLayout",
+      "to_file": "src/lib/queries/siteSettings.ts",
+      "to_func": "getSiteSettings"
+    },
+    {
+      "from_file": "app/(site)/services/[slug]/page.tsx",
+      "from_func": "ServiceDetailPage",
+      "to_file": "src/lib/queries/services.ts",
+      "to_func": "getServiceBySlug"
+    },
+    {
+      "from_file": "app/layout.tsx",
+      "from_func": "RootLayout",
+      "to_file": "src/lib/jsonld.ts",
+      "to_func": "personSchema"
+    },
+    {
+      "from_file": "app/(site)/work/page.tsx",
+      "from_func": "WorkPage",
+      "to_file": "src/lib/queries/projects.ts",
+      "to_func": "getProjects"
+    },
+    {
+      "from_file": "app/(site)/services/[slug]/page.tsx",
+      "from_func": "generateStaticParams",
+      "to_file": "src/lib/queries/services.ts",
+      "to_func": "getServiceSlugs"
+    },
+    {
+      "from_file": "src/lib/queries/aboutPage.ts",
+      "from_func": "getAboutPage",
+      "to_file": "src/lib/sanity-server.ts",
+      "to_func": "sanityFetch"
+    },
+    {
+      "from_file": "app/(site)/services/[slug]/page.tsx",
+      "from_func": "ServiceDetailPage",
+      "to_file": "src/lib/jsonld.ts",
+      "to_func": "serviceSchema"
+    },
+    {
+      "from_file": "app/(site)/page.tsx",
+      "from_func": "HomePage",
+      "to_file": "src/lib/queries/homePage.ts",
+      "to_func": "getHomePage"
+    },
+    {
+      "from_file": "app/(site)/pricing/page.tsx",
+      "from_func": "PricingPage",
+      "to_file": "src/lib/queries/pricingPage.ts",
+      "to_func": "getPricingPage"
+    },
+    {
+      "from_file": "app/layout.tsx",
+      "from_func": "RootLayout",
+      "to_file": "src/lib/jsonld.ts",
+      "to_func": "organizationSchema"
+    },
+    {
+      "from_file": "app/(site)/work/[slug]/page.tsx",
+      "from_func": "WorkDetailPage",
+      "to_file": "src/lib/jsonld.ts",
+      "to_func": "creativeWorkSchema"
+    },
+    {
+      "from_file": "src/lib/queries/services.ts",
+      "from_func": "getServices",
+      "to_file": "src/lib/sanity-server.ts",
+      "to_func": "sanityFetch"
+    }
+  ],
+  "languages": [
+    "javascript",
+    "python",
+    "typescript"
+  ],
+  "timestamp": 1779209018.9963572
+}

@@ -600,8 +600,7 @@ function ProjectNavCard({ project }: NavCardProps) {
     const v = videoRef.current
     if (!v || !project.heroVideoUrl) return
     const startPlay = () => {
-      const fromStart = project.slug === 'undurraga-wines'
-      const t = fromStart ? 0 : (v.duration && isFinite(v.duration) ? v.duration / 2 : 0)
+      const t = project.slug === 'undurraga-wines' ? 5 : (v.duration && isFinite(v.duration) ? v.duration / 2 : 0)
       startTimeRef.current = t
       v.currentTime = t
       v.play().catch(() => {})
