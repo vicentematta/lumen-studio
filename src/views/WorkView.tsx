@@ -24,13 +24,16 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
     const v = videoRef.current
     if (!v || !p.heroVideoUrl) return
     const startPlay = () => {
-      const t = p.slug === 'undurraga-wines' ? 5 : (v.duration && isFinite(v.duration) ? v.duration / 2 : 0)
+      const t = p.slug === 'undurraga-wines' ? 7 : (v.duration && isFinite(v.duration) ? v.duration / 2 : 0)
       startTimeRef.current = t
       v.currentTime = t
       v.play().catch(() => {})
     }
     if (v.readyState >= 1) startPlay()
-    else v.addEventListener('loadedmetadata', startPlay, { once: true })
+    else {
+      v.addEventListener('loadedmetadata', startPlay, { once: true })
+      v.load()
+    }
   }
 
   function onLeave() {
@@ -56,7 +59,7 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
                 muted
                 playsInline
                 src={p.heroVideoUrl ?? undefined}
-                preload="metadata"
+                preload="none"
                 onTimeUpdate={(e) => {
                   const v = e.currentTarget
                   if (v.currentTime >= startTimeRef.current + 8) v.currentTime = startTimeRef.current
