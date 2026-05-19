@@ -35,7 +35,7 @@ export function AboutView({ content }: Props) {
         actions={
           <>
             {content.ctaWork ? (
-              <GlassButton to="/contact" variant="solid" size="lg">
+              <GlassButton to="/work" variant="solid" size="lg">
                 {content.ctaWork}
               </GlassButton>
             ) : null}
