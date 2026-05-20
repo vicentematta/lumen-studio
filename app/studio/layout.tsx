@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { viewport as studioViewport } from 'next-sanity/studio'
 
-export const viewport: Viewport = studioViewport
+export const viewport: Viewport = studioViewport as Viewport
 
 export const metadata: Metadata = {
   title: 'Riverhaus Studio',
