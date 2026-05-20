@@ -30,10 +30,7 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
       v.play().catch(() => {})
     }
     if (v.readyState >= 1) startPlay()
-    else {
-      v.addEventListener('loadedmetadata', startPlay, { once: true })
-      v.load()
-    }
+    else v.addEventListener('loadedmetadata', startPlay, { once: true })
   }
 
   function onLeave() {
@@ -59,7 +56,7 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
                 muted
                 playsInline
                 src={p.heroVideoUrl ?? undefined}
-                preload="none"
+                preload="metadata"
                 onTimeUpdate={(e) => {
                   const v = e.currentTarget
                   if (v.currentTime >= startTimeRef.current + 8) v.currentTime = startTimeRef.current

@@ -75,6 +75,7 @@ const LIST_QUERY = `*[_type == "project"] | order(order asc){
   "category": coalesce(category.es, category.en),
   year,
   "heroVideoUrl": coalesce(
+    hoverVideoUrl,
     blocks[_type == "videoBlock"][0].url,
     blocks[_type == "videoRowBlock"][0].url1,
     blocks[_type == "mediaColumnsBlock"][0].rightItems[_type == "videoItem"][0].url

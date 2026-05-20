@@ -405,6 +405,22 @@ function VideoWithUnmute({ src, poster, rounded }: { src: string; poster?: strin
   const videoRef = useRef<HTMLVideoElement>(null)
   const [muted, setMuted] = useState(true)
 
+  useEffect(() => {
+    const el = videoRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.play().catch(() => {})
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [src])
+
   function toggleMute() {
     if (!videoRef.current) return
     const next = !muted
@@ -418,7 +434,6 @@ function VideoWithUnmute({ src, poster, rounded }: { src: string; poster?: strin
         ref={videoRef}
         src={src}
         poster={poster}
-        autoPlay
         muted
         loop
         playsInline
@@ -468,6 +483,22 @@ function RightColumnVideo({ src, alt }: { src: string; alt?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [muted, setMuted] = useState(true)
 
+  useEffect(() => {
+    const el = videoRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.play().catch(() => {})
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [src])
+
   function toggleMute() {
     if (!videoRef.current) return
     const next = !muted
@@ -481,7 +512,6 @@ function RightColumnVideo({ src, alt }: { src: string; alt?: string }) {
         ref={videoRef}
         src={src}
         aria-label={alt || undefined}
-        autoPlay
         muted
         loop
         playsInline
@@ -596,17 +626,36 @@ function ProjectNavCard({ project }: NavCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const startTimeRef = useRef(0)
 
+  useEffect(() => {
+    const el = videoRef.current
+    if (!el || !project.heroVideoUrl) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.load()
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '300px' },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [project.heroVideoUrl])
+
   function onEnter() {
     const v = videoRef.current
     if (!v || !project.heroVideoUrl) return
     const startPlay = () => {
-      const t = project.slug === 'undurraga-wines' ? 5 : (v.duration && isFinite(v.duration) ? v.duration / 2 : 0)
+      const t = project.slug === 'undurraga-wines' ? 7 : (v.duration && isFinite(v.duration) ? v.duration / 2 : 0)
       startTimeRef.current = t
       v.currentTime = t
       v.play().catch(() => {})
     }
     if (v.readyState >= 1) startPlay()
-    else v.addEventListener('loadedmetadata', startPlay, { once: true })
+    else {
+      v.addEventListener('loadedmetadata', startPlay, { once: true })
+      v.load()
+    }
   }
 
   function onLeave() {
