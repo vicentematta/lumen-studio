@@ -233,7 +233,8 @@ export function WorkDetailView({ project, allProjects }: Props) {
             </motion.div>
             <motion.div
               variants={stagger}
-              {...inViewProps}
+              initial="hidden"
+              animate="show"
               className="grid grid-cols-1 gap-6 md:grid-cols-2"
             >
               {suggestions.map((p) => (
