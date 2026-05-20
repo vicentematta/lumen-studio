@@ -10,6 +10,14 @@ Claude Code leerá este archivo + el git log + los archivos de memoria y retomar
 
 ---
 
+## URLs
+
+- **Producción:** https://cool-chatterjee-9dea31-vicentemattas-projects.vercel.app
+- **GitHub:** https://github.com/vicentematta/lumen-studio
+- **Dev local:** http://localhost:3000
+
+---
+
 ## Stack
 
 - **Next.js 16** (App Router, Turbopack) + **TypeScript**
