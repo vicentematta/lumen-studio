@@ -48,7 +48,7 @@ export function AboutView({ content }: Props) {
         }
       />
 
-      <section className="px-6 py-16 md:py-24">
+      <section className="px-6 py-8 md:py-24">
         <Container width="lg">
           <motion.div
             variants={fadeRise}
@@ -69,7 +69,7 @@ export function AboutView({ content }: Props) {
       </section>
 
       {content.values?.length ? (
-        <section className="px-6 pb-32 md:pb-44">
+        <section className="px-6 pb-16 md:pb-44">
           <Container width="lg">
             {content.valuesHeading ? (
               <motion.h2

@@ -282,16 +282,16 @@ function Featured({ content }: { content: HomeContent }) {
 function Philosophy({ content }: { content: HomeContent }) {
   if (!content.philosophyTitle) return null
   return (
-    <section className="bg-black px-6 py-28 md:py-40">
+    <section className="bg-black px-6 py-14 md:py-40">
       <Container width="lg">
-        <SectionHeading className="mb-16 md:mb-24" size="xl">
+        <SectionHeading className="mb-10 md:mb-24" size="xl">
           {content.philosophyTitle}
         </SectionHeading>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           <motion.div
             variants={slideFromLeft}
             {...inViewProps}
-            className="aspect-[4/3] overflow-hidden rounded-3xl"
+            className="aspect-video md:aspect-[4/3] overflow-hidden rounded-3xl"
           >
             <LazyVideo
               src={stegaClean(content.videoPhilosophy ?? '') || VIDEOS.philosophy.mp4}
@@ -388,7 +388,7 @@ function Services({ content }: { content: HomeContent }) {
   if (!content.servicesTitle) return null
 
   return (
-    <section className="relative overflow-hidden bg-black px-6 py-28 md:py-40">
+    <section className="relative overflow-hidden bg-black px-6 py-14 md:py-40">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.025)_0%,_transparent_60%)]" />
       <Container width="lg" className="relative">
         <motion.div
@@ -547,7 +547,7 @@ function ClientsStrip({ content }: { content: HomeContent }) {
 function Cta({ content }: { content: HomeContent }) {
   if (!content.ctaTitle) return null
   return (
-    <section className="bg-black px-6 py-28 md:py-40">
+    <section className="bg-black px-6 py-14 md:py-40">
       <Container width="md" className="text-center">
         <motion.h2
           variants={fadeRise}
