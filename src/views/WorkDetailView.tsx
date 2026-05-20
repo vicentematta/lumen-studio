@@ -405,6 +405,7 @@ function ImageBlock({ block }: BlockProps) {
 function VideoWithUnmute({ src, poster, rounded }: { src: string; poster?: string; rounded?: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [muted, setMuted] = useState(true)
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     const el = videoRef.current
@@ -430,7 +431,12 @@ function VideoWithUnmute({ src, poster, rounded }: { src: string; poster?: strin
   }
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
+      {!loaded && (
+        <div
+          className={`aspect-video w-full animate-pulse bg-white/5 ${rounded ? 'rounded-2xl' : ''}`}
+        />
+      )}
       <video
         ref={videoRef}
         src={src}
@@ -439,7 +445,8 @@ function VideoWithUnmute({ src, poster, rounded }: { src: string; poster?: strin
         loop
         playsInline
         preload="metadata"
-        style={{ maxHeight: '80vh', maxWidth: '100%' }}
+        onCanPlay={() => setLoaded(true)}
+        style={{ maxHeight: '80vh', maxWidth: '100%', display: loaded ? undefined : 'none' }}
         className={`h-auto w-auto ${rounded ? 'rounded-2xl' : ''}`}
       />
       <button
@@ -483,6 +490,7 @@ function VideoBlock({ block }: BlockProps) {
 function RightColumnVideo({ src, alt }: { src: string; alt?: string }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [muted, setMuted] = useState(true)
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     const el = videoRef.current
@@ -509,6 +517,9 @@ function RightColumnVideo({ src, alt }: { src: string; alt?: string }) {
 
   return (
     <div className="relative overflow-hidden rounded-2xl">
+      {!loaded && (
+        <div className="aspect-video w-full animate-pulse bg-white/5 rounded-2xl" />
+      )}
       <video
         ref={videoRef}
         src={src}
@@ -517,6 +528,8 @@ function RightColumnVideo({ src, alt }: { src: string; alt?: string }) {
         loop
         playsInline
         preload="metadata"
+        onCanPlay={() => setLoaded(true)}
+        style={{ display: loaded ? undefined : 'none' }}
         className="h-auto w-full"
       />
       <button
