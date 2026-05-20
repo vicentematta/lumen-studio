@@ -94,5 +94,5 @@ export default defineConfig({
     }),
   ],
 
-  schema: { types: schemaTypes },
+  schema: { types: schemaTypes as any },
 })
