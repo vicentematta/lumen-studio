@@ -47,7 +47,7 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
           {p.heroVideoUrl ? (
             <div
               ref={overlayRef}
-              className="absolute inset-0 transition-opacity duration-500"
+              className="pointer-events-none absolute inset-0 transition-opacity duration-500"
               style={{ clipPath: 'inset(0 round 1.5rem)', opacity: 0 }}
             >
               {/* Video con color grade cinemático */}

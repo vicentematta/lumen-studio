@@ -12,6 +12,11 @@
 }
 .film-grain { animation: film-grain 0.35s steps(5) infinite; }
 
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 @keyframes hero-blur-in {
   from { filter: blur(12px); transform: translateY(24px); opacity: 1; }
   to   { filter: blur(0px);  transform: translateY(0);    opacity: 1; }

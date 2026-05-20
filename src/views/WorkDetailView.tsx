@@ -433,9 +433,9 @@ function VideoWithUnmute({ src, poster, rounded }: { src: string; poster?: strin
   return (
     <div className="relative w-full">
       {!loaded && (
-        <div
-          className={`aspect-video w-full animate-pulse bg-white/5 ${rounded ? 'rounded-2xl' : ''}`}
-        />
+        <div className={`aspect-video w-full overflow-hidden bg-white/5 ${rounded ? 'rounded-2xl' : ''}`}>
+          <div className="h-full w-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%]" />
+        </div>
       )}
       <video
         ref={videoRef}
@@ -518,7 +518,9 @@ function RightColumnVideo({ src, alt }: { src: string; alt?: string }) {
   return (
     <div className="relative overflow-hidden rounded-2xl">
       {!loaded && (
-        <div className="aspect-video w-full animate-pulse bg-white/5 rounded-2xl" />
+        <div className="aspect-video w-full overflow-hidden rounded-2xl bg-white/5">
+          <div className="h-full w-full animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent bg-[length:200%_100%]" />
+        </div>
       )}
       <video
         ref={videoRef}
@@ -682,7 +684,7 @@ function ProjectNavCard({ project }: NavCardProps) {
         <GlassCard rounded="3xl" className="relative overflow-hidden">
           {project.heroVideoUrl ? (
             <div
-              className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               style={{ clipPath: 'inset(0 round 1.5rem)' }}
             >
               <video
