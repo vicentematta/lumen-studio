@@ -136,7 +136,8 @@ export function WorkView({ projects }: Props) {
         <Container width="lg">
           <motion.div
             variants={stagger}
-            {...inViewProps}
+            initial="hidden"
+            animate="show"
             className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8"
           >
             {projects.map((p) => {
