@@ -732,7 +732,7 @@ function ProjectNavCard({ project }: NavCardProps) {
                 </p>
               ) : null}
             </div>
-            <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45 md:h-11 md:w-11">
+            <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:-rotate-45 md:h-11 md:w-11">
               <ArrowUpRight className="h-4 w-4" />
             </span>
           </div>

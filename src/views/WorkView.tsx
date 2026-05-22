@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
@@ -19,6 +19,22 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
   const overlayRef = useRef<HTMLDivElement>(null)
   const startTimeRef = useRef(0)
 
+  useEffect(() => {
+    const el = videoRef.current
+    if (!el || !p.heroVideoUrl) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.load()
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '300px' },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [p.heroVideoUrl])
+
   function onEnter() {
     if (overlayRef.current) overlayRef.current.style.opacity = '1'
     const v = videoRef.current
@@ -30,7 +46,10 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
       v.play().catch(() => {})
     }
     if (v.readyState >= 1) startPlay()
-    else v.addEventListener('loadedmetadata', startPlay, { once: true })
+    else {
+      v.addEventListener('loadedmetadata', startPlay, { once: true })
+      v.load()
+    }
   }
 
   function onLeave() {
@@ -99,7 +118,7 @@ function ProjectCard({ p }: { p: ProjectListItem }) {
                 </p>
               ) : null}
             </div>
-            <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45 md:h-11 md:w-11">
+            <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:-rotate-45 md:h-11 md:w-11">
               <ArrowUpRight className="h-4 w-4" />
             </span>
           </div>
