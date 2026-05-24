@@ -37,7 +37,7 @@ export function Navbar({ settings }: Props) {
               className="h-7 w-auto object-contain"
             />
           </Link>
-          <ul className="hidden items-center gap-[2.1rem] md:flex">
+          <ul className="hidden items-center gap-[2.1875rem] md:flex">
             {NAV_LINKS.filter((l) => l.label).map((l) => {
               const isActive = pathname === l.href || pathname?.startsWith(l.href + '/')
               return (
