@@ -45,7 +45,7 @@ export function Navbar({ settings }: Props) {
                   <Link
                     href={l.href}
                     className={cn(
-                      'text-sm font-medium transition-colors',
+                      'font-body text-sm font-normal uppercase !tracking-[0.05em] transition-colors',
                       isActive ? 'text-white' : 'text-white/70 hover:text-white',
                     )}
                   >
@@ -83,7 +83,7 @@ export function Navbar({ settings }: Props) {
                 <Link
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-xl px-4 py-3 text-sm text-white/80 hover:bg-white/[0.04] hover:text-white"
+                  className="block rounded-xl px-4 py-3 font-body text-sm font-normal uppercase !tracking-[0.05em] text-white/80 hover:bg-white/[0.04] hover:text-white"
                 >
                   {l.label}
                 </Link>
