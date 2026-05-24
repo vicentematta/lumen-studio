@@ -131,8 +131,8 @@ function Hero({ content }: { content: HomeContent }) {
             className="mt-6 max-w-2xl md:mt-8"
           >
             {content.heroSubtitle ? (
-              <p className="text-base text-white/75 md:text-lg lg:text-xl">
-                {content.heroSubtitle}
+              <p className="whitespace-pre-line text-base text-white/75 md:text-lg lg:text-xl">
+                {content.heroSubtitle.trim()}
               </p>
             ) : null}
             {content.heroSubtitle2 ? (
