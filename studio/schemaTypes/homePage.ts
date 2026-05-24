@@ -8,7 +8,8 @@ export const homePage = defineType({
     // ── Hero ──────────────────────────────────────────────────────────────
     defineField({ name: 'heroTitle', title: 'Hero · Title', type: 'string' }),
     defineField({ name: 'heroSubtitle', title: 'Hero · Subtitle 1', type: 'string' }),
-    defineField({ name: 'heroSubtitle2', title: 'Hero · Subtitle 2', type: 'string' }),
+    defineField({ name: 'heroSubtitle2', title: 'Hero · Subtitle 2', type: 'text', rows: 2,
+      description: 'Hit Enter to break to a new line. Line breaks are preserved on the site.' }),
     defineField({ name: 'heroPrimaryLabel', title: 'Hero · Primary CTA', type: 'string' }),
     defineField({ name: 'heroSecondaryLabel', title: 'Hero · Secondary CTA', type: 'string' }),
 
