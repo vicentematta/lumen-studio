@@ -26,7 +26,7 @@ export function Navbar({ settings }: Props) {
   return (
     <header className="absolute inset-x-0 top-0 z-30 px-4 pt-5 sm:px-6 sm:pt-6">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-24 lg:gap-32">
           <Link
             href="/"
             className="flex origin-left scale-[0.8] items-center gap-2 text-white md:scale-100"
@@ -45,7 +45,7 @@ export function Navbar({ settings }: Props) {
                   <Link
                     href={l.href}
                     className={cn(
-                      'font-body text-sm font-normal uppercase !tracking-[0.05em] transition-colors',
+                      'font-body text-xs font-normal uppercase !tracking-[0.05em] transition-colors',
                       isActive ? 'text-white' : 'text-white/70 hover:text-white',
                     )}
                   >
