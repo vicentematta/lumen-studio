@@ -37,7 +37,7 @@ export function Navbar({ settings }: Props) {
               className="h-7 w-auto object-contain"
             />
           </Link>
-          <ul className="hidden items-center gap-7 md:flex">
+          <ul className="hidden items-center gap-[2.1rem] md:flex">
             {NAV_LINKS.filter((l) => l.label).map((l) => {
               const isActive = pathname === l.href || pathname?.startsWith(l.href + '/')
               return (
@@ -45,7 +45,7 @@ export function Navbar({ settings }: Props) {
                   <Link
                     href={l.href}
                     className={cn(
-                      'font-body text-xs font-normal uppercase !tracking-[0.05em] transition-colors',
+                      'font-body text-sm font-normal uppercase !tracking-[0.05em] transition-colors',
                       isActive ? 'text-white' : 'text-white/70 hover:text-white',
                     )}
                   >
