@@ -8,10 +8,11 @@ import { structureTool } from 'sanity/structure'
 import { defineDocuments, defineLocations, presentationTool } from 'sanity/presentation'
 import { schemaTypes } from '../../studio/schemaTypes'
 
-const LIVE_URL =
-  typeof window !== 'undefined' && window.location.hostname === 'localhost'
-    ? 'http://localhost:3000'
-    : 'https://riverhaus.xyz'
+const LIVE_URL = (() => {
+  if (typeof window === 'undefined') return 'https://riverhaus.xyz'
+  if (window.location.hostname === 'localhost') return 'http://localhost:3000'
+  return window.location.origin
+})()
 
 export default defineConfig({
   basePath: '/studio',
