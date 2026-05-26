@@ -430,7 +430,7 @@ function Services({ content }: { content: HomeContent }) {
                 </div>
                 <div className="p-7 md:p-9">
                   <div className="mb-6 flex items-start justify-between gap-4">
-                    <span className="text-eyebrow uppercase text-white/40">
+                    <span className="text-eyebrow uppercase text-white/25">
                       {card.tag}
                     </span>
                     <span className="liquid-glass flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:rotate-45">
