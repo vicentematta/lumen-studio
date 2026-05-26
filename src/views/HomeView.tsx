@@ -450,22 +450,6 @@ function Services({ content }: { content: HomeContent }) {
             </motion.a>
           ))}
         </motion.div>
-        {content.servicesAllLabel ? (
-          <motion.div
-            variants={fadeRise}
-            {...inViewProps}
-            className="mt-12 flex justify-center"
-          >
-            <GlassButton
-              to="/services"
-              variant="glass-strong"
-              size="lg"
-              icon={<ArrowUpRight className="h-4 w-4" />}
-            >
-              {content.servicesAllLabel}
-            </GlassButton>
-          </motion.div>
-        ) : null}
       </Container>
     </section>
   )
