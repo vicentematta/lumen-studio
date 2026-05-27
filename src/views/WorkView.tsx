@@ -148,7 +148,7 @@ export function WorkView({ projects }: Props) {
             <em className="italic text-white/60">resultados concretos</em>.
           </>
         }
-        subtitle="Cada proyecto parte de un diagnóstico. Cada resultado se mide contra el problema original."
+        subtitle="Cada proyecto parte de la posición. Cada resultado se mide contra el problema original."
       />
 
       <section className="px-6 pb-32 md:pb-44">

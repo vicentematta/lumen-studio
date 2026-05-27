@@ -26,7 +26,7 @@ export function ServicesView({ services }: Props) {
             <em className="italic text-white/60">categoría</em>.
           </>
         }
-        subtitle="Estrategia comercial, identidad digital y producción creativa — un solo método. Cobramos primero por el ángulo; la aplicación táctica viene después, siempre amarrada al diagnóstico."
+        subtitle="Estrategia comercial, identidad digital y producción creativa — un solo método. Cobramos primero por el ángulo; la aplicación táctica viene después, siempre amarrada a la posición."
       />
       <section className="px-6 pb-32 md:pb-44">
         <Container width="lg">

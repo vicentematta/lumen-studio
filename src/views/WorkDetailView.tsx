@@ -144,7 +144,7 @@ export function WorkDetailView({ project, allProjects }: Props) {
               className="mt-10 flex flex-wrap gap-4"
             >
               <GlassButton to="/contact" variant="solid" size="lg">
-                Agenda diagnóstico
+                Hablemos (30 min)
               </GlassButton>
               <GlassButton to="/work" variant="glass" size="lg">
                 Ver proyectos

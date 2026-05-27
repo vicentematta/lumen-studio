@@ -5,7 +5,7 @@ import { ServicesView } from '@/views/ServicesView'
 export const metadata: Metadata = {
   title: 'Servicios',
   description:
-    'Tres puertas a tu categoría: estrategia comercial, identidad digital y producción continua. Un solo método amarrado al diagnóstico.',
+    'Tres puertas a tu categoría: estrategia comercial, identidad digital y producción continua. Un solo método amarrado a la posición.',
 }
 
 export default async function ServicesPage() {

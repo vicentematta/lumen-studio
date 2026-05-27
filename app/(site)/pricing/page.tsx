@@ -5,7 +5,7 @@ import { PricingView } from '@/views/PricingView'
 export const metadata: Metadata = {
   title: 'Inversión',
   description:
-    'Cómo cobramos. Primero el diagnóstico — siempre. La producción se cotiza según lo que el diagnóstico indique.',
+    'Cómo cobramos. Primero la posición — siempre. La producción se cotiza según lo que la posición indique.',
 }
 
 export default async function PricingPage() {

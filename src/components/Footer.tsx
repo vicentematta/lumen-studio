@@ -63,7 +63,7 @@ export function Footer({ settings }: Props) {
             ) : null}
             <div className="mt-7 flex flex-wrap items-center gap-3">
               <GlassButton to="/contact" variant="solid" size="lg">
-                {settings?.footerCtaBook ?? 'Agenda diagnóstico'}
+                {settings?.footerCtaBook ?? 'Hablemos (30 min)'}
               </GlassButton>
               <WorkCTAButton label={settings?.footerCtaWork ?? 'Ver trabajos'} />
             </div>

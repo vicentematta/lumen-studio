@@ -61,7 +61,7 @@ export function Navbar({ settings }: Props) {
           {/* CTA: solo desde lg (≥1024px). Apunta a /contact (Auth eliminado en M2a) */}
           <div className="hidden lg:block">
             <GlassButton to="/contact" variant="solid" size="sm" className="whitespace-nowrap">
-              {settings?.navCtaLabel ?? 'Agenda diagnóstico'}
+              {settings?.navCtaLabel ?? 'Hablemos (30 min)'}
             </GlassButton>
           </div>
           <button
@@ -97,7 +97,7 @@ export function Navbar({ settings }: Props) {
                 className="w-full justify-center"
                 onClick={() => setOpen(false)}
               >
-                {settings?.navCtaLabel ?? 'Agenda diagnóstico'}
+                {settings?.navCtaLabel ?? 'Hablemos (30 min)'}
               </GlassButton>
             </li>
           </ul>

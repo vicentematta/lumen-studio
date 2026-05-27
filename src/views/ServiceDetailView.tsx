@@ -81,7 +81,7 @@ export function ServiceDetailView({ service, prev, next }: Props) {
               className="mt-8 flex flex-wrap gap-4"
             >
               <GlassButton to="/contact" variant="solid" size="lg">
-                Agenda diagnóstico
+                Hablemos (30 min)
               </GlassButton>
               <GlassButton to="/services" variant="glass" size="lg">
                 Ver servicios
